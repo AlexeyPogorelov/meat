@@ -1,4 +1,27 @@
-.top-line {}
+.top-line {
+	padding: 26px 0;
+}
+.top-line .left-bar,
+.top-line .right-bar {
+	float: left;
+	width: 50%;
+}
+
+.top-line .left-bar {
+}
+.top-line .right-bar {
+	text-align: right;
+}
+.top-line .socials {}
+.top-line .socials li {
+	display: inline-block;
+	margin-right: 33px;
+	margin-top: 4px;
+}
+.top-line .socials li a {
+	color: #fff;
+	font-size: 21px;
+}
 .top-line .email-me {
 	color: white;
 	font-family: "Gotham Pro", sans-serif;
@@ -6,7 +29,11 @@
 	font-weight: 300;
 	line-height: 24px;
 }
-.bottom-line {}
+.bottom-line {
+	bottom: 33px;
+	position: absolute;
+	width: 100%;
+}
 .bottom-line .copyright-holder {
 	text-align: center;
 }
@@ -15,27 +42,43 @@
 	color: white;
 	font-family: "Gotham Pro", sans-serif;
 	font-size: 20px;
-	font-weight: 400;
+	font-weight: 100;
 	line-height: 19px;
 }
+#underconstruction {
+	/*height: 700px;*/
+	overflow: hidden;
+}
+#underconstruction .content-holder {
+	display: table;
+	height: 100%;
+	height: calc(100% - 211px);
+	/*width: 100%;*/
+}
 #underconstruction .presentation {
-	text-align: center;
+	/*display: table-cell;*/
+	height: 100%;
+	vertical-align: middle;
 }
 #underconstruction .presentation .main-logo-holder,
 #underconstruction .presentation .main-description-holder {
-	display: inline-block;
+	display: table-cell;
+	padding: 0 26px;
 	vertical-align: middle;
 }
 #underconstruction .presentation .main-logo-holder {
+	text-align: right;
+	width: 324px;
 }
 #underconstruction .presentation .main-description-holder {
+	padding-top: 35px;
 }
 #underconstruction .presentation .grand {
 	color: white;
 	font-family: "Gotham Pro", sans-serif;
 	font-size: 58px;
 	font-weight: 700;
-	line-height: 69px;
+	line-height: 71px;
 }
 #underconstruction .presentation .small {
 	color: white;
@@ -43,4 +86,5 @@
 	font-size: 28px;
 	font-weight: 300;
 	line-height: 28px;
+	margin-top: 31px;
 }
