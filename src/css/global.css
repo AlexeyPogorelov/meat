@@ -48,10 +48,13 @@ li {
 
 h1 {
 	color: white;
-	font-family: "Gotham Pro";
+	font-family: "Gotham Pro", sans-serif;
 	font-size: 58px;
 	font-weight: 700;
 	line-height: 69px;
+}
+h1.big {
+	font-size: 88px;
 }
 h1.center {
 	text-align: center;

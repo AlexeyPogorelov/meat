@@ -2,6 +2,10 @@
 	background-image: url('../img/bg/bg-letters-pattern-2.svg'), linear-gradient(180deg, #4e00e0 0%, #1b6ef8 100%);
 	background-repeat: repeat;
 }
+.bg-2 {
+	background: url('../img/bg/bg-letters-pattern-2.svg'), #f41f52;
+	background-repeat: repeat;
+}
 .background-pattern {
 	background-image: url('../img/bg/bg-letters-pattern-1.svg');
 	opacity: .1;
