@@ -2,7 +2,7 @@ $(document).on('ready', function () {
 	var winWidth = $(window).width(),
 		winHeight = $(window).height();
 	$('.full-height').css({
-		'height': winHeight
+		'min-height': winHeight
 	});
 
 	// resize
@@ -10,7 +10,7 @@ $(document).on('ready', function () {
 		winWidth = $(window).width();
 		winHeight = $(window).height();
 		$('.full-height').css({
-			'height': winHeight
+			'min-height': winHeight
 		});
 	});
 });

@@ -5,6 +5,11 @@
 	padding: 0;
 }
 body {
+	color: black;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 30px;
 }
 .wrapper {}
 .lightbox-cell::-webkit-scrollbar-corner,
@@ -37,6 +42,7 @@ section#footer .container {
 }
 a {
 	color: #000;
+	font-family: "Gotham Pro", sans-serif;
 	text-decoration: none;
 }
 img {
@@ -48,7 +54,6 @@ li {
 
 h1 {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 58px;
 	font-weight: 700;
 	line-height: 69px;
@@ -120,6 +125,8 @@ textarea:-moz-placeholder {
 }
 /*	END SELECT	*/
 
+
+/*	END INPUT	*/
 input {
 	outline-width: 5px;
 	outline-color: transparent;
@@ -128,8 +135,8 @@ input {
 	transition: outline-color .4s;
 }
 input:focus {
-	border: 1px solid #000;
-	transition: border .4s;
+	/*border: 1px solid #000;*/
+	/*transition: border .4s;*/
 }
 input::-webkit-input-placeholder {
 }
@@ -142,6 +149,7 @@ input::-moz-placeholder {
 
 input:-ms-input-placeholder {
 }
+/*	END INPUT	*/
 
 /* CHECKBOX */
 
@@ -400,6 +408,9 @@ input[type='number'] {
 .text-right {
 	text-align: right;
 }
+.text-left {
+	text-align: left;
+}
 .block {
 	display: block;
 }
@@ -421,6 +432,24 @@ input[type='number'] {
 }
 .table .bottom {
 	vertical-align: bottom;
+}
+/*	vertical */
+.vertical-middle,
+.full-height {
+	position: relative;
+	text-align: center;
+}
+.full-height .content-holder,
+.vertical-middle .content-holder {
+	bottom: 0;
+	display: table;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	text-align: left;
+	top: 0;
+	width: 100%;
 }
 /*	NAVIIGATION */
 .navbar-toggle {

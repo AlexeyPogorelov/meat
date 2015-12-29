@@ -1,3 +1,18 @@
+/* TEMP */
+.grid-overlay {
+	background: url('../img/bg/grid.png') 50% 0 repeat-y;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	opacity: .5;
+	pointer-events: none;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+}
+/* END TEMP */
+
 /* NAV */
 .main-navigation:before,
 .footer-navigation:before,
@@ -18,29 +33,47 @@ nav .navbar-right {
 }
 nav .navigation-links a {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 22px;
-	font-weight: 500;
+	font-weight: 600;
 	line-height: 40px;
-}
-nav .navigation-links li {
-	margin-right: 240px;
 }
 nav .navigation-links li:last-child {
 	margin-right: 0;
 }
 nav .navigation-links li.active a {
 	color: #4d2ce0;
+	font-weight: bold;
 }
-nav .socials {}
+nav .socials {
+	margin-top: 6px;
+}
 nav .socials li {
 	margin-left: 46px;
 }
 nav .socials li a {
 	font-size: 21px;
 }
-nav.main-navigation {}
+nav.main-navigation .container {
+	max-width: 1364px;
+	width: auto;
+}
+nav.main-navigation {
+	padding: 20px 20px 0;
+}
 nav.main-navigation li {
+	display: inline-block;
+}
+nav.main-navigation .navigation-links li {
+	margin-right: 236px;
+}
+nav.main-navigation .navigation-links li:last-child {
+	margin-right: 0;
+}
+nav.footer-navigation {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+nav.footer-navigation li {
 	display: inline-block;
 }
 nav.fixed {
@@ -76,7 +109,6 @@ nav.fixed {
 }
 .top-line .email-me {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 24px;
@@ -90,12 +122,11 @@ nav.fixed {
 	text-align: center;
 }
 .bottom-line .copyright-holder span {
-	opacity: 0.4;
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 20px;
 	font-weight: 100;
 	line-height: 19px;
+	opacity: 0.4;
 }
 #underconstruction {
 	/*height: 700px;*/
@@ -105,7 +136,6 @@ nav.fixed {
 	display: table;
 	height: 100%;
 	height: calc(100% - 211px);
-	/*width: 100%;*/
 }
 #underconstruction .presentation {
 	/*display: table-cell;*/
@@ -127,14 +157,12 @@ nav.fixed {
 }
 #underconstruction .presentation .grand {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 58px;
 	font-weight: 700;
 	line-height: 71px;
 }
 #underconstruction .presentation .small {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 28px;
 	font-weight: 300;
 	line-height: 28px;
@@ -142,8 +170,26 @@ nav.fixed {
 }
 /* MAIN-PRESENTATION */
 section#main-presentation {}
-section#main-presentation .content-holder {
+section#main-presentation .content {
+	height: 100%;
+	left: 0;
+	overflow: auto;
+	position: absolute;
 	text-align: center;
+	top: 0;
+	width: 100%;
+}
+section#main-presentation .content-holder {
+	/*bottom: 0;
+	display: table;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	width: 100%;*/
+	bottom: 120px;
 }
 section#main-presentation .left-side,
 section#main-presentation .right-side {
@@ -152,28 +198,234 @@ section#main-presentation .right-side {
 section#main-presentation .left-side {
 	display: inline-block;
 	position: relative;
-	text-align: right;
+	/*text-align: right;*/
 	vertical-align: middle;
+}
+section#main-presentation .left-side img {
+	position: relative;
+	top: 15px;
 }
 section#main-presentation .right-side {
 	display: inline-block;
-	margin-left: -10px;
-	max-width: 980px;
+	margin-left: -16px;
+	max-width: 814px;
 	vertical-align: bottom;
 }
 section#main-presentation h1 {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 88px;
 	font-weight: 700;
-	line-height: 90px;
+	line-height: 96px;
 }
 section#main-presentation h3 {
 	color: white;
-	font-family: "Gotham Pro", sans-serif;
 	font-size: 42px;
 	font-weight: 300;
-	line-height: 78px;
-	margin-left: 250px;
+	line-height: 86px;
+	margin-left: 173px;
 }
 /* END MAIN-PRESENTATION */
+
+/* CAPABILITIES */
+section#capabilities {
+	padding-top: 100px;
+	padding-bottom: 140px;
+	text-align: center;
+	width: 100%;
+}
+section#capabilities .left-element,
+section#capabilities .right-element {
+	background-color: white;
+	display: inline-block;
+	padding: 73px 20px 90px 90px;
+	text-align: left;
+	width: 530px;
+}
+section#capabilities h4 {
+	color: black;
+	font-size: 32px;
+	font-weight: 700;
+	line-height: 57px;
+}
+section#capabilities ul {
+	margin-top: 26px;
+	padding-left: 3px;
+}
+section#capabilities li {
+	color: black;
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 50px;
+}
+section#capabilities li:before {
+	background-color: #f41f52;
+	border-radius: 50%;
+	content: "";
+	display: inline-block;
+	height: 7px;
+	margin-right: 16px;
+	vertical-align: middle;
+	width: 7px;
+}
+
+/*section#capabilities .left-element {}
+section#capabilities .right-element {}*/
+
+/* END CAPABILITIES */
+
+/* PORTFOLIO */
+section#portfolio-presentation {
+	padding-top: 197px;
+}
+section#portfolio-presentation .portfolio-label {
+	color: white;
+	font-size: 76px;
+	font-weight: 700;
+	line-height: 64px;
+}
+/* END PORTFOLIO */
+
+/* DEVICES */
+section#devices {
+	background-color: #4d2ce0;
+	color: #fff;
+}
+section#devices .devices-illustration {}
+section#devices h2 {
+	color: white;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 57px;
+	margin-top: 68px;
+}
+section#devices p {
+	color: white;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 30px;
+	margin-top: 40px;
+}
+/* END DEVICES */
+
+/* EXPERIENCE */
+section#experience {
+	background-color: white;
+	padding-top: 180px;
+}
+section#experience h2 {
+	color: black;
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 57px;
+	margin-bottom: 154px;
+}
+section#experience .main-image-holder {
+	margin-bottom: -122px;
+	text-align: center;
+}
+section#experience .main-image-holder img {
+	width: 100%;
+}
+/* END EXPERIENCE */
+
+/* ABOUT-TEXT */
+section#about-text {
+	padding-top: 235px;
+	padding-bottom: 128px;
+}
+section#about-text p {
+	color: white;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 38px;
+}
+/* END ABOUT-TEXT */
+
+/* SUBSCRIBER */
+section#subscriber {
+	background: transparent url('../img/bg/subscriber-bg-1.png') no-repeat 100% 0;
+}
+section#subscriber .subscriber-holder {
+	border-top: 6px solid #4d2ce0;
+	border-left: 6px solid #4d2ce0;
+	display: block;
+}
+section#subscriber .input-area {
+	padding: 0 70px;
+}
+section#subscriber .input-area img {
+	position: relative;
+	top: 4px;
+	vertical-align: baseline;
+}
+section#subscriber .input-area input {
+	background-color: transparent;
+	border: none;
+	color: snow;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 39px;
+	font-weight: 300;
+	height: 92px;
+	line-height: 30px;
+	outline: none;
+	width: 960px;
+}
+section#subscriber .input-area input:focus {
+	/*border: 1px solid #000;*/
+	/*transition: border .4s;*/
+}
+section#subscriber .input-area input::-webkit-input-placeholder {
+	color: snow;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 39px;
+	font-weight: 300;
+	line-height: 44px;
+	opacity: 0.8;
+	vertical-align: middle;
+}
+
+section#subscriber .input-area input:-moz-placeholder {
+	color: snow;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 39px;
+	font-weight: 300;
+	line-height: 44px;
+	opacity: 0.8;
+	vertical-align: middle;
+}
+
+section#subscriber .input-area input::-moz-placeholder {
+	color: snow;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 39px;
+	font-weight: 300;
+	line-height: 44px;
+	opacity: 0.8;
+	vertical-align: middle;
+}
+
+section#subscriber .input-area input:-ms-input-placeholder {
+	color: snow;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 39px;
+	font-weight: 300;
+	line-height: 44px;
+	opacity: 0.8;
+	vertical-align: middle;
+}
+section#subscriber .description-holder {
+	background-color: #4d2ce0;
+	color: white;
+	font-size: 50px;
+	font-weight: 700;
+	height: 224px;
+	line-height: 57px;
+	padding: 54px 63px 0;
+}
+section#subscriber .description-holder a {
+	color: white;
+	font-size: 34px;
+	font-weight: 300;
+	line-height: 57px;
+}
+/* END SUBSCRIBER */
