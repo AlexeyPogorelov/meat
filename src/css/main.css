@@ -75,6 +75,14 @@ nav.footer-navigation {
 }
 nav.footer-navigation li {
 	display: inline-block;
+	margin-left: 48px;
+}
+nav.footer-navigation .socials {
+	margin-left: 68px;
+}
+nav.footer-navigation .socials li {
+	margin-left: 0;
+	margin-right: 29px;
 }
 nav.fixed {
 	top: 0;
@@ -229,6 +237,7 @@ section#main-presentation h3 {
 /* CAPABILITIES */
 section#capabilities {
 	padding-top: 100px;
+	/*padding-top: 212px;*/
 	padding-bottom: 140px;
 	text-align: center;
 	width: 100%;
@@ -276,12 +285,35 @@ section#capabilities .right-element {}*/
 /* PORTFOLIO */
 section#portfolio-presentation {
 	padding-top: 197px;
+	padding-bottom: 354px;
 }
 section#portfolio-presentation .portfolio-label {
 	color: white;
+	display: inline-block;
 	font-size: 76px;
 	font-weight: 700;
 	line-height: 64px;
+	margin-left: 35px;
+	position: relative;
+	top: -55px;
+}
+section#portfolio-presentation .portfolio-item {
+	display: inline-block;
+	vertical-align: top;
+}
+section#portfolio-presentation .portfolio-item.type-1 {
+	margin-left: 39px;
+}
+section#portfolio-presentation .portfolio-item.type-2 {
+	margin-left: 95px;
+}
+section#portfolio-presentation .portfolio-item.type-3 {
+	margin-left: 69px;
+	margin-top: 83px;
+}
+section#portfolio-presentation .portfolio-item.type-4 {
+	margin-left: 105px;
+	margin-top: 83px;
 }
 /* END PORTFOLIO */
 
@@ -296,7 +328,7 @@ section#devices h2 {
 	font-size: 50px;
 	font-weight: 700;
 	line-height: 57px;
-	margin-top: 68px;
+	margin-top: 60px;
 }
 section#devices p {
 	color: white;
@@ -310,14 +342,14 @@ section#devices p {
 /* EXPERIENCE */
 section#experience {
 	background-color: white;
-	padding-top: 180px;
+	padding-top: 174px;
 }
 section#experience h2 {
 	color: black;
 	font-size: 50px;
 	font-weight: 700;
 	line-height: 57px;
-	margin-bottom: 154px;
+	margin-bottom: 166px;
 }
 section#experience .main-image-holder {
 	margin-bottom: -122px;
@@ -330,14 +362,14 @@ section#experience .main-image-holder img {
 
 /* ABOUT-TEXT */
 section#about-text {
-	padding-top: 235px;
+	padding-top: 239px;
 	padding-bottom: 128px;
 }
 section#about-text p {
 	color: white;
 	font-size: 20px;
 	font-weight: 300;
-	line-height: 38px;
+	line-height: 40px;
 }
 /* END ABOUT-TEXT */
 
@@ -358,6 +390,10 @@ section#subscriber .input-area img {
 	top: 4px;
 	vertical-align: baseline;
 }
+section#subscriber .input-area form {
+	display: inline-block;
+	width: 960px;
+}
 section#subscriber .input-area input {
 	background-color: transparent;
 	border: none;
@@ -368,7 +404,7 @@ section#subscriber .input-area input {
 	height: 92px;
 	line-height: 30px;
 	outline: none;
-	width: 960px;
+	width: 100%;
 }
 section#subscriber .input-area input:focus {
 	/*border: 1px solid #000;*/
