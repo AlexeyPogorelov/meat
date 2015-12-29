@@ -5,12 +5,16 @@
 .bg-2 {
 	background: url('../img/bg/bg-letters-pattern-2.svg'), #f41f52;
 	background-repeat: repeat;
-}
 .bg-3 {
 	background-color: #4d2ce0;
 }
 .bg-4 {
 	background: url('../img/bg/bg-letters-pattern-2.svg');
+}
+}
+.bg-5 {
+	background: url('../img/bg/bg-letters-pattern-2.svg'), #4d2ce0;
+	background-repeat: repeat;
 }
 .background-pattern {
 	background-image: url('../img/bg/bg-letters-pattern-1.svg');
