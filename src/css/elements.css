@@ -9,6 +9,9 @@
 .bg-3 {
 	background-color: #4d2ce0;
 }
+.bg-4 {
+	background: url('../img/bg/bg-letters-pattern-2.svg');
+}
 .background-pattern {
 	background-image: url('../img/bg/bg-letters-pattern-1.svg');
 	opacity: .1;

@@ -210,6 +210,8 @@ section#main-presentation .left-side {
 	vertical-align: middle;
 }
 section#main-presentation .left-side img {
+	-webkit-box-shadow: 0 24px 65px -10px rgba(0,0,0,.45);
+	box-shadow: 0 24px 65px -10px rgba(0,0,0,.45);
 	position: relative;
 	top: 15px;
 }
@@ -244,6 +246,8 @@ section#capabilities {
 }
 section#capabilities .left-element,
 section#capabilities .right-element {
+	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
+	box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
 	background-color: white;
 	display: inline-block;
 	padding: 73px 20px 90px 90px;
@@ -298,6 +302,8 @@ section#portfolio-presentation .portfolio-label {
 	top: -55px;
 }
 section#portfolio-presentation .portfolio-item {
+	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.55);
+	box-shadow: 0 24px 65px -20px rgba(0,0,0,.55);
 	display: inline-block;
 	vertical-align: top;
 }
@@ -356,6 +362,8 @@ section#experience .main-image-holder {
 	text-align: center;
 }
 section#experience .main-image-holder img {
+	-webkit-box-shadow: 0 44px 65px -35px rgba(0,0,0,.35);
+	box-shadow: 0 44px 65px -35px rgba(0,0,0,.35);
 	width: 100%;
 }
 /* END EXPERIENCE */
@@ -465,3 +473,45 @@ section#subscriber .description-holder a {
 	line-height: 57px;
 }
 /* END SUBSCRIBER */
+
+/* 404 */
+section#page-404 {
+	color: #000;
+	text-align: center;
+}
+section#page-404 .logo {
+	display: inline-block;
+	margin-top: 79px;
+}
+section#page-404 h1 {
+	margin-top: 59px;
+	color: black;
+	font-size: 164px;
+	font-weight: 700;
+	line-height: 160px;;
+}
+section#page-404 h4 {
+	color: black;
+	font-size: 38px;
+	font-weight: 700;
+	line-height: 60px;
+}
+section#page-404 .to-main-page {
+	border: 3px dashed #f41f52;
+	border-radius: 4px;
+	color: #f42752;
+	display: inline-block;
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 60px;
+	margin-top: 53px;
+	margin-bottom: 80px;
+	padding: 0 32px;
+	text-transform: uppercase;
+}
+section#page-404 .illustration {
+	bottom: 0;
+	display: block;
+	position: absolute;
+}
+/* END 404 */

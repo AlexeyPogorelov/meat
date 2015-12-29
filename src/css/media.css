@@ -18,6 +18,14 @@
 	.container {
 		width: 960px;
 	}
+	/* 404 */
+	section#page-404 .illustration {
+		bottom: 0;
+		left: -80px;
+		display: block;
+		position: absolute;
+	}
+	/* END 404 */
 }
 /*--------------------------------------------------------------------------
 	TABLET
@@ -56,6 +64,11 @@
 		margin-top: 60px;
 		margin-bottom: 20px;
 	}
+	/* 404 */
+	section#page-404 .illustration {
+		display: none;
+	}
+	/* END 404 */
 }
 /*
 	MOBILE
@@ -79,6 +92,17 @@
 		font-size: 30px;
 		line-height: 40px;
 	}
+	/* 404 */
+	section#page-404 h1 {
+		font-size: 132px;
+	}
+	section#page-404 h4 {
+		font-size: 20px;
+	}
+	section#page-404 .to-main-page {
+		font-size: 18px;
+	}
+	/* END 404 */
 }
 /*
 	xSMALL
