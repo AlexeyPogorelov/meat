@@ -662,6 +662,7 @@ section#blog-item .blog-item-page:last-child {
 	padding-top: 0;
 	padding-bottom: 80px;
 	margin-bottom: -310px;
+	z-index: 1;
 }
 section#blog-item .blog-item-page:last-child ul.socials {
 	bottom: -4px;
@@ -875,6 +876,7 @@ section#works-item .blog-item-page:last-child {
 	padding-top: 0;
 	padding-bottom: 80px;
 	margin-bottom: -310px;
+	z-index: 1;
 }
 section#works-item .blog-item-page:last-child ul.socials {
 	bottom: -4px;
@@ -957,8 +959,38 @@ section#works-item table tr td:nth-child(3) {
 section#works-item .blog-item-page .color {
 	color: #f41f52;
 }
-section#works-item ~ #blog-articles {
+section#works-item ~ #works-articles {
 	padding-top: 558px;
 }
 
 /* END WORKS */
+
+/* BLOCKQUOTE */
+
+ .blockquote-holder {}
+ .blockquote-holder .image-holder {
+	 float: left;
+	 width: 174px;
+ }
+ .blockquote-holder .user-name {
+	 opacity: 0.8;
+	 line-height: 30px;
+	 color: black;
+	 font-size: 30px;
+	 font-weight: 700;
+ }
+ .blockquote-holder .user-description {
+	 opacity: 0.8;
+	 line-height: 30px;
+	 color: #717171;
+	 font-size: 20px;
+	 font-weight: 400;
+ }
+ .blockquote-holder .comment-holder {
+	 color: #f41f52;
+	 font-size: 32px;
+	 font-weight: 300;
+	 line-height: 42px;
+ }
+
+/* END BLOCKQUOTE */
