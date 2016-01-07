@@ -148,7 +148,7 @@
 /*
 	TABLET
 */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
 	.col-tb-1 {
 		width: 8.333%;
 	}

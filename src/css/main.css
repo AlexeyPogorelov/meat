@@ -497,7 +497,125 @@ section#subscriber .description-holder a {
 	font-weight: 700;
 	line-height: 58px;
 }
+.facts-block {
+	margin-top: 90px;
+}
+.facts-block .blockquote-holder .image-holder {
+	width: 141px;
+}
+.facts-block .fact {
+	width: 32.9%;
+	vertical-align: top;
+	text-align: center;
+	display: inline-block;
+}
+.facts-block .image-holder {
+	margin-right: 27px;
+}
+#works-item .facts-block p.user-name {
+	font-family: "Gotham Pro", sans-serif;
+	line-height: 30px;
+	color: black;
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 9px;
+	padding-top: 18px;
+}
+#works-item .facts-block p.user-description {
+	font-family: "Gotham Pro", sans-serif;
+	line-height: 30px;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+#works-item .facts-block .comment-holder p {
+	color: #f41f52;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 32px;
+	font-weight: 300;
+	overflow: hidden;
+	line-height: 44px;
+}
+#works-item .facts-block .facts-holder {
+	margin-top: 147px;
+	margin-bottom: 23px;
 
+}
+#works-item .facts-block .facts-holder p {
+	color: black;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 21px;
+}
+#works-item .facts-block .facts-holder p.big {
+	color: black;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 60px;
+	font-weight: 700;
+}
+#works-item .facts-block .form-group {
+	text-align: center;
+}
+#works-item .facts-block .form-group a {
+	color: #4d2ce0;
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 46px;
+}
+#works-item .facts-block .mobile-app {
+	background: #fff;
+	border-radius: 3px;
+	border: 2px solid #f41f52;
+	cursor: pointer;
+	height: 84px;
+	margin-left: 18px;
+	padding-left: 75px;
+	padding: 9px;
+	position: relative;
+	text-align: left;
+	vertical-align: top;
+	width: 255px;
+}
+#works-item .facts-block .mobile-app.app-2 {
+	width: 281px;
+}
+#works-item .facts-block .mobile-app img {
+	margin-bottom: 0;
+	position: absolute;
+	left: 30px;
+	top: 16px;
+}
+#works-item .facts-block .mobile-app i {
+	position: absolute;
+	left: 26px;
+	top: 14px;
+	font-size: 44px;
+	color: #F41F52;
+}
+#works-item .facts-block .mobile-app span {
+	height: 26px;
+	color: #f41f52;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 28px;
+	line-height: 27px;
+	font-weight: 700;
+	vertical-align: top;
+}
+#works-item .facts-block .mobile-app span.small {
+	color: #f41f52;
+	font-family: "Gotham Pro", sans-serif;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 17px;
+	vertical-align: top;
+}
+#works-item .facts-block .form-group .link-type-1 {
+	margin-bottom: 49px;
+}
+#works-item .facts-block .form-group.mobile-apps {
+	padding-left: 20px;
+	margin-top: 49px;
+}
 /* END FACTS-BLOCK */
 
 /* 404 */
@@ -523,15 +641,15 @@ section#page-404 h4 {
 	line-height: 60px;
 }
 section#page-404 .to-main-page {
-	border: 3px dashed #f41f52;
 	border-radius: 4px;
+	border: 3px dashed #f41f52;
 	color: #f42752;
 	display: inline-block;
 	font-size: 26px;
 	font-weight: 400;
 	line-height: 60px;
-	margin-top: 53px;
 	margin-bottom: 80px;
+	margin-top: 53px;
 	padding: 0 32px;
 	text-transform: uppercase;
 }
@@ -610,7 +728,6 @@ section#blog-item-header {
 	line-height: 66px;
 	letter-spacing: -2px;
 	padding-top: 160px;
-	padding-bottom: 167px;
 	padding-bottom: 479px;
 }
 section#blog-item-header .container {
@@ -824,7 +941,7 @@ section#works-item-header {
 	line-height: 66px;
 	letter-spacing: -2px;
 	padding-top: 160px;
-	padding-bottom: 167px;
+	/*padding-bottom: 167px;*/
 	padding-bottom: 479px;
 }
 section#works-item-header .container {
@@ -840,7 +957,7 @@ section#works-item .blog-item-page {
 	margin: auto;
 	padding: 0 108px;
 	position: relative;
-	width: 1160px;
+	width: 800px;
 }
 section#works-item ul.socials {
 	position: absolute;
@@ -969,28 +1086,32 @@ section#works-item ~ #works-articles {
 
  .blockquote-holder {}
  .blockquote-holder .image-holder {
-	 float: left;
-	 width: 174px;
+	float: left;
+	width: 174px;
  }
  .blockquote-holder .user-name {
-	 opacity: 0.8;
-	 line-height: 30px;
-	 color: black;
-	 font-size: 30px;
-	 font-weight: 700;
+	opacity: 0.8;
+	line-height: 30px;
+	color: black;
+	font-size: 30px;
+	font-weight: 700;
  }
  .blockquote-holder .user-description {
-	 opacity: 0.8;
-	 line-height: 30px;
-	 color: #717171;
-	 font-size: 20px;
-	 font-weight: 400;
+	opacity: 0.8;
+	line-height: 30px;
+	color: #717171;
+	font-size: 20px;
+	font-weight: 400;
  }
  .blockquote-holder .comment-holder {
-	 color: #f41f52;
-	 font-size: 32px;
-	 font-weight: 300;
-	 line-height: 42px;
+	color: #f41f52;
+	font-size: 32px;
+	font-weight: 300;
+	line-height: 42px;
  }
 
 /* END BLOCKQUOTE */
+
+
+/* MOBILE */
+/* END MOBILE */

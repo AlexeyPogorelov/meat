@@ -10,13 +10,19 @@
 		text-align: right;
 		width: 521px;
 	}
+	section#works-item .blog-item-page {
+		width: 1160px;
+	}
 }
 /*------------------------------------------------------------------------------
 	MEDIUM
 ------------------------------------------------------------------------------*/
 @media screen and (max-width: 1439px) {
 	.container {
-		width: 960px;
+		width: 660px;
+	}
+	nav.footer-navigation .navigation-links {
+		display: none;
 	}
 	/* 404 */
 	section#page-404 .illustration {
@@ -30,7 +36,8 @@
 /*--------------------------------------------------------------------------
 	TABLET
 --------------------------------------------------------------------------*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
+	section#works-articles .container,
 	.container {
 		width: 100%;
 	}
@@ -73,7 +80,7 @@
 /*
 	MOBILE
 */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 800px) {
 /*	.container {
 		width: 100%;
 	}*/
