@@ -141,10 +141,10 @@
 		margin-bottom: 0;
 	}
 	section#works-item-header .container {
-		padding-left: 0;
+		padding-left: 25px;
 	}
 	section#works-item-header {
-		padding-top: 160px;
+		padding-top: 100px;
 	}
 	nav.main-navigation .navigation-links li {
 		margin-right: 236px;
@@ -163,11 +163,42 @@
 	section#works-item .blog-item-page {
 		width: 1160px;
 	}
+	section#works-item-header {
+		font-size: 34px;
+		font-weight: 100;
+	}
 }
 /*------------------------------------------------------------------------------
 	MEDIUM
 ------------------------------------------------------------------------------*/
 @media screen and (max-width: 1439px) {
+	#works-item .facts-block .form-group.mobile-apps {
+		margin-top: 26px;
+		margin-bottom: 39px;
+	}
+	#works-item .facts-block .facts-holder p.big {
+		font-size: 50px;
+		margin-bottom: 20px;
+	}
+	#works-item .facts-block .facts-holder p {
+		font-size: 16px;
+		line-height: 16px;
+	}
+	.mobile-sm-visible {
+		display: inherit;
+	}
+	.mobile-sm-hidden {
+		display: none;
+	}
+	section#works-item p {
+		margin-bottom: 60px;
+	}
+	section#works-item h3 {
+		margin-bottom: 24px;
+	}
+	section#works-item-header .container {
+		padding-left: 69px;
+	}
 	section#main-presentation {
 		min-height: 0 !important;
 		margin-top: 145px;
@@ -265,12 +296,39 @@
 	.mobile-hidden {
 		display: none !important;
 	}
+	.mobile-xs-visible {
+		display: inherit;
+	}
+	.mobile-xs-hidden {
+		display: none;
+	}
+	section#works-item .table-holder {
+		margin-bottom: 54px;
+	}
+	section#works-item blockquote,
+	section#blog-item blockquote {
+		background-size: 55px;
+	}
+	section#works-item ul {
+		margin-bottom: 38px;
+	}
+	section#works-item blockquote {
+		margin-bottom: 10px;
+	}
+	.table-holder {
+		max-width: 320px;
+		overflow: auto;
+	}
+	section#works-item h3,
+	section#works-item p {
+		margin-bottom: 21px;
+	}
 	.navbar-toggle {
 		display: block;
 	}
 	section#works-item .full-width,
 	section#blog-item .full-width {
-		margin-bottom: 30px;
+		margin-bottom: 43px;
 	}
 	section#works-item iframe,
 	section#blog-item iframe {
@@ -280,10 +338,10 @@
 	section#blog-articles .articles-holder .article h4 {
 		font-size: 19px;
 		font-weight: 700;
-		line-height: 24px;
+		line-height: 19px
 	}
 	section#blog-articles .articles-holder .article p {
-		font-family: Garamond, sans-serif;
+		font-family: Garamond, serif;
 		font-size: 15px;
 		line-height: 21px;
 	}
@@ -550,7 +608,7 @@
 		width: 320px;
 	}
 	section#works-item ~ #works-articles {
-		padding-top: 132px;
+		padding-top: 113px;
 	}
 	#works-item .facts-block .mobile-app span {
 		font-size: 24px;
@@ -568,6 +626,8 @@
 	#works-item .facts-block .form-group .link-type-1 {
 		font-size: 22px;
 		line-height: 46px;
+		margin-top: 21px;
+		display: block;
 	}
 	section#works-item .blog-item-page:last-child {
 		margin-bottom: 0;
@@ -608,6 +668,7 @@
 	}
 	.facts-block {
 		margin-top: 54px;
+		margin-bottom: 51px;
 	}
 	.facts-block .blockquote-holder .image-holder {
 		width: 65px;
@@ -615,7 +676,8 @@
 	section#works-item table td,
 	section#blog-item table td {
 		font-size: 15px;
-		padding: 5px;
+		padding: 15px;
+		min-width: 128px;
 	}
 	section#works-item ul li,
 	section#blog-item ul li {
@@ -634,8 +696,8 @@
 	}
 	section#works-item blockquote {
 		padding: 6px 0 0;
-		font-size: 19px;
-		line-height: 30px;
+		font-size: 18px;
+		line-height: 27px;
 	}
 	section#works-item p {
 		line-height: 20px;
@@ -692,6 +754,24 @@
 	section#works-item ul.socials,
 	section#blog-item ul.socials {
 		display: none;
+	}
+	section#works-item .blog-item-page ul.socials.mobile-vs,
+	section#blog-item .blog-item-page ul.socials.mobile-vs {
+		display: block;
+		bottom: 29px;
+		position: absolute;
+		text-align: center;
+		left: -60px;
+	}
+	section#works-item ul.socials.mobile-vs li,
+	section#blog-item ul.socials.mobile-vs li {
+		display: inline-block;
+		height: auto;
+		width: 47px;
+	}
+	section#works-item ul.socials.mobile-vs li i,
+	section#blog-item ul.socials.mobile-vs li i {
+		font-size: 20px;
 	}
 	section#works-item-header .container {
 		max-width: 320px;
