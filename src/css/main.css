@@ -854,7 +854,8 @@ section#blog-item ul li {
 	font-weight: 400;
 	line-height: 46px;
 }
-section#blog-item ul li:before {
+section#blog-item ul li:before,
+section#works-item ul li:before {
 	background-color: #f41f52;
 	border-radius: 50%;
 	content: "";
@@ -866,7 +867,8 @@ section#blog-item ul li:before {
 	vertical-align: middle;
 	width: 7px;
 }
-section#blog-item ul li span {
+section#blog-item ul li span,
+section#works-item ul li span {
 	display: block;
 	overflow: hidden;
 }
@@ -1090,10 +1092,12 @@ section#works-item ul li:before {
 	vertical-align: middle;
 	width: 7px;
 }
+section#works-item .table-holder {
+	margin-bottom: 80px;
+}
 section#works-item table {
 	border-collapse: collapse;
 	border-radius: 6px;
-	margin-bottom: 80px;
 	width: 100%;
 }
 section#works-item table td {
