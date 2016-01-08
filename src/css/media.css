@@ -264,8 +264,17 @@
 	}
 	section#works-item .full-width,
 	section#blog-item .full-width {
+		margin-bottom: 30px;
+	}
+	section#works-item iframe,
+	section#blog-item iframe {
 		height: 220px;
 		margin-bottom: 30px;
+	}
+	section#blog-articles .articles-holder .article h4 {
+		font-size: 19px;
+		font-weight: 700;
+		line-height: 24px;
 	}
 	section#blog-articles .articles-holder .article p {
 		font-family: Garamond, sans-serif;
@@ -291,6 +300,8 @@
 		width: 256px;
 	}
 	section#blog-articles .articles-holder .article {
+		-webkit-box-shadow: 0 46px 75px -35px rgba(0,0,0,.9);
+		box-shadow: 0 46px 75px -35px rgba(0,0,0,.9);
 		width: 256px;
 	}
 	section#blog-item ~ #blog-articles {
@@ -604,6 +615,10 @@
 	section#blog-item ul li {
 		font-size: 13px;
 		line-height: 30px;
+	}
+	section#works-item ul li:before,
+	section#blog-item ul li:before {
+		margin-top: 10px;
 	}
 	section#blog-item blockquote {
 		padding: 6px 0 0;

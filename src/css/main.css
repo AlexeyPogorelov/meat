@@ -726,12 +726,12 @@ section#blog-articles .articles-holder .article .description-holder {
 	height: 288px;
 }
 section#blog-articles .articles-holder .article h4 {
-	margin-top: 45px;
-	line-height: 32px;
-	padding: 0 42px;
 	color: black;
 	font-size: 24px;
 	font-weight: 700;
+	line-height: 32px;
+	margin-top: 45px;
+	padding: 0 42px;
 }
 section#blog-articles .articles-holder .article p {
 	margin-top: 27px;
@@ -859,10 +859,16 @@ section#blog-item ul li:before {
 	border-radius: 50%;
 	content: "";
 	display: inline-block;
+	float: left;
 	height: 7px;
+	margin-top: 18px;
 	margin-right: 16px;
 	vertical-align: middle;
 	width: 7px;
+}
+section#blog-item ul li span {
+	display: block;
+	overflow: hidden;
 }
 section#blog-item table {
 	border-collapse: collapse;
