@@ -41,24 +41,41 @@
 	section#portfolio-presentation .portfolio-item.type-1 {
 		margin-left: 39px;
 	}
-	#capabilities .container {
+	section#capabilities {
+		padding-bottom: 140px;
+	}
+	section#capabilities .container {
 		width: 1160px;
 	}
 	section#capabilities li {
 		font-size: 20px;
 		line-height: 50px;
+		margin-bottom: 0;
 	}
 	section#capabilities .left-element,
 	section#capabilities .right-element {
 		width: 530px;
+		padding: 73px 20px 90px 90px;
+	}
+	section#capabilities ul {
+		margin-top: 26px;
+	}
+	section#capabilities li {
+		margin-bottom: 0;
+	}
+	section#capabilities li:before {
+		margin-top: 22px;
 	}
 	section#main-presentation h3 {
 		font-size: 42px;
 		font-weight: 300;
 		line-height: 86px;
+		margin-top: 0;
+		margin-bottom: 0;
 	} 
 	section#main-presentation h1  {
 		font-size: 88px;
+		line-height: 96px;
 	}
 	section#main-presentation .right-side {
 		margin-left: -16px;
@@ -78,7 +95,7 @@
 		width: 960px;
 	}
 	section#subscriber .container {
-		width: auto;
+		/*width: auto;*/
 	}
 	section#subscriber {
 		margin-left: 0;
@@ -153,8 +170,8 @@
 @media screen and (max-width: 1439px) {
 	section#main-presentation {
 		min-height: 0 !important;
-		margin-top: 149px;
-		margin-bottom: 365px;
+		margin-top: 145px;
+		margin-bottom: 367px;
 	}
 	nav.main-navigation .container {
 		width: auto;
@@ -316,6 +333,10 @@
 	section#blog-item-header {
 		padding-top: 14px;
 	}
+	section#about-text {
+		padding-top: 150px;
+		padding-bottom: 80px;
+	}
 	section#about-text p {
 		font-size: 13px;
 		line-height: 24px;
@@ -324,9 +345,13 @@
 	section#experience .main-image-holder {
 		padding: 35px;
 	}
+	section#experience .main-image-holder img {
+		box-shadow: 0 20px 65px -15px rgba(0,0,0,.85);
+	}
 	section#experience h2 {
 		font-size: 32px;
 		line-height: 36px;
+		margin-bottom: 0;
 		padding: 35px;
 	}
 	section#experience {
@@ -411,7 +436,9 @@
 		font-size: 19px;
 		line-height: 20px;
 		margin-left: 0;
-		padding: 16px 34px 34px;
+		margin-right: 0;
+		padding: 16px 14px 34px 34px;
+		text-align: left;
 		}
 	section#main-presentation h1 {
 		font-size: 32px;
@@ -656,11 +683,20 @@
 	.navbar-left.navigation-links {
 		display: none;
 	}
+	nav.footer-navigation .socials li {
+		margin-bottom: 40px;
+	}
 }
 /*
 	SMALL
 */
 @media screen and (max-width: 564px) {
+	body::-webkit-scrollbar {
+		width: 0;
+		height: 0;
+		background-color: #fff;
+		border: none;
+	}
 	#underconstruction .content-holder {
 		height: auto;
 	}

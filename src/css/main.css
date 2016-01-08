@@ -219,7 +219,7 @@ section#main-presentation .left-side img {
 }
 section#main-presentation .right-side {
 	display: inline-block;
-	margin-left: -5px;
+	margin-left: -12px;
 	max-width: 509px;
 	vertical-align: middle;
 }
@@ -234,15 +234,17 @@ section#main-presentation h3 {
 	font-size: 24px;
 	font-weight: 300;
 	line-height: 30px;
-	margin-left: 173px;
+	margin: 16px 58px -16px 0;
+	margin-bottom: -16px;
+	margin-top: 16px;
+	text-align: right;
 }
 /* END MAIN-PRESENTATION */
 
 /* CAPABILITIES */
 section#capabilities {
 	padding-top: 100px;
-	/*padding-top: 212px;*/
-	padding-bottom: 140px;
+	padding-bottom: 122px;
 	text-align: center;
 	width: 100%;
 }
@@ -255,9 +257,10 @@ section#capabilities .right-element {
 	box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
 	background-color: white;
 	display: inline-block;
-	padding: 73px 20px 90px 90px;
+	padding: 73px 60px 62px 60px;
 	text-align: left;
 	width: 380px;
+	vertical-align: top;
 }
 section#capabilities h4 {
 	color: black;
@@ -266,24 +269,30 @@ section#capabilities h4 {
 	line-height: 57px;
 }
 section#capabilities ul {
-	margin-top: 26px;
+	margin-top: 38px;
 	padding-left: 3px;
 }
 section#capabilities li {
 	color: black;
 	font-weight: 400;
 	font-size: 18px;
-	margin-bottom: 23px;
+	margin-bottom: 21px;
 	line-height: 27px;
+}
+section#capabilities li span {
+	overflow: hidden;
+	display: block;
 }
 section#capabilities li:before {
 	background-color: #f41f52;
 	border-radius: 50%;
 	content: "";
 	display: inline-block;
+	float: left;
 	height: 7px;
+	margin-top: 9px;
 	margin-right: 16px;
-	vertical-align: middle;
+	vertical-align: top;
 	width: 7px;
 }
 
@@ -1138,6 +1147,7 @@ section#works-item ~ #works-articles {
 .navbar-toggle {
 	background: none;
 	cursor: pointer;
+	overflow: auto;
 	position: fixed;
 	top: 26px;
 	left: 32px;
@@ -1153,16 +1163,17 @@ section#works-item ~ #works-articles {
 }
 .close-lightbox {
 	background: none;
+	bottom: 15px;
 	cursor: pointer;
+	left: 50%;
+	margin-left: -10px;
 	opacity: 0.5;
 	position: absolute;
-	bottom: 15px;
-	left: 50%;
-	-webkit-transform: rotate(45deg);
-	transform: rotate(45deg);
 	z-index: 2;
-	-webkit-transition: opacity .4s;
+	transform: rotate(45deg);
 	transition: opacity .4s;
+	-webkit-transform: rotate(45deg);
+	-webkit-transition: opacity .4s;
 }
 .close-lightbox:hover {
 	opacity: 1;
@@ -1184,6 +1195,12 @@ section#works-item ~ #works-articles {
 	-webkit-transition: top .4s;
 	-o-transition: top .4s;
 	transition: top .4s;
+}
+.mobile-menu::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	background-color: #fff;
+	border: none;
 }
 .mobile-menu.opened {
 	left: 0;

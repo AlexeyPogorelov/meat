@@ -1,18 +1,41 @@
 $(document).on('ready', function () {
 	var winWidth = $(window).width(),
-		winHeight = $(window).height();
+		winHeight = $(window).height(),
+		bodyOverflow = {
+			fixBody: function () {
+				$('body').width($('body').width())
+					.css({
+						'overflow': 'hidden'
+					});
+			},
+			unfixBody: function () {
+				$('body')
+					.css({
+						'overflow': 'auto',
+						'overflow-y': 'scroll',
+						'width': 'initial'
+					});
+			},
+			resize: function () {
+				this.unfixBody();
+			}.bind(this)
+		};
 	$('.full-height').css({
 		'min-height': winHeight
 	});
 
-	// open sidebar
+	// sidebars
 	$('.navbar-toggle').on('click', function () {
-		$($(this).data('target')).toggleClass('opened');
-	})
-	// open sidebar
+		$('#mobile-menu').toggleClass('opened');
+		bodyOverflow.fixBody();
+	});
+	$('.open-lightbox').on('click', function () {
+		$($(this).data('target')).addClass('opened');
+	});
 	$('.close-lightbox').on('click', function () {
-		$(this).closest('.mobile-menu').toggleClass('opened');
-	})
+		$(this).closest($(this).data('target')).removeClass('opened');
+		bodyOverflow.unfixBody();
+	});
 
 	// resize
 	$(window).on('resize', function () {
