@@ -301,6 +301,93 @@ section#capabilities .right-element {}*/
 
 /* END CAPABILITIES */
 
+/* CAPABILITIES SLIDER */
+section#capabilities-slider {
+	padding-top: 100px;
+	padding-bottom: 122px;
+	text-align: center;
+	width: 100%;
+}
+#capabilities-slider .container {
+	width: 100%;
+}
+#capabilities-slider .slider-viewport {
+	box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
+	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
+	overflow: hidden;
+	margin: auto;
+	width: 256px;
+}
+#capabilities-slider .slider-viewport .slider-holder {
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+	-webkit-transition: transform .3s;
+	transition: transform .3s;
+}
+#capabilities-slider .slider-viewport .slider-holder:before,
+#capabilities-slider .slider-viewport .slider-holder:after {
+	content: "";
+	clear: both;
+	display: table;
+}
+section#capabilities-slider .slide {
+	background-color: white;
+	display: block;
+	float: left;
+/*	margin-left: 2px;
+	margin-right: 2px;*/
+	padding: 46px 20px 10px 39px;
+	text-align: left;
+	vertical-align: top;
+	width: 256px;
+}
+section#capabilities-slider h4 {
+	font-size: 24px;
+	line-height: 28px;
+}
+section#capabilities-slider ul {
+	margin-top: 38px;
+	padding-left: 3px;
+}
+section#capabilities-slider li {
+	color: black;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 20px;
+	margin-bottom: 21px;
+}
+section#capabilities-slider li span {
+	overflow: hidden;
+	display: block;
+}
+section#capabilities-slider li:before {
+	background-color: #f41f52;
+	border-radius: 50%;
+	content: "";
+	display: inline-block;
+	float: left;
+	height: 7px;
+	margin-top: 9px;
+	margin-right: 16px;
+	vertical-align: top;
+	width: 7px;
+}
+section#capabilities-slider .paginator-holder {
+}
+section#capabilities-slider .paginator-holder .page {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	cursor: pointer;
+	display: inline-block;
+	margin-right: 10px;
+	height: 8px;
+	width: 8px;
+}
+section#capabilities-slider .paginator-holder .page.active {
+	background: #fff;
+}
+/* END CAPABILITIES SLIDER */
+
 /* PORTFOLIO */
 section#portfolio-presentation {
 	padding-top: 197px;

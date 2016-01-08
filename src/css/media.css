@@ -117,7 +117,7 @@
 	}
 	#works-item .facts-block .facts-holder {
 		margin-top: 147px;
-} 
+	} 
 	#works-item .facts-block .comment-holder p {
 		font-size: 32px;
 	}
@@ -259,6 +259,12 @@
 	MOBILE
 */
 @media screen and (max-width: 960px) {
+	.mobile-visible {
+		display: inherit !important;
+	}
+	.mobile-hidden {
+		display: none !important;
+	}
 	.navbar-toggle {
 		display: block;
 	}
