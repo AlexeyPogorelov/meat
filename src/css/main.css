@@ -144,7 +144,6 @@ nav.fixed {
 }
 #underconstruction .content-holder {
 	display: table;
-	height: 100%;
 	height: calc(100% - 211px);
 }
 #underconstruction .presentation {
@@ -229,7 +228,6 @@ section#main-presentation h1 {
 	font-weight: 700;
 	line-height: 60px;
 	font-size: 58px;
-	font-weight: 700;
 }
 section#main-presentation h3 {
 	color: white;
@@ -318,7 +316,7 @@ section#portfolio-presentation .portfolio-item img {
 	width: 350px;
 }
 section#portfolio-presentation .portfolio-item.type-1 {
-	margin-left: 0px;
+	margin-left: 0;
 }
 section#portfolio-presentation .portfolio-item.type-2 {
 	margin-left: 65px;
@@ -495,8 +493,7 @@ section#subscriber .description-holder {
 	font-weight: 700;
 	height: 224px;
 	line-height: 57px;
-	padding: 54px 63px 0;
-	padding-right: 35px;
+	padding: 54px 35px 0 63px;
 }
 section#subscriber .description-holder a {
 	color: white;
@@ -589,8 +586,7 @@ section#subscriber .description-holder a {
 	cursor: pointer;
 	height: 84px;
 	margin-left: 18px;
-	padding: 9px;
-	padding-left: 75px;
+	padding: 9px 9px 9px 75px;
 	position: relative;
 	text-align: left;
 	vertical-align: top;
@@ -1139,4 +1135,77 @@ section#works-item ~ #works-articles {
 
 
 /* MOBILE */
+.navbar-toggle {
+	background: none;
+	cursor: pointer;
+	position: fixed;
+	top: 26px;
+	left: 32px;
+	z-index: 2;
+}
+.navbar-toggle .icon-bar {
+	pointer-events: none;
+	background: #fff;
+	display: block;
+	margin-bottom: 5px;
+	height: 3px;
+	width: 25px;
+}
+.close-lightbox {
+	background: none;
+	cursor: pointer;
+	opacity: 0.5;
+	position: absolute;
+	bottom: 15px;
+	left: 50%;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	z-index: 2;
+	-webkit-transition: opacity .4s;
+	transition: opacity .4s;
+}
+.close-lightbox:hover {
+	opacity: 1;
+	-webkit-transition: opacity .1s;
+	transition: opacity .1s;
+}
+.close-lightbox img {
+	pointer-events: none;
+}
+.mobile-menu {
+	background: rgba(0,0,0,.8);
+	overflow: auto;
+	position: fixed;
+	top: -100%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	-webkit-transition: top .4s;
+	-o-transition: top .4s;
+	transition: top .4s;
+}
+.mobile-menu.opened {
+	left: 0;
+	top: 0;
+	-webkit-transition: top .4s;
+	-o-transition: top .4s;
+	transition: top .4s;
+}
+.mobile-menu ul {
+	margin-top: 100px;
+}
+.mobile-menu li {
+	text-align: center;
+}
+.mobile-menu li a {
+	color: #fff;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 64px;
+	text-align: center;
+}
+.mobile-menu li.active a {
+	color: #f41f52;
+}
 /* END MOBILE */

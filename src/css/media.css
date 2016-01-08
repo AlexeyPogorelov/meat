@@ -121,7 +121,7 @@
 	}
 	section#works-item-header img {
 		width: auto;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 	section#works-item-header .container {
 		padding-left: 0;
@@ -242,13 +242,16 @@
 	MOBILE
 */
 @media screen and (max-width: 960px) {
+	.navbar-toggle {
+		display: block;
+	}
 	section#works-item .full-width,
 	section#blog-item .full-width {
 		height: 220px;
 		margin-bottom: 30px;
 	}
 	section#blog-articles .articles-holder .article p {
-		font-family: Garamond;
+		font-family: Garamond, sans-serif;
 		font-size: 15px;
 		line-height: 21px;
 	}
@@ -264,7 +267,7 @@
 		padding-top: 48px;
 	}
 	section#blog-articles .articles-holder .article {
-		margin: 0 0px 35px;
+		margin: 0 0 35px;
 	}
 	section#blog-articles .articles-holder .article .image-holder {
 		height: auto;
@@ -330,7 +333,7 @@
 		padding-top: 73px;
 	}
 	section#devices {
-		min-height: auto!important;
+		min-height: 0 !important;
 	}
 	section#devices p {
 		font-size: 15px;
@@ -361,10 +364,9 @@
 	section#portfolio-presentation .portfolio-label {
 		font-size: 37px;
 		position: static;
-		margin: 0 auto;
+		margin: 35px auto 0 auto;
 		display: block;
 		width: 222px;
-		margin-top: 35px;
 	}
 	section#portfolio-presentation .portfolio-item img,
 	section#portfolio-presentation .portfolio-item.type-3 img,
@@ -376,9 +378,7 @@
 	section#portfolio-presentation .portfolio-item.type-2,
 	section#portfolio-presentation .portfolio-item.type-3,
 	section#portfolio-presentation .portfolio-item.type-4 {
-		margin: 35px;
-		margin-top: 22px;
-		margin-bottom: 22px;
+		margin: 22px 35px;
 	}
 	section#portfolio-presentation {
 		padding-top: 7px;
@@ -411,8 +411,7 @@
 		font-size: 19px;
 		line-height: 20px;
 		margin-left: 0;
-		padding: 34px;
-		padding-top: 16px;
+		padding: 16px 34px 34px;
 		}
 	section#main-presentation h1 {
 		font-size: 32px;
@@ -422,8 +421,8 @@
 		padding-right: 35px;
 	}
 	section#main-presentation {
-		margin-top: 0px;
-		margin-bottom: 0px;
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 	section#main-presentation .content-holder .container {
 		text-align: center;
@@ -487,8 +486,7 @@
 		font-size: 20px;
 	}
 	section#subscriber .input-area {
-		padding: 0 20px;
-		padding-right: 0;
+		padding: 0 0 0 20px;
 	}
 	section#subscriber .input-area img {
 		display: none;
@@ -561,7 +559,7 @@
 	}
 	#works-item .facts-block p.user-name {
 		font-size: 19px;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 		padding-top: 1px;
 	}
 	.facts-block {
@@ -581,13 +579,13 @@
 		line-height: 30px;
 	}
 	section#blog-item blockquote {
-		padding: 6px 0px 0;
+		padding: 6px 0 0;
 		font-size: 18px;
 		font-weight: 300;
 		line-height: 26px;
 	}
 	section#works-item blockquote {
-		padding: 6px 0px 0;
+		padding: 6px 0 0;
 		font-size: 19px;
 		line-height: 30px;
 	}
@@ -607,7 +605,7 @@
 		line-height: 19px;
 	}
 	section#works-item .blog-item-page:first-child {
-		margin-top: 0px;
+		margin-top: 0;
 		width: 320px;
 	}
 	section#works-item-header p {
