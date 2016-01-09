@@ -1,3 +1,25 @@
+var loading = {
+	trg: 1,
+	state: 0,
+	loaded: function () {
+		if(++this.state == this.trg) {
+			this.done();
+		}
+	},
+	done: function () {
+		// setInterval();
+		// vendor init
+		$('section').addClass('wow fadeInUp');
+		new WOW().init();
+
+		// hide preloader
+		$('body > .preloader').animate({
+			'opacity': 0
+		}, 200, function () {
+			$(this).remove();
+		});
+	}
+};
 $(document).on('ready', function () {
 	var winWidth = $(window).width(),
 		winHeight = $(window).height(),
@@ -39,6 +61,9 @@ $(document).on('ready', function () {
 
 	// capatabilities
 	$('#capabilities-slider').capabilitiesSlider();
+
+	// loaded
+	loading.loaded();
 
 	// resize
 	$(window).on('resize', function () {
@@ -95,7 +120,6 @@ $(document).on('ready', function () {
 					state.sliderWidth = DOM.$viewport.width();
 					state.slideWidth = DOM.$slides.eq(0).outerWidth();
 					DOM.$sliderHolder.width(state.slideWidth * state.activeSlides);
-					console.log(state.slideWidth);
 				},
 				prevSlide: function () {
 					var id = state.cur - 1;

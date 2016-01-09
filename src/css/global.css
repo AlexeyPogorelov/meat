@@ -401,6 +401,18 @@ input[type='number'] {
 	top: 50%;
 	left: 50%;
 }
+.preloader svg {
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	height: 200px;
+	width: 200px;
+}
 /*	GRID	*/
 .container {
 	margin: 0 auto;

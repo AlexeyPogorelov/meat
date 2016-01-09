@@ -290,6 +290,18 @@
 	MOBILE
 */
 @media screen and (max-width: 960px) {
+	section#subscriber .input-area input::-webkit-input-placeholder {
+		line-height: 25px;
+	}
+	section#subscriber .input-area input:-moz-placeholder {
+		line-height: 25px;
+	}
+	section#subscriber .input-area input::-moz-placeholder {
+		line-height: 25px;
+	}
+	section#subscriber .input-area input:-ms-input-placeholder {
+		line-height: 25px;
+	}
 	body::-webkit-scrollbar {
 		width: 0;
 		height: 0;
