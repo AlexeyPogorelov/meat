@@ -10,6 +10,8 @@ body {
 	font-size: 18px;
 	font-weight: 300;
 	line-height: 30px;
+	perspective: 1500px;
+	transform-style: preserve-3d;
 }
 .wrapper {}
 .lightbox-cell::-webkit-scrollbar-corner,
@@ -33,9 +35,9 @@ body {
 }
 section {
 	display: block;
-/*	position: relative;
+	position: relative;
 	width: 100%;
-	z-index: 1;*/
+	/*z-index: 1;*/
 }
 section#footer .container {
 	width: auto;
@@ -412,6 +414,19 @@ input[type='number'] {
 	left: 50%;
 	height: 200px;
 	width: 200px;
+}
+.preloader span {
+	color: #ffffff;
+	font-size: 40px;
+	position: absolute;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	z-index: 1;
 }
 /*	GRID	*/
 .container {

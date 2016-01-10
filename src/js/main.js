@@ -9,9 +9,13 @@ var loading = {
 	},
 	done: function () {
 		// setInterval();
+
 		// vendor init
 		$('section').addClass('wow fadeInUp');
 		new WOW().init();
+
+		// perspective hover
+		$('.portfolio-item').perspectiveHover();
 
 		// hide preloader
 		$('body > .preloader').animate({
@@ -193,14 +197,44 @@ $(document).on('ready', function () {
 
 			var DOM = {},
 				state = {},
-				self = this;
+				$self = $(this);
 
 			// options
 			if (!opt) {
 				opt = {};
 			}
 			opt = $.extend({
+				'power': 4
 			}, opt);
+
+			// methods
+			var plg = {
+				init: function () {
+					state.elementWidth = $self.innerWidth();
+					state.elementHeight = $self.innerHeight();
+					$self.on('mousemove', this.mousemove);
+					$self.on('mouseleave', this.mouseleave);
+				},
+				mousemove: function (e) {
+					var offsetX = e.pageX - $self.offset().left;
+					state.xmult = offsetX / state.elementWidth;
+					var offsetY = e.pageY - $self.offset().top;
+					state.ymult = offsetY / state.elementHeight;
+					// console.log(state.xmult + " - " + state.ymult);
+					$self.css({
+						"transform": "rotateY(" + ((state.xmult - 0.5) * -opt.power) + "deg) rotateX(" + ((state.ymult - 0.5) * opt.power) + "deg) translateZ(10px)"
+					});
+				},
+				mouseleave: function () {
+					$self.css({
+						"transform": "rotateY(" + 0 + "deg) rotateX(" + 0 + "deg)"
+					});
+				}
+			};
+
+			plg.init();
+
+			return plg;
 		});
 	};
 })(jQuery);

@@ -500,6 +500,8 @@
 	section#portfolio-presentation .portfolio-item.type-3,
 	section#portfolio-presentation .portfolio-item.type-4 {
 		margin: 22px 35px;
+		height: auto;
+		width: auto;
 	}
 	section#portfolio-presentation {
 		padding-top: 7px;

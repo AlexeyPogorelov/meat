@@ -218,6 +218,10 @@ nav.fixed {
 	margin-top: 31px;
 }
 /* MAIN-PRESENTATION */
+#frame-logo {
+	height: 350px;
+	width: 350px;
+}
 section#main-presentation {}
 section#main-presentation .content {
 	height: 100%;
@@ -467,7 +471,9 @@ section#portfolio-presentation .portfolio-label:hover:before {
 section#portfolio-presentation .portfolio-item {
 	display: inline-block;
 	text-decoration: none;
+	position: relative;
 	vertical-align: top;
+	z-index: 2;
 	/* before hover */
 	-webkit-box-shadow: 0 24px 35px -20px rgba(0,0,0,.25);
 	box-shadow: 0 24px 35px -20px rgba(0,0,0,.25);
@@ -487,24 +493,31 @@ section#portfolio-presentation .portfolio-item {
 	box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);
 	-webkit-transform: translateY(-10px);
 	transform: translateY(-10px);
-	-moz-transform: none;
+	-webkit-transition: box-shadow .3s, transform .1s;
+	transition: box-shadow .3s, transform .1s;
 }
 section#portfolio-presentation .portfolio-item img {
 	width: 350px;
 }
 section#portfolio-presentation .portfolio-item.type-1 {
 	margin-left: 0;
+	height: 490px;
+	width: 490px;
 }
 section#portfolio-presentation .portfolio-item.type-2 {
 	margin-left: 65px;
+	height: 490px;
+	width: 490px;
 }
-section#portfolio-presentation .portfolio-item.type-3 {
+/*section#portfolio-presentation .portfolio-item.type-3 {
 	margin-left: 69px;
 	margin-top: 83px;
-}
+}*/
 section#portfolio-presentation .portfolio-item.type-3 {
 	margin-left: 30px;
 	margin-top: 63px;
+	height: 420px;
+	width: 420px;
 }
 section#portfolio-presentation .portfolio-item.type-3 img {
 	width: 280px;
@@ -515,6 +528,8 @@ section#portfolio-presentation .portfolio-item.type-4 img {
 section#portfolio-presentation .portfolio-item.type-4 {
 	margin-left: 65px;
 	margin-top: 63px;
+	height: 558px;
+	width: 558px;
 }
 /* END PORTFOLIO */
 
