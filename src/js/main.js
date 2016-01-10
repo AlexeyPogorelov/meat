@@ -1,4 +1,5 @@
 var loading = {
+	avgTime: 3000,
 	trg: 1,
 	state: 0,
 	loaded: function () {
@@ -88,7 +89,7 @@ $(document).on('ready', function () {
 			// options
 			if (!opt) {
 				opt = {};
-			};
+			}
 			opt = $.extend({
 				'loop': true,
 				'interval': false,
@@ -150,14 +151,14 @@ $(document).on('ready', function () {
 					} else {
 						DOM.$pagination = $('<div>').addClass('paginator-holder');
 						DOM.$pagination.appendTo(DOM.$slider);
-					};
+					}
 					for (var i = 0; i < state.activeSlides / opt.slidesOnPage; i++) {
 						var page = $('<div>').data('page', i).addClass('page');
 						if (!i) {
 							page.addClass('active');
-						};
+						}
 						DOM.$pagination.append(page);
-					};
+					}
 				}
 			};
 
@@ -169,20 +170,37 @@ $(document).on('ready', function () {
 			// resize
 			$(window).on('resize', function () {
 				plg.resize();
-			})
+			});
 
 			// click events
 			DOM.$slider.on('click', function (e) {
 				var $target = $(e.target);
 				if ($target.hasClass('page')) {
 					plg.toSlide($(e.target).data('page'));
-				};
-			})
+				}
+			});
 
 			$(window).on('resize', plg.resize.bind(plg));
 			plg.init();
 
 			return plg;
+		});
+	};
+
+	$.fn.perspectiveHover = function (opt) {
+
+		this.each(function (i) {
+
+			var DOM = {},
+				state = {},
+				self = this;
+
+			// options
+			if (!opt) {
+				opt = {};
+			}
+			opt = $.extend({
+			}, opt);
 		});
 	};
 })(jQuery);
