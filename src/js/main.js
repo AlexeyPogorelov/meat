@@ -123,7 +123,7 @@ $(document).on('ready', function () {
 				},
 				resize: function () {
 					state.sliderWidth = DOM.$viewport.width();
-					state.slideWidth = DOM.$slides.eq(0).outerWidth();
+					state.slideWidth = DOM.$slides.eq(0).outerWidth() + 12;
 					DOM.$sliderHolder.width(state.slideWidth * state.activeSlides);
 				},
 				prevSlide: function () {
@@ -204,7 +204,7 @@ $(document).on('ready', function () {
 				opt = {};
 			}
 			opt = $.extend({
-				'power': 4
+				'power': 25
 			}, opt);
 
 			// methods
@@ -214,6 +214,10 @@ $(document).on('ready', function () {
 					state.elementHeight = $self.innerHeight();
 					$self.on('mousemove', this.mousemove);
 					$self.on('mouseleave', this.mouseleave);
+					if (!state.$shadow) {
+						state.$shadow = $('<div>').addClass('blick');
+						state.$shadow.appendTo($self);
+					};
 				},
 				mousemove: function (e) {
 					var offsetX = e.pageX - $self.offset().left;
@@ -222,12 +226,18 @@ $(document).on('ready', function () {
 					state.ymult = offsetY / state.elementHeight;
 					// console.log(state.xmult + " - " + state.ymult);
 					$self.css({
-						"transform": "rotateY(" + ((state.xmult - 0.5) * -opt.power) + "deg) rotateX(" + ((state.ymult - 0.5) * opt.power) + "deg) translateZ(10px)"
+						"transform": "rotateY(" + (-(state.xmult - 0.5) * -opt.power) + "deg) rotateX(" + (-(state.ymult - 0.5) * opt.power) + "deg) translateZ(10px)"
+					});
+					state.$shadow.css({
+						'background-image': 'linear-gradient(' + (state.xmult * 30 + 14) + 'deg, rgba(96, 58, 58, 0.6), transparent ' + (state.ymult * 30 + 14) + '%)'
 					});
 				},
 				mouseleave: function () {
 					$self.css({
 						"transform": "rotateY(" + 0 + "deg) rotateX(" + 0 + "deg)"
+					});
+					state.$shadow.css({
+						'background-image': 'linear-gradient(30deg, rgba(96, 58, 58, 0.6), transparent 30%)'
 					});
 				}
 			};
