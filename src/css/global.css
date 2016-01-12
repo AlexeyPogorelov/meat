@@ -334,6 +334,9 @@ input[type='number'] {
 .mobile-xs-visible {
 	display: none;
 }
+.tablet-visible {
+	display: none;
+}
 .image-holder {
 	overflow: hidden;
 	position: relative;
