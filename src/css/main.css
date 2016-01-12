@@ -93,6 +93,9 @@ nav .socials li a:hover {
 	-o-transition: color .2s;
 	transition: color .2s;
 }
+.bg-5 nav .socials li a:hover {
+	color: #f41f52;
+}
 nav.main-navigation .container {
 		max-width: 940px;
 }
@@ -219,8 +222,10 @@ nav.fixed {
 }
 /* MAIN-PRESENTATION */
 #frame-logo {
+	position: relative;
 	height: 350px;
 	width: 350px;
+	z-index: 2;
 }
 #frame-logo a {
 	display: block;
@@ -230,7 +235,27 @@ nav.fixed {
 	display: block;
 	margin: auto;
 }
+ #frame-logo .blick {
+	 top: 16px;
+ }
+/* 3D HOVER */
+.blick {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: linear-gradient(26deg, rgba(96, 58, 58, 0.6), transparent 35%);
+	height: 100%;
+	width: 100%;
+	-webkit-transition: all .4s;
+	transition: all .4s;
+}
+/* END 3D HOVER */
 section#main-presentation {}
+section#main-presentation .container {
+	position: relative;
+	z-index: 0;
+}
 section#main-presentation .content {
 	height: 100%;
 	left: 0;
@@ -251,6 +276,8 @@ section#main-presentation .content-holder {
 	top: 0;
 	width: 100%;*/
 	bottom: 223px;
+	perspective: 2000px;
+	transform-style: preserve-3d;
 }
 section#main-presentation .left-side,
 section#main-presentation .right-side {
@@ -514,17 +541,6 @@ section#portfolio-presentation .portfolio-item {
 section#portfolio-presentation .portfolio-item img {
 	min-height: 100%;
 	width: 100%;
-}
-section#portfolio-presentation .portfolio-item .blick {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	background: linear-gradient(26deg, rgba(96, 58, 58, 0.6), transparent 35%);
-	height: 100%;
-	width: 100%;
-	-webkit-transition: all .4s;
-	transition: all .4s;
 }
 section#portfolio-presentation .portfolio-item.type-1 {
 	margin-left: 0;
@@ -1242,10 +1258,14 @@ section#works-articles {
 section#works-articles .container {
 	max-width: 940px;
 	width: auto;
+	perspective: 4000px;
+	transform-style: preserve-3d;
 }
 section#works-articles .articles-holder {
 	text-align: center;
-	margin: -20px;
+	/*margin: -20px;*/
+	position: relative;
+	z-index: 0;
 }
 section#works-articles .articles-holder .article {
 	background: #fff;
@@ -1257,14 +1277,16 @@ section#works-articles .articles-holder .article {
 	box-shadow: 0 36px 75px -35px rgba(0,0,0,.2);
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
-	-webkit-transition: 0.3s;
-	transition: 0.3s;
+	-webkit-transition: translate 0.3s;
+	transition: translate 0.3s;
 	-webkit-user-select: none;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+	position: relative;
+	z-index: 1;
 }
 section#works-articles .articles-holder .article:hover {
 	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);

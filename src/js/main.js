@@ -15,7 +15,7 @@ var loading = {
 		new WOW().init();
 
 		// perspective hover
-		$('.portfolio-item').perspectiveHover();
+		$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
 
 		// hide preloader
 		$('body > .preloader').animate({
@@ -66,6 +66,17 @@ $(document).on('ready', function () {
 
 	// capatabilities
 	$('#capabilities-slider').capabilitiesSlider();
+
+	// scroll
+	// TODO
+	//$(document).on('scroll', function () {
+	//	var top = $(this).scrollTop();
+	//	if ($('section#blog-item ul.socials').offset().top < top) {
+	//		$('section#blog-item ul.socials').css({
+	//			'top': top - $(window).height()
+	//		});
+	//	}
+	//});
 
 	// loaded
 	loading.loaded();
