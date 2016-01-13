@@ -108,14 +108,21 @@ $(document).on('ready', function () {
 		$(this).closest($(this).data('target')).removeClass('opened');
 		bodyOverflow.unfixBody();
 	});
+	$('#mobile-menu').on('click', function (e) {
+		if (e.target.tagName != "A") {
+			e.preventDefault();
+			$(this).closest('.opened').removeClass('opened');
+		}
+	})
 
 	// capatabilities
 	$('#capabilities-slider').capabilitiesSlider();
 
 	// navigation
-	$('nav, #blog-articles, #works-articles').find('a').on('click', function (e) {
+	$('nav, #blog-articles, #works-articles, #mobile-menu').find('a').on('click', function (e) {
 		if ($(this).attr('href') == '#contact') {
 			e.preventDefault();
+			$(this).closest('.opened').removeClass('opened')
 			$('html, body').animate({
 				scrollTop: $('#subscriber').offset().top
 			}, 2400, 'easeOutQuint');
