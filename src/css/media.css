@@ -13,35 +13,32 @@
 	section#blog-item-header .container {
 		max-width: 940px;
 	}
-	section#portfolio-presentation .portfolio-item img {
-		width: auto;
-	}
 	section#portfolio-presentation .portfolio-label {
 		font-size: 76px;
 		margin-left: 35px;
 		top: -55px;
 	}
 	section#portfolio-presentation .portfolio-item.type-1 {
-		margin-left: 39px;
-		height: 490px;
-		width: 490px;
+		margin-left: 0;
+		height: 494px;
+		width: 494px;
 	}
 	section#portfolio-presentation .portfolio-item.type-2 {
 		margin-left: 95px;
-		height: 490px;
-		width: 490px;
+		height: 494px;
+		width: 494px;
 	}
 	section#portfolio-presentation .portfolio-item.type-3 {
-		margin-left: 68px;
+		margin-left: 70px;
 		margin-top: 84px;
-		height: 420px;
-		width: 420px;
+		height: 424px;
+		width: 424px;
 	}
 	section#portfolio-presentation .portfolio-item.type-4 {
-		margin-left: 105px;
+		margin-left: 95px;
 		margin-top: 83px;
-		height: 558px;
-		width: 558px;
+		height: 565px;
+		width: 565px;
 	}
 
 /* TODO */
@@ -134,7 +131,7 @@
 		/*width: auto;*/
 	}
 	section#subscriber {
-		padding-left: 112px;
+		/*padding-left: 112px;*/
 		margin-left: 0;
 	}
 	section#works-item ~ #works-articles {
@@ -292,9 +289,6 @@
 	.tablet-visible {
 		display: initial;
 	}
-	.mobile-menu {
-		display: block;
-	}
 	.top-line .left-bar,
 	.top-line .right-bar {
 		float: none;
@@ -310,9 +304,18 @@
 	nav.footer-navigation .navigation-links {
 		display: none;
 	}
+	nav.footer-navigation .socials {
+		padding-left: 76px;
+	}
 	#frame-logo {
 		height: 265px;
 		width: 265px;
+	}
+	.modal-holder .modal-content {
+		top: 28px;
+		bottom: 28px;
+		left: 32px;
+		right: 32px;
 	}
 	#underconstruction {
 		height: auto !important;
@@ -337,6 +340,9 @@
 	}
 	section#blog-item .blog-item-page:last-child {
 		margin-bottom: 0;
+	}
+	section#subscriber .input-area input {
+		padding-left: 6px;
 	}
 	/* 404 */
 	section#page-404 .illustration {
@@ -545,6 +551,7 @@
 	}
 	section#portfolio-presentation {
 		padding-bottom: 130px;
+		text-align: center;
 	}
 	section#portfolio-presentation .portfolio-label {
 		display: block;
@@ -567,6 +574,8 @@
 	section#portfolio-presentation .portfolio-item.type-2,
 	section#portfolio-presentation .portfolio-item.type-3,
 	section#portfolio-presentation .portfolio-item.type-4 {
+		display: inline-block;
+		float: none;
 		margin: 22px 35px;
 		height: auto;
 		width: auto;
@@ -645,7 +654,7 @@
 		margin: 0;
 	}
 	nav.footer-navigation .socials {
-		padding-left: 45px;
+		padding-left: 66px;
 		margin-right: 0;
 		width: 253px;
 		width: 100%;
@@ -656,6 +665,7 @@
 	section#subscriber .description-holder h4 {
 		font-size: 32px;
 		line-height: 34px;
+		max-width: 380px;
 	}
 	section#subscriber .description-holder {
 		padding: 28px 28px 0;

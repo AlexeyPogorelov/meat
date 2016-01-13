@@ -567,3 +567,64 @@ button:focus,
 .btn:focus {
 	outline: none;
 }
+.modal-holder {
+	background-color: #4d2ce0;
+	overflow: auto;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	visibility: hidden;
+	width: 100%;
+	z-index: 10;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
+
+	-webkit-transition: opacity .3s ease-out, transform .2s, visibility .4s;
+	transition: opacity .3s ease-out, transform .2s, visibility .4s;
+}
+.modal-holder .close-modal {
+	cursor: pointer;
+	height: 35px;
+	opacity: .7;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 35px;
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	-webkit-transition: opacity .1s;
+	transition: opacity .1s;
+}
+.modal-holder .close-modal:hover {
+	opacity: 1;
+	-webkit-transition: opacity .3s;
+	transition: opacity .3s;
+}
+.modal-holder .modal-content {
+	background: #fff;
+	position: absolute;
+	top: 60px;
+	bottom: 60px;
+	left: 60px;
+	right: 60px;
+	-webkit-transform: translateZ(400px) rotateX(60deg);
+	transform: translateZ(400px) rotateX(60deg);
+	-webkit-transition: opacity .3s ease-out, transform .2s, visibility .4s;
+	transition: opacity .3s ease-out, transform .2s, visibility .4s;
+}
+.modal-holder.opened {
+	left: 0;
+	top: 0;
+	opacity: 1;
+	visibility: visible;
+}
+.modal-holder.opened .modal-content {
+	-webkit-transform: scale(1, 1) rotateX(0deg);
+	transform: scale(1, 1) rotateX(0deg);
+	-webkit-transition: transform .3s;
+	transition: transform .3s;
+}
