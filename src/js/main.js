@@ -381,7 +381,7 @@ $(document).on('ready', function () {
 				opt = {};
 			}
 			opt = $.extend({
-				'power': 25,
+				'power': 15,
 				'duration': 2000
 			}, opt);
 
@@ -413,7 +413,6 @@ $(document).on('ready', function () {
 						"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(10px)"
 					});
 					state.$shadow.css({
-						'background-image': '-webkit-linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)',
 						'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
 					});
 				}
