@@ -114,6 +114,7 @@
 	}
 	section#main-presentation .right-side {
 		margin-left: -16px;
+		margin-top: 0;
 		max-width: 814px;
 		vertical-align: bottom;
 	}
