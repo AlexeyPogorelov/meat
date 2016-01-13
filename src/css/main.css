@@ -66,6 +66,7 @@ nav .navigation-links a:before {
 	-webkit-transition: opacity .5s, transform .5s;
 	transition: opacity .5s, transform .5s;
 }
+
 nav .navigation-links a:hover:before {
 	content: "";
 	opacity: 1;
@@ -80,6 +81,9 @@ nav .navigation-links li:last-child {
 nav .navigation-links li.active a {
 	color: #4d2ce0;
 	font-weight: bold;
+}
+nav .navigation-links li.active a:before {
+	background-color: #4d2ce0;
 }
 nav .socials {
 	margin-top: 6px;
@@ -145,6 +149,9 @@ nav.fixed {
 }
 .bg-5 nav .navigation-links li.active a {
 	color: #f41f52;
+}
+.bg-5 nav .navigation-links li.active a:before {
+	background: #f41f52;
 }
 /* END NAV */
 .top-line {
@@ -310,8 +317,8 @@ section#main-presentation .left-side {
 	transform-style: preserve-3d;
 }
 section#main-presentation .left-side img {
-	-webkit-box-shadow: 0 24px 65px -10px rgba(0,0,0,.45);
-	box-shadow: 0 24px 65px -10px rgba(0,0,0,.45);
+	-webkit-box-shadow: 0 48px 75px -10px rgba(0,0,0,.35);
+	box-shadow: 0 48px 75px -10px rgba(0,0,0,.35);
 	position: relative;
 	top: 15px;
 	width: 265px;
@@ -353,8 +360,8 @@ section#capabilities {
 }
 section#capabilities .left-element,
 section#capabilities .right-element {
-	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
-	box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
+	-webkit-box-shadow: 0 60px 65px -20px rgba(0,0,0,.3);
+	box-shadow: 0 60px 65px -20px rgba(0,0,0,.3);
 	background-color: white;
 	display: inline-block;
 	padding: 73px 60px 62px 60px;
@@ -1072,8 +1079,8 @@ section#blog-articles .articles-holder .article {
 	margin: 0 48px 135px;
 	text-align: left;
 	width: 320px;
-	-webkit-box-shadow: 0 46px 75px -35px rgba(0,0,0,.1);
-	box-shadow: 0 46px 75px -35px rgba(0,0,0,.1);
+	-webkit-box-shadow: 0 44px 65px -20px rgba(0,0,0,.3);
+	box-shadow: 0 44px 65px -20px rgba(0,0,0,.3);
 	transform: translate3d(0,0,0);
 	-webkit-transform: translate3d(0,0,0);
 	-webkit-transition: 0.3s;
@@ -1086,8 +1093,6 @@ section#blog-articles .articles-holder .article {
 	user-select: none;
 }
 section#blog-articles .articles-holder .article:hover {
-	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);
-	box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);
 	-webkit-transform: translateY(-10px);
 	transform: translateY(-10px);
 	-moz-transform: none;
@@ -1339,8 +1344,8 @@ section#works-articles .articles-holder .article {
 	margin: 0 16px 135px;
 	text-align: left;
 	width: 240px;
-	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);
-	box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);
+	/*-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);*/
+	/*box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);*/
 	position: relative;
 	z-index: 1;
 	-webkit-perspective: 2000px;
@@ -1358,8 +1363,8 @@ section#works-articles .articles-holder .article:after {
 	left: 0;
 	height: 100%;
 	width: 100%;
-	-webkit-box-shadow: 0 70px 75px -20px rgba(0,0,0,.35);
-	box-shadow: 0 70px 75px -20px rgba(0,0,0,.35);
+	-webkit-box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
+	box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
 	-webkit-transform: translateZ(-50px);
 	transform: translateZ(-50px);
 	z-index: 0;

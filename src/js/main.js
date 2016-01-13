@@ -181,20 +181,22 @@ $(document).on('ready', function () {
 				var elTopStart,
 					elTopEnd,
 					parentOffset,
+					elHalfHeight,
 					$el = $('#fixed-socials'),
 					$end = $el.parent().siblings('.bottom');
 				var plg = {
 					resize: function () {
+						elHalfHeight = $el.height() / 2;
 						elTopStart = $el.offset().top;
-						elTopEnd = $end.offset().top + $end.outerHeight() - $el.height();
+						elTopEnd = $end.offset().top + $end.outerHeight() - (elHalfHeight * 2);
 						parentOffset = $el.parent().offset().top;
 					},
 					scroll: function (top) {
-						if (top > parentOffset && top < elTopEnd) {
+						if (top + (winHeight / 2) - elHalfHeight > parentOffset && top < elTopEnd - (winHeight / 2)) {
 							$el.css({
-								'top': top - parentOffset
+								'top': top + (winHeight / 2) - elHalfHeight - parentOffset
 							});
-						} else if (top < parentOffset) {
+						} else if (top < parentOffset + winHeight) {
 							$el.css({
 								'top': 0
 							});
