@@ -92,9 +92,9 @@ $(document).on('ready', function () {
 					fixElement.resize();
 				});
 			}
-	$('.full-height').css({
-		'min-height': winHeight
-	});
+	// $('.full-height').css({
+	// 	'min-height': winHeight
+	// });
 
 	// sidebars
 	$('.navbar-toggle').on('click', function () {
@@ -163,9 +163,9 @@ $(document).on('ready', function () {
 	$(window).on('resize', function () {
 		winWidth = $(window).width();
 		winHeight = $(window).height();
-		$('.full-height').css({
-			'min-height': winHeight > 450 ? winHeight : 450
-		});
+		// $('.full-height').css({
+		// 	'min-height': winHeight > 450 ? winHeight : 450
+		// });
 	});
 
 	// loaded

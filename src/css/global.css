@@ -465,6 +465,10 @@ input[type='number'] {
 	vertical-align: bottom;
 }
 /*	vertical */
+.full-height {
+	height: 100vh;
+	min-height: 480px;
+}
 .vertical-middle,
 .full-height {
 	position: relative;
@@ -472,15 +476,13 @@ input[type='number'] {
 }
 .full-height .content-holder,
 .vertical-middle .content-holder {
-	bottom: 0;
-	display: table;
-	left: 0;
 	margin: auto;
-	position: absolute;
-	right: 0;
 	text-align: left;
-	top: 0;
 	width: 100%;
+	top: 50%;
+	position: relative;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
 /*	NAVIIGATION */
 .navbar-toggle {
@@ -567,6 +569,11 @@ button:focus,
 .btn:focus {
 	outline: none;
 }
+
+/* TODO realize it */
+.content-holder {}
+.content-holder > .container {}
+
 .modal-holder {
 	background-color: #4d2ce0;
 	overflow: auto;
