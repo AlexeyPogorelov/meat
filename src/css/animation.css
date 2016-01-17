@@ -43,8 +43,8 @@
 @-webkit-keyframes fadeInRight {
 	from {
 		opacity: 0;
-		-webkit-transform: translate(60px, 0);
-		transform: translate(60px, 0);
+		-webkit-transform: translate(40px, 0);
+		transform: translate(40px, 0);
 	}
 	to {
 		opacity: 1;
@@ -55,8 +55,8 @@
 @keyframes fadeInRight {
 	from {
 		opacity: 0;
-		-webkit-transform: translate(60px, 0);
-		transform: translate(60px, 0);
+		-webkit-transform: translate(40px, 0);
+		transform: translate(40px, 0);
 	}
 	to {
 		opacity: 1;
@@ -72,8 +72,8 @@
 }
 @-webkit-keyframes fadeInRightA {
 	from {
-		-webkit-transform: translate(90px, 0);
-		transform: translate(90px, 0);
+		-webkit-transform: translate(40px, 0);
+		transform: translate(40px, 0);
 	}
 	to {
 		-webkit-transform: translate(0, 0);
@@ -82,8 +82,8 @@
 }
 @keyframes fadeInRightA {
 	from {
-		-webkit-transform: translate(90px, 0);
-		transform: translate(90px, 0);
+		-webkit-transform: translate(40px, 0);
+		transform: translate(40px, 0);
 	}
 	to {
 		-webkit-transform: translate(0, 0);

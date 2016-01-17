@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/media.css">
 </head>
 <body>
-	<div class="preloader">
+	<div class="preloader blue">
 	</div>
 	<button class="navbar-toggle" data-target=".mobile-menu">
 		<span class="icon-bar"></span>
@@ -33,7 +33,7 @@
 				<a href="works.html">Works</a>
 			</li>
 			<li class="active">
-				<a href="blog.html">Blog</a>
+				<a href="blog.html" target="blue">Blog</a>
 			</li>
 			<li>
 				<a href="#contact">Contact us</a>
@@ -51,7 +51,7 @@
 						<a href="main.html">About</a>
 					</li>
 					<li class="active">
-						<a href="blog.html">Blog</a>
+						<a href="blog.html" target="blue">Blog</a>
 					</li>
 					<li>
 						<a href="works.html">Works</a>
@@ -150,23 +150,25 @@
 					</li>
 				</ul>
 				<h3>New Shop on the Block: Twigy Posts</h3>
-				<table>
-					<tr>
-						<td>Design</td>
-						<td>Google’s Material Design An almost-flat style,</td>
-						<td>UI design</td>
-					</tr>
-					<tr>
-						<td>Google’s Material Design An almost-flat style,</td>
-						<td>Google’s Material Design An almost-flat style,</td>
-						<td>UI design Aside from the prescriptive</td>
-					</tr>
-					<tr>
-						<td>Google’s Material Design An almost-flat style,</td>
-						<td>Google’s Material Design An almost-flat style,</td>
-						<td>Google’s Material Design An almost-flat style,</td>
-					</tr>
-				</table>
+				<div class="table-holder">
+					<table>
+						<tr>
+							<td>Design</td>
+							<td>Google’s Material Design An almost-flat style,</td>
+							<td>UI design</td>
+						</tr>
+						<tr>
+							<td>Google’s Material Design An almost-flat style,</td>
+							<td>Google’s Material Design An almost-flat style,</td>
+							<td>UI design Aside from the prescriptive</td>
+						</tr>
+						<tr>
+							<td>Google’s Material Design An almost-flat style,</td>
+							<td>Google’s Material Design An almost-flat style,</td>
+							<td>Google’s Material Design An almost-flat style,</td>
+						</tr>
+					</table>
+				</div>
 			</div>
 			<div class="blog-item-page bottom">
 				<p>Floating Action Buttons sit apart from the rest of a UI, styled to appear as if floating over the top of content. Almost exclusively a circle, they’re a pleasingly minimal shape, that lends itself to animation. Floating Action Buttons are the natural evolution of the sticky header that have been popular for the last few years. The leap Google made to move beyond the sticky header was to decouple the Floating Action Button from the rest of the navigation. </p>
@@ -306,7 +308,7 @@
 
 		<section id="subscriber">
 			<div class="container">
-				<label for="subscribe-me" class="subscriber-holder">
+				<div for="subscribe-me" class="subscriber-holder">
 					<div class="input-area">
 						<form action="#">
 							<input placeholder="Subscribe our news _" type="text" name="subscribe-me" id="subscribe-me">
@@ -321,7 +323,7 @@
 						<h4>Show your project. Email us!</h4>
 						<a href="mailto:hello@makemeat.com?subject=Mail from Site">hello@makemeat.com</a>
 					</div>
-				</label>
+				</div>
 			</div>
 		</section>
 		<nav class="footer-navigation">
@@ -378,7 +380,7 @@
 						<a href="main.html">About</a>
 					</li>
 					<li class="active">
-						<a href="blog.html">Blog</a>
+						<a href="blog.html" target="blue">Blog</a>
 					</li>
 					<li>
 						<a href="works.html">Works</a>

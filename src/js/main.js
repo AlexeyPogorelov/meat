@@ -13,13 +13,13 @@ var loading = {
 			// vendor init
 			$('.fadeInUp').addClass('wow fadeInUp');
 			$('.fadeInRight').addClass('wow fadeInRight');
-			$('#devices > .content-holder > .container > *').addClass('wow fadeInUp');
-			$('#experience > .container > *').addClass('wow fadeInUp');
-			$('#about-text > .container > *').addClass('wow fadeInUp');
-			$('#subscriber > .container > .subscriber-holder').addClass('wow fadeInRightA');
-			$('#blog-articles > .container .article').addClass('wow fadeInUp');
-			$('#works-articles > .container .article').addClass('wow fadeInUp');
-			$('#works-item-header > .container > *').each(function (i) {
+			$('#devices').find('> .content-holder > .container > *').addClass('wow fadeInUp');
+			$('#experience').find('> .container > *').addClass('wow fadeInUp');
+			$('#about-text').find('> .container > *').addClass('wow fadeInUp');
+			$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
+			$('#blog-articles').find('> .container .article').addClass('wow fadeInUp');
+			$('#works-articles').find('> .container .article').addClass('wow fadeInUp');
+			$('#works-item-header').find('> .container > *').each(function (i) {
 				$(this).css({
 					'-webkit-animation-delay': 200 * i + 'ms',
 					'animation-delay': 200 * i + 'ms'
@@ -141,7 +141,7 @@ $(document).on('ready', function () {
 	$('#subscriber').find('input').on('focus', function () {
 		$(this).closest('#subscriber').addClass('focused');
 	}).on('blur', function () {
-		var $self = $(this)
+		var $self = $(this);
 		setTimeout(function () {
 			$self.closest('#subscriber').removeClass('focused');
 		}, 200);
@@ -149,10 +149,11 @@ $(document).on('ready', function () {
 
 	// navigation
 	$('nav, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
-		var href = $(this).attr('href');
+		var $self = $(this);
+		var href = $self.attr('href');
 		if (href == '#contact') {
 			e.preventDefault();
-			$(this).closest('.opened').removeClass('opened')
+			$self.closest('.opened').removeClass('opened');
 			$('html, body').animate({
 				scrollTop: $('#subscriber').offset().top
 			}, 2400, 'easeOutQuint');
@@ -160,6 +161,11 @@ $(document).on('ready', function () {
 			e.preventDefault();
 		} else {
 			e.preventDefault();
+			if ($self.attr('target') == 'blue') {
+				loading.preloader.addClass('blue');
+			} else {
+				loading.preloader.removeClass('blue');
+			}
 			loading.preloader.insertBefore('body').animate({
 				'opacity': 1
 			}, 200, function () {

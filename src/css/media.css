@@ -173,7 +173,7 @@
 	}
 	section#works-item-header img {
 		width: auto;
-		margin-bottom: 0;
+		margin-bottom: 20px;
 	}
 	section#works-item-header .container {
 		padding-left: 25px;
@@ -737,6 +737,9 @@
 	}
 	section#subscriber .input-area input {
 		padding: 0 0 0 100px;
+	}
+	section#subscriber.focused .input-area input {
+		padding: 0 0 0 28px;
 	}
 	section#subscriber .input-area .subscribe-button {
 		top: 0;

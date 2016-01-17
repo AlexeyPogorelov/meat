@@ -697,8 +697,8 @@ section#experience .main-image-holder {
 	text-align: center;
 }
 section#experience .main-image-holder img {
-	-webkit-box-shadow: 0 44px 65px -35px rgba(0,0,0,.35);
-	box-shadow: 0 44px 65px -35px rgba(0,0,0,.35);
+	-webkit-box-shadow: 0 64px 65px -35px rgba(0,0,0,.35);
+	box-shadow: 0 64px 65px -35px rgba(0,0,0,.35);
 	width: 100%;
 }
 /* END EXPERIENCE */
@@ -785,8 +785,9 @@ section#subscriber .input-area input {
 section#subscriber.focused .input-area input {
 	/*border: 1px solid #000;*/
 	/*transition: border .4s;*/
-	color: black;
 	background: #fff;
+	color: black;
+	padding-left: 70px;
 }
 section#subscriber .subscribe-button {
 	background: rgba(255,255,255,0);
@@ -799,6 +800,8 @@ section#subscriber .subscribe-button {
 section#subscriber.focused .subscribe-button {
 	background: rgba(77,44,254,1);
 	left: calc(100% - 100px);
+	left: auto;
+	right: 0;
 	pointer-events: all;
 	-webkit-transition: all .3s ease-out;
 	transition: all .3s ease-out;
@@ -1325,6 +1328,7 @@ section#blog-item p {
 }
 section#blog-item p a {
 	color: #f41f52;
+	font-family: 'Garamond', serif;
 	position: relative;
 	font-size: 24px;
 	white-space: nowrap;
@@ -1401,10 +1405,16 @@ section#blog-item table {
 	border-collapse: collapse;
 	border-radius: 6px;
 	color: #656565;
-	margin-bottom: 80px;
+	margin-bottom: 58px;
 	font-family: 'Garamond';
 	font-size: 24px;
 	width: 100%;
+}
+section#blog-item .table-holder table {
+	margin-bottom: 0;
+}
+section#blog-item .table-holder {
+	margin-bottom: 58px;
 }
 section#blog-item table td {
 	border: 1px solid #a7a7a7;
@@ -1545,7 +1555,7 @@ section#works-item-header {
 }
 section#works-item-header img {
 	width: 77px;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 }
 section#works-item-header .container {
 	max-width: 940px;

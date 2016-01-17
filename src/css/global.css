@@ -388,11 +388,14 @@ input[type='number'] {
 	max-width: 100%;
 }
 .preloader {
-	background-color: #000;
+	background-color: #f41f52;
 	position: fixed;
 	height: 100%;
 	width: 100%;
 	z-index: 999;
+}
+.preloader.blue {
+	background-color: #4d2ce0;
 }
 .preloader img {
 	position: absolute;
@@ -618,8 +621,8 @@ button:focus,
 	bottom: 60px;
 	left: 60px;
 	right: 60px;
-	-webkit-transform: translateZ(400px) rotateX(60deg);
-	transform: translateZ(400px) rotateX(60deg);
+	-webkit-transform: translateZ(400px);
+	transform: translateZ(400px);
 	-webkit-transition: opacity .3s ease-out, transform .2s, visibility .4s;
 	transition: opacity .3s ease-out, transform .2s, visibility .4s;
 }
@@ -630,8 +633,8 @@ button:focus,
 	visibility: visible;
 }
 .modal-holder.opened .modal-content {
-	-webkit-transform: scale(1, 1) rotateX(0deg);
-	transform: scale(1, 1) rotateX(0deg);
+	-webkit-transform: scale(1, 1);
+	transform: scale(1, 1);
 	-webkit-transition: transform .3s;
 	transition: transform .3s;
 }
