@@ -137,7 +137,6 @@ $(document).on('ready', function () {
 	$('#capabilities-slider').capabilitiesSlider();
 
 	// subscriber
-	// .focused
 	$('#subscriber').find('input').on('focus', function () {
 		$(this).closest('#subscriber').addClass('focused');
 	}).on('blur', function () {
@@ -186,6 +185,12 @@ $(document).on('ready', function () {
 	});
 	$('.close-modal').on('click', function () {
 		$(this).closest('.opened').removeClass('opened');
+	});
+	$(window).on('keyup', function (e) {
+		// esc pressed
+		if (e.keyCode == '27') {
+			$('.modal-holder').removeClass('opened');
+		}
 	});
 
 	// scroll
@@ -252,7 +257,7 @@ $(document).on('ready', function () {
 				prevSlide: function () {
 					var id = state.cur - 1;
 					if (id < 0) {
-						this.toSlide(state.activeSlides - 1);
+						// this.toSlide(state.activeSlides - 1);
 						return;
 					}
 					this.toSlide(id);
@@ -260,7 +265,7 @@ $(document).on('ready', function () {
 				nextSlide: function () {
 					var id = state.cur + 1;
 					if (id >= state.activeSlides) {
-						this.toSlide(0);
+						// this.toSlide(0);
 						return;
 					}
 					this.toSlide(id);
@@ -271,6 +276,7 @@ $(document).on('ready', function () {
 						'transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)'
 					});
 					DOM.$pagination.find('.page').eq(id).addClass('active').siblings().removeClass('active');
+					state.cur = id;
 				},
 				createPagination: function () {
 					if (DOM.$pagination) {
@@ -304,6 +310,24 @@ $(document).on('ready', function () {
 				var $target = $(e.target);
 				if ($target.hasClass('page')) {
 					plg.toSlide($(e.target).data('page'));
+				}
+			});
+
+			// drag events
+			DOM.$slider.on('touchstart', function (e) {
+				state.touchEvent = e;
+			});
+			DOM.$slider.on('touchend', function (e) {
+				var distance = 150,
+					speed = 200,
+					delta = state.touchEvent.originalEvent.touches[0].pageX - e.originalEvent.changedTouches[0].pageX,
+					time = e.timeStamp - state.touchEvent.timeStamp;
+				if (delta > distance || -delta > distance) {
+					if (delta > 0) {
+						plg.nextSlide();
+					} else {
+						plg.prevSlide();
+					}
 				}
 			});
 

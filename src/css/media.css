@@ -325,12 +325,6 @@
 		margin-top: 60px;
 		margin-bottom: 20px;
 	}
-	section#blog-item .blog-item-page:first-child {
-		margin-top: 0;
-	}
-	section#blog-item .blog-item-page:last-child {
-		margin-bottom: 0;
-	}
 	section#subscriber .input-area input {
 		/*padding-left: 6px;*/
 	}
@@ -352,6 +346,10 @@
 		line-height: 40px;
 		font-size: 18px;
 	}
+	section#blog-item ~ #blog-articles {
+		padding-top: 62px;
+		padding-bottom: 96px;
+	}
 }
 /*
 	MOBILE
@@ -359,18 +357,6 @@
 @media screen and (max-width: 960px) {
 	.container {
 		width: 100%;
-	}
-	section#subscriber .input-area input::-webkit-input-placeholder {
-		line-height: 25px;
-	}
-	section#subscriber .input-area input:-moz-placeholder {
-		line-height: 25px;
-	}
-	section#subscriber .input-area input::-moz-placeholder {
-		line-height: 25px;
-	}
-	section#subscriber .input-area input:-ms-input-placeholder {
-		line-height: 25px;
 	}
 	body::-webkit-scrollbar {
 		width: 0;
@@ -399,6 +385,19 @@
 		-o-transform: none;
 		transform: none;
 	}
+	section#subscriber .input-area input::-webkit-input-placeholder {
+		line-height: 25px;
+	}
+	section#subscriber .input-area input:-moz-placeholder {
+		line-height: 25px;
+	}
+	section#subscriber .input-area input::-moz-placeholder {
+		line-height: 25px;
+	}
+	section#subscriber .input-area input:-ms-input-placeholder {
+		line-height: 25px;
+	}
+
 
 	#frame-logo {
 		height: 256px;
@@ -491,6 +490,13 @@
 		margin-left: 10px;
 		margin-right: 10px;
 		width: 256px;
+	}
+
+	section#blog-item .blog-item-page:first-child {
+		margin-top: 0;
+	}
+	section#blog-item .blog-item-page:last-child {
+		margin-bottom: 0;
 	}
 	section#blog-item .blog-item-page:last-child {
 		margin-bottom: 0;
@@ -614,7 +620,8 @@
 		margin: 22px 35px;
 		height: auto;
 		width: auto;
-		max-height: 490px;
+		width: calc(100% - 120px);
+		/*max-height: 490px;*/
 	}
 	section#portfolio-presentation {
 		padding-top: 7px;
@@ -626,19 +633,18 @@
 	section#capabilities .left-element,
 	section#capabilities .right-element {
 		width: auto;
+		width: calc(100% - 20px);
 		padding: 46px 20px 10px 39px;
 	}
 	#capabilities .container.table .cell  {
 		display: inline-block;
 		padding-top: 0;
-		width: 256px;
+		width: 300px;
+		width: calc(50% - 60px);
 	}
 	#capabilities .container.table .cell h4 {
 		font-size: 24px;
 		line-height: 28px;
-	}
-	#capabilities .container {
-		width: 320px;
 	}
 	section#capabilities {
 		padding-top: 192px;
@@ -647,21 +653,14 @@
 		margin-top: 0;
 	}
 	section#main-presentation h3 {
-		font-size: 19px;
-		line-height: 20px;
-		margin-left: 0;
-		margin-right: 0;
-		padding: 16px 14px 34px 34px;
-		text-align: left;
+		margin-left: -10px;
 	}
 	section#main-presentation h1 {
-		font-size: 32px;
-		line-height: 38px;
-		margin-top: 40px;
-		padding-left: 32px;
-		padding-right: 32px;
+		margin-top: 70px;
+		margin-left: -10px;
 	}
 	section#main-presentation {
+		height: auto;
 		margin-top: 0;
 		margin-bottom: 0;
 	}
@@ -671,7 +670,7 @@
 	section#main-presentation .left-side {
 		display: inline-block;
 		margin-top: 59px;
-		min-width: 50%
+		/*min-width: 50%*/
 	}
 	section#main-presentation .left-side img {
 		width: 256px;
@@ -680,7 +679,7 @@
 		display: inline-block;
 		margin-left: 0;
 		margin-right: 0;
-		min-width: 50%
+		/*min-width: 50%*/
 	}
 	section#subscriber .input-area input {
 		height: 63px;
@@ -961,14 +960,42 @@
 /*
 	SMALL
 */
-@media screen and (max-width: 600px) {
-	#underconstruction .content-holder {
+@media screen and (max-width: 660px) {
+	.x-mobile-visible {
+		display: inherit;
+	}
+	.x-mobile-hidden {
+		display: none;
+	}
+	section#main-presentation .left-side,
+	section#main-presentation .right-side {
+		min-width: 50%
+	}
+	section#main-presentation h3 {
+		font-size: 19px;
+		line-height: 20px;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 16px 14px 34px 34px;
+		text-align: left;
+	}
+	section#main-presentation h1 {
+		font-size: 32px;
+		line-height: 38px;
+		margin-top: 40px;
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	section#capabilities-slider .slider-viewport {}
+	section#capabilities-slider .slide {}
+
+	section#underconstruction .content-holder {
 		height: auto;
 	}
-	#underconstruction .presentation .small {
+	section#underconstruction .presentation .small {
 		font-size: 20px;
 	}
-	#underconstruction .presentation .grand {
+	section#underconstruction .presentation .grand {
 		font-size: 30px;
 		line-height: 40px;
 	}
@@ -977,6 +1004,20 @@
 		width: 100%;
 	}
 	section#works-item .blog-item-page {}
+
+	section#portfolio-presentation .portfolio-item,
+	section#portfolio-presentation .portfolio-item.type-1,
+	section#portfolio-presentation .portfolio-item.type-2,
+	section#portfolio-presentation .portfolio-item.type-3,
+	section#portfolio-presentation .portfolio-item.type-4 {
+		display: inline-block;
+		float: none;
+		margin: 22px 35px;
+		height: auto;
+		width: auto;
+		width: calc(100% - 70px);
+		/*max-height: 490px;*/
+	}
 	/* 404 */
 	section#page-404 h1 {
 		display: inline-block;
@@ -1015,7 +1056,10 @@
 /*
 	xSMALL
 */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 481px) {
+	section#capabilities-slider .slide {
+		width: 256px;
+	}
 }
 
 /*

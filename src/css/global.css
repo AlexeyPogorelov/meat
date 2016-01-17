@@ -334,6 +334,9 @@ input[type='number'] {
 .mobile-xs-visible {
 	display: none;
 }
+.x-mobile-visible {
+	display: none;
+}
 .tablet-visible {
 	display: none;
 }
