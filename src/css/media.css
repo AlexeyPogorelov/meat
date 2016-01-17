@@ -3,6 +3,9 @@
 	LARGE
 */
 @media screen and (min-width: 1420px) {
+	.container {
+		width: 1160px;
+	}
 	section#blog-item .blog-item-page:first-child {
 		padding-top: 95px;
 	}
@@ -122,9 +125,6 @@
 	section#main-presentation .content-holder {
 		bottom: 120px;
 	}
-	nav.footer-navigation .socials {
-		margin-left: 68px;
-	}
 	section#subscriber .input-area form {
 		width: 100%;
 	}
@@ -188,9 +188,6 @@
 		max-width: 1364px;
 		width: auto;
 	}
-	.container {
-		width: 1160px;
-	}
 	#underconstruction .presentation .main-logo-holder {
 		text-align: right;
 		width: 521px;
@@ -202,6 +199,9 @@
 		font-size: 34px;
 		font-weight: 100;
 	}
+/*	nav.footer-navigation .socials {
+		padding-left: 76px;
+	}*/
 }
 /*------------------------------------------------------------------------------
 	MEDIUM
@@ -267,6 +267,9 @@
 		font-size: 34px;
 		font-weight: 100;
 	}
+	nav.footer-navigation .navigation-links {
+		display: none;
+	}
 }
 /*--------------------------------------------------------------------------
 	TABLET
@@ -290,9 +293,6 @@
 		margin-left: 16px;
 		margin-right: 16px;
 		margin-top: 24px;
-	}
-	nav.footer-navigation .navigation-links {
-		display: none;
 	}
 	nav.footer-navigation .socials {
 		padding-left: 76px;
@@ -332,7 +332,7 @@
 		margin-bottom: 0;
 	}
 	section#subscriber .input-area input {
-		padding-left: 6px;
+		/*padding-left: 6px;*/
 	}
 	#main-modal .container .content-holder {
 		top: 0;
@@ -408,7 +408,7 @@
 		display: none;
 	}
 	.table-holder {
-		max-width: 320px;
+		max-width: 100%;
 		overflow: auto;
 	}
 	nav.footer-navigation .socials {
@@ -736,7 +736,15 @@
 		font-size: 20px;
 	}
 	section#subscriber .input-area input {
-		padding: 0 0 0 20px;
+		padding: 0 0 0 100px;
+	}
+	section#subscriber .input-area .subscribe-button {
+		top: 0;
+		left: 16px;
+		height: 63px;
+	}
+	section#subscriber.focused .input-area .subscribe-button {
+		background: rgba(255,255,255,0);
 	}
 	section#subscriber .input-area img {
 		display: none;
@@ -1012,6 +1020,12 @@
 */
 @media screen and (max-width: 1600px) {
 	section#subscriber {
+		background-position: 400px 0;
+	}
+	section#subscriber.focused {
+		background-position: 400px 0;
+	}
+	.bg-5 section#subscriber.focused {
 		background-position: 400px 0;
 	}
 }

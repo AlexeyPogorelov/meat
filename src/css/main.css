@@ -135,11 +135,14 @@ nav.footer-navigation li:first-child {
 	margin-left: 0;
 }
 nav.footer-navigation .socials {
-	padding-left: 58px;
+	padding-left: 76px;
 }
 nav.footer-navigation .socials li {
 	margin-left: 0;
 	margin-right: 29px;
+}
+nav.footer-navigation .socials li:last-child {
+	margin-right: 0;
 }
 nav.fixed {
 	top: 0;
@@ -330,6 +333,8 @@ section#main-presentation .right-side {
 	margin-left: -12px;
 	max-width: 509px;
 	vertical-align: middle;
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
 }
 section#main-presentation h1 {
 	color: white;
@@ -369,6 +374,10 @@ section#capabilities .right-element {
 	text-align: left;
 	width: 380px;
 	vertical-align: top;
+}
+section#capabilities .right-element {
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
 }
 section#capabilities h4 {
 	color: black;
@@ -622,6 +631,8 @@ section#portfolio-presentation .portfolio-item.type-2 {
 	margin-right: 62px;
 	height: 334px;
 	width: 334px;
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
 }
 /*section#portfolio-presentation .portfolio-item.type-3 {
 	margin-left: 69px;
@@ -632,12 +643,16 @@ section#portfolio-presentation .portfolio-item.type-3 {
 	margin-top: 63px;
 	height: 268px;
 	width: 268px;
+/*	-webkit-animation-delay: .4s;
+	animation-delay: .4s;*/
 }
 section#portfolio-presentation .portfolio-item.type-4 {
 	margin-left: 66px;
 	margin-top: 63px;
 	height: 400px;
 	width: 400px;
+	-webkit-animation-delay: .4s;
+	animation-delay: .4s;
 }
 /* END PORTFOLIO */
 
@@ -713,9 +728,22 @@ section#about-text p {
 }
 
 section#subscriber {
-	background: transparent url('../img/bg/subscriber-bg-1.png') no-repeat 100% 0;
+	background: url('../img/bg/subscriber-bg-1.png') no-repeat -100% 0, linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 29%, rgba(255,255,255,0) 30%) no-repeat 50%;
+	background-position: right 0;
 	/*padding-left: 112px;*/
 	overflow: hidden;
+}
+section#subscriber.focused {
+	background: url('../img/bg/subscriber-bg-1.png') no-repeat -100% 0, linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 29%, rgba(255,255,255,1) 30%) no-repeat 50%;
+	background-position: right 0;
+
+	/*-webkit-transition: background .3s;*/
+	/*transition: background .3s;*/
+}
+
+.bg-5 section#subscriber.focused {
+	background: url('../img/bg/subscriber-bg-2.png') no-repeat -100% 0, linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 29%, rgba(255,255,255,1) 30%) no-repeat 50%;
+	background-position: right 0;
 }
 section#subscriber .subscriber-holder {
 	border-top: 6px solid #4d2ce0;
@@ -728,10 +756,12 @@ section#subscriber .input-area {
 }
 section#subscriber .input-area .subscribe-button {
 	background: none;
-	height: 72px;
-	padding: 0 10px;
+	cursor: pointer;
+	height: 76px;
+	pointer-events: none;
+	padding: 0 14px;
 	position: absolute;
-	top: 10px;
+	top: 8px;
 	/*vertical-align: baseline;*/
 }
 section#subscriber .input-area form {
@@ -751,18 +781,14 @@ section#subscriber .input-area input {
 	padding-left: 140px;
 	width: 100%;
 	cursor: pointer;
-	-webkit-transition: background .3s;
-	transition: background .3s;
 }
-section#subscriber .input-area input:focus {
+section#subscriber.focused .input-area input {
 	/*border: 1px solid #000;*/
 	/*transition: border .4s;*/
 	color: black;
 	background: #fff;
-	-webkit-transition: background .3s;
-	transition: background .3s;
 }
-section#subscriber .input-area input ~ .subscribe-button {
+section#subscriber .subscribe-button {
 	background: rgba(255,255,255,0);
 	left: 62px;
 	right: auto;
@@ -770,11 +796,15 @@ section#subscriber .input-area input ~ .subscribe-button {
 	-webkit-transition: all .3s ease-out;
 	transition: all .3s ease-out;
 }
-section#subscriber .input-area input:focus ~ .subscribe-button {
-	/*background: rgba(255,255,255,1);*/
+section#subscriber.focused .subscribe-button {
+	background: rgba(77,44,254,1);
 	left: calc(100% - 100px);
+	pointer-events: all;
 	-webkit-transition: all .3s ease-out;
 	transition: all .3s ease-out;
+}
+.bg-5 section#subscriber.focused .subscribe-button {
+	background: rgba(244,31,82,1);
 }
 /*section#subscriber .input-area input ~ .subscribe-button:after {
 	background: rgba(255,255,255,0);
@@ -790,18 +820,18 @@ section#subscriber .input-area input:focus ~ .subscribe-button {
 section#subscriber .input-area input:focus ~ .subscribe-button:after {
 	background: rgba(255,255,255,1);
 }*/
-section#subscriber .input-area input ~ .subscribe-button svg {
+section#subscriber .subscribe-button svg {
 	z-index: 1;
 }
-section#subscriber .input-area input ~ .subscribe-button svg path {
+section#subscriber .subscribe-button svg path {
 	-webkit-transition: all .3s;
 	transition: all .3s;
 }
-section#subscriber .input-area input:focus ~ .subscribe-button svg path {
+/*section#subscriber.focused .subscribe-button svg path {
 	fill: #f41f52;
 	-webkit-transition: all .3s;
 	transition: all .3s;
-}
+}*/
 section#subscriber .input-area input::-webkit-input-placeholder {
 	color: snow;
 	font-family: "Gotham Pro", sans-serif;
@@ -991,7 +1021,6 @@ section#subscriber .description-holder a:hover:before {
 	vertical-align: top;
 	width: 255px;
 	-webkit-transition: all .5s;
-	-o-transition: all .5s;
 	transition: all .5s;
 }
 #works-item .facts-block .mobile-app.app-2 {
@@ -1000,7 +1029,6 @@ section#subscriber .description-holder a:hover:before {
 #works-item .facts-block .mobile-app:hover {
 	background: #f41f52;
 	-webkit-transition: all .2s;
-	-o-transition: all .2s;
 	transition: all .2s;
 }
 #works-item .facts-block .mobile-app:hover span,
@@ -1008,7 +1036,6 @@ section#subscriber .description-holder a:hover:before {
 #works-item .facts-block .mobile-app:hover i {
 	color: #fff;
 	-webkit-transition: all .2s;
-	-o-transition: all .2s;
 	transition: all .2s;
 }
 #works-item .facts-block .mobile-app img {
@@ -1024,7 +1051,6 @@ section#subscriber .description-holder a:hover:before {
 	font-size: 54px;
 	color: #F41F52;
 	-webkit-transition: all .5s;
-	-o-transition: all .5s;
 	transition: all .5s;
 }
 #works-item .facts-block .mobile-app.app-2 i {
@@ -1093,13 +1119,11 @@ section#page-404 .to-main-page {
 	padding: 0 32px;
 	text-transform: uppercase;
 	-webkit-transition: all .5s;
-	-o-transition: all .5s;
 	transition: all .5s;
 }
 section#page-404 .to-main-page:hover {
 	border: 3px solid #f41f52;
 	-webkit-transition: all .2s;
-	-o-transition: all .2s;
 	transition: all .2s;
 } 
 section#page-404 .illustration {
@@ -1163,7 +1187,6 @@ section#blog-articles .articles-holder .article:hover {
 section#blog-articles .articles-holder .article:hover h4 {
 	color: #f41f52;
 	-webkit-transition: color .2s;
-	-o-transition: color .2s;
 	transition: color .2s;
 }
 section#blog-articles .articles-holder .article .image-holder {
@@ -1592,7 +1615,6 @@ section#works-item ul.socials li a {
 	vertical-align: middle;
 	width: 100%;
 	-webkit-transition: .5s;
-	-o-transition: .5s;
 	transition: .5s;
 }
 section#works-item ul.socials li a:hover {
