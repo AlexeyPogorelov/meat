@@ -55,7 +55,8 @@ var loading = {
 	};
 $(window).on('load', function () {
 	// loaded
-	loading.loaded();
+	// loading.loaded();
+	loading.done();
 });
 $(document).on('ready', function () {
 	$('img').each(function () {
