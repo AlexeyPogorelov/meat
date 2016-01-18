@@ -402,7 +402,7 @@ input[type='number'] {
 .preloader > .after {
 	background: #f41f52;
 	content: "";
-	height: 4px;
+	height: 6px;
 	left: 0;
 	position: fixed;
 	top: 0;

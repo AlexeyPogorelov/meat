@@ -432,6 +432,7 @@ section#capabilities-slider {
 	/*overflow: hidden;*/
 	margin: auto;
 	width: 256px;
+	width: calc(100% - 70px);
 }
 #capabilities-slider .slider-viewport .slider-holder {
 	-webkit-transform: translateX(0);
@@ -450,7 +451,7 @@ section#capabilities-slider .slide {
 	display: block;
 	float: left;
 	margin-right: 12px;
-	padding: 46px 20px 10px 39px;
+	padding: 46px 20px 26px 39px;
 	text-align: left;
 	vertical-align: top;
 	width: 256px;
@@ -616,7 +617,7 @@ section#portfolio-presentation .portfolio-item:hover .blick {
 	transition: opacity .3s;
 }
 section#portfolio-presentation .portfolio-item img {
-	min-height: 100%;
+	/*min-height: 100%;*/
 	position: relative;
 	width: 100%;
 	z-index: 2;
@@ -762,7 +763,7 @@ section#subscriber .input-area .subscribe-button {
 	padding: 0 14px;
 	pointer-events: none;
 	position: absolute;
-	right: 20px;
+	right: 8px;
 	top: 14px;
 	/*vertical-align: baseline;*/
 	background: rgba(255,255,255,0);
@@ -897,6 +898,21 @@ section#subscriber .input-area input:focus::-moz-placeholder {
 }
 
 section#subscriber .input-area input:focus:-ms-input-placeholder {
+	color: white;
+}
+section#subscriber .input-area input:hover::-webkit-input-placeholder {
+	color: white;
+}
+
+section#subscriber .input-area input:hover:-moz-placeholder {
+	color: white;
+}
+
+section#subscriber .input-area input:hover::-moz-placeholder {
+	color: white;
+}
+
+section#subscriber .input-area input:hover:-ms-input-placeholder {
 	color: white;
 }
 section#subscriber .description-holder {
@@ -1160,6 +1176,8 @@ section#page-404 h4 {
 section#page-404 .to-main-page {
 	border-radius: 0;
 	border: 3px dashed #f41f52;
+	outline: 3px solid transparent;
+	outline-offset: -3px;
 	color: #f42752;
 	display: inline-block;
 	font-size: 26px;
@@ -1173,7 +1191,7 @@ section#page-404 .to-main-page {
 	transition: all .5s;
 }
 section#page-404 .to-main-page:hover {
-	border: 3px solid #f41f52;
+	outline-color: #f41f52;
 	-webkit-transition: all .2s;
 	transition: all .2s;
 } 
@@ -1422,7 +1440,7 @@ section#blog-item img {
 }
 section#blog-item ul {
 	margin-top: -6px;
-	margin-bottom: 80px;
+	margin-bottom: 58px;
 }
 section#blog-item ul li {
 	color: #656565;
@@ -1715,7 +1733,7 @@ section#works-item h3 {
 section#works-item p {
 	color: #656565;
 	font-family: "Gotham Pro", serif;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 400;
 	line-height: 36px;
 	margin-bottom: 40px;
@@ -1740,7 +1758,7 @@ section#works-item img {
 }
 section#works-item ul {
 	margin-top: -6px;
-	margin-bottom: 80px;
+	margin-bottom: 58px;
 }
 section#works-item ul li {
 	color: #656565;
@@ -1793,31 +1811,35 @@ section#works-item ~ #works-articles {
 
 /* BLOCKQUOTE */
 
- .blockquote-holder {}
- .blockquote-holder .image-holder {
+.blockquote-holder {}
+.blockquote-holder .image-holder {
 	float: left;
 	width: 174px;
- }
- .blockquote-holder .user-name {
+}
+section#works-item .blockquote-holder .image-holder img {
+	margin-top: 10px;
+	vertical-align: top;
+}
+.blockquote-holder .user-name {
 	opacity: 0.8;
 	line-height: 30px;
 	color: black;
 	font-size: 30px;
 	font-weight: 700;
- }
- .blockquote-holder .user-description {
+}
+.blockquote-holder .user-description {
 	opacity: 0.8;
 	line-height: 30px;
 	color: #717171;
 	font-size: 20px;
 	font-weight: 400;
- }
- .blockquote-holder .comment-holder {
+}
+.blockquote-holder .comment-holder {
 	color: #f41f52;
 	font-size: 32px;
 	font-weight: 300;
 	line-height: 42px;
- }
+}
 
 /* END BLOCKQUOTE */
 

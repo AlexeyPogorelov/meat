@@ -539,10 +539,10 @@
 	section#about-text p {
 		font-size: 13px;
 		line-height: 24px;
-		padding: 35px;
+		padding: 35px 60px;
 	}
 	section#experience .main-image-holder {
-		padding: 35px;
+		padding: 35px 60px;
 	}
 	section#experience .main-image-holder img {
 		box-shadow: 0 20px 65px -15px rgba(0,0,0,.85);
@@ -551,7 +551,7 @@
 		font-size: 32px;
 		line-height: 36px;
 		margin-bottom: 0;
-		padding: 35px;
+		padding: 35px 60px;
 	}
 	section#experience {
 		padding-top: 73px;
@@ -564,8 +564,8 @@
 	section#devices p {
 		font-size: 13px;
 		line-height: 25px;
-		padding-left: 35px;
-		padding-right: 35px;
+		padding-left: 60px;
+		padding-right: 60px;
 		margin-top: 24px;
 		margin-bottom: 14px;
 		font-weight: 300;
@@ -573,8 +573,8 @@
 	section#devices h2 {
 		font-size: 32px;
 		line-height: 39px;
-		padding-left: 32px;
-		padding-right: 32px;
+		padding-left: 60px;
+		padding-right: 60px;
 		margin-top: 36px;
 	}
 	section#devices .content-holder {
@@ -583,7 +583,7 @@
 	}
 	section#devices img {
 		width: 260px;
-		margin-left: 32px;
+		margin-left: 60px;
 		margin-top: 107px;
 	}
 	section#portfolio-presentation {
@@ -630,7 +630,7 @@
 	section#capabilities .right-element {
 		width: auto;
 		width: calc(100% - 20px);
-		padding: 46px 20px 10px 39px;
+		padding: 46px 20px 28px 39px;
 	}
 	#capabilities .container.table .cell  {
 		display: inline-block;
@@ -757,7 +757,7 @@
 		display: none;
 	}
 	section#subscriber {
-		padding-left: 32px;
+		padding-left: 60px;
 	}
 	section#works-articles .articles-holder .article {
 		width: 256px;
@@ -976,9 +976,8 @@
 		height: auto;
 		width: calc(100% - 60px);
 	}
-	.fadeInRight {
+	.wow {
 		-webkit-animation: none;
-		-o-animation: none;
 		animation: none;
 	}
 	section#main-presentation .left-side,
@@ -986,21 +985,6 @@
 		min-width: 50%;
 		margin-top: 76px;
 		/*float: none;*/
-	}
-	section#main-presentation h3 {
-		font-size: 19px;
-		line-height: 20px;
-		margin-left: 0;
-		margin-right: 0;
-		padding: 16px 14px 34px 0;
-		text-align: left;
-	}
-	section#main-presentation h1 {
-		font-size: 32px;
-		line-height: 38px;
-		margin-top: 22px;
-		padding-left: 0;
-		padding-right: 0;
 	}
 	section#main-presentation .content-holder .container {
 		text-align: center;
@@ -1072,6 +1056,40 @@
 	section#main-presentation h3 {
 		margin-top: 0;
 	}
+	section#main-presentation h3 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	section#main-presentation h1 {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	section#experience h2 {
+		padding: 35px;
+	}
+	section#devices p {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+	section#devices h2 {
+		padding-left: 32px;
+		padding-right: 32px;
+	}
+	section#devices img {
+		width: 260px;
+		margin-left: 32px;
+		margin-right: 32px;
+	}
+	section#experience .main-image-holder {
+		padding: 35px;
+	}
+	section#about-text p {
+		padding: 35px;
+	}
+	section#subscriber {
+		padding-left: 32px;
+	}
 }
 /*
 	xSMALL
@@ -1079,6 +1097,23 @@
 @media screen and (max-width: 481px) {
 	section#capabilities-slider .slide {
 		width: 256px;
+	}
+	section#main-presentation h3 {
+		font-size: 19px;
+		line-height: 20px;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 16px 14px 34px 0;
+		text-align: left;
+	}
+	section#main-presentation h1 {
+		font-size: 32px;
+		line-height: 38px;
+		margin-top: 22px;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 

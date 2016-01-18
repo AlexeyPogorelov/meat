@@ -42,9 +42,6 @@ var loading = {
 			});
 			new WOW().init();
 
-			// perspective hover
-			$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
-
 			// hide preloader
 			this.preloader.animate({
 				'opacity': 0
@@ -135,6 +132,12 @@ $(document).on('ready', function () {
 	// $('.full-height').css({
 	// 	'min-height': winHeight
 	// });
+
+
+	// perspective hover
+	if (winWidth > 944) {
+		$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
+	}
 
 	// sidebars
 	$('.navbar-toggle').on('click', function () {
@@ -278,6 +281,7 @@ $(document).on('ready', function () {
 				},
 				resize: function () {
 					state.sliderWidth = DOM.$viewport.width();
+					DOM.$slides.width(DOM.$viewport.width() - 59)
 					state.slideWidth = DOM.$slides.eq(0).outerWidth() + 12;
 					DOM.$sliderHolder.width(state.slideWidth * state.activeSlides);
 				},
@@ -342,15 +346,22 @@ $(document).on('ready', function () {
 
 			// drag events
 			DOM.$slider.on('touchstart', function (e) {
-				state.touchEvent = e;
+				state.touchStart = e;
+			});
+			DOM.$slider.on('touchmove', function (e) {
+				state.touchEnd = e;
 			});
 			DOM.$slider.on('touchend', function (e) {
 				var distance = 150,
 					speed = 200,
-					delta = state.touchEvent.originalEvent.touches[0].pageX - e.originalEvent.changedTouches[0].pageX,
-					time = e.timeStamp - state.touchEvent.timeStamp;
+					delta = state.touchEnd.originalEvent.targetTouches[0].pageX - state.touchStart.originalEvent.targetTouches[0].pageX,
+					time = state.touchEnd.timeStamp - state.touchStart.timeStamp;
+				// console.log('-----');
+				// console.log(e);
+				// console.log(state.touchStart.originalEvent.targetTouches[0].pageX);
+				// console.log(state.touchEnd.originalEvent.targetTouches[0].pageX);
 				if (delta > distance || -delta > distance) {
-					if (delta > 0) {
+					if (delta < 0) {
 						plg.nextSlide();
 					} else {
 						plg.prevSlide();
