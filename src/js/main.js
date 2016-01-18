@@ -19,6 +19,7 @@ var loading = {
 			$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
 			$('#blog-articles').find('> .container .article').addClass('wow fadeInUp');
 			$('#works-articles').find('> .container .article').addClass('wow fadeInUp');
+			$('.blog-item-page.top').addClass('wow fadeInUp');
 			$('#works-item-header').find('> .container > *').each(function (i) {
 				$(this).css({
 					'-webkit-animation-delay': 200 * i + 'ms',
@@ -153,6 +154,10 @@ $(document).on('ready', function () {
 		if (href == '#contact') {
 			e.preventDefault();
 			$self.closest('.opened').removeClass('opened');
+			$('html, body').one('mousewheel touchstart', function () {
+				$(this).stop(true, true);
+				bodyOverflow.unfixBody();
+			});
 			$('html, body').animate({
 				scrollTop: $('#subscriber').offset().top
 			}, 2400, 'easeOutQuint');
@@ -351,7 +356,7 @@ $(document).on('ready', function () {
 				opt = {};
 			}
 			opt = $.extend({
-				'power': 15,
+				'power': 20,
 				'duration': 2000
 			}, opt);
 

@@ -115,7 +115,7 @@
 	}
 	section#main-presentation .right-side {
 		margin-left: -16px;
-		margin-top: 0;
+		margin-top: 70px;
 		max-width: 814px;
 		vertical-align: bottom;
 	}
@@ -399,10 +399,6 @@
 	}
 
 
-	#frame-logo {
-		height: 256px;
-		width: 256px;
-	}
 	#frame-logo .blick {
 		display: none;
 	}
@@ -673,7 +669,9 @@
 		/*min-width: 50%*/
 	}
 	section#main-presentation .left-side img {
-		width: 256px;
+		position: static;
+		width: auto;
+		width: 100%;
 	}
 	section#main-presentation .right-side {
 		display: inline-block;
@@ -714,7 +712,7 @@
 		max-width: 380px;
 	}
 	section#subscriber .description-holder {
-		padding: 28px 28px 0;
+		padding: 46px 28px 0;
 	}
 	section#subscriber .input-area form {
 		width: 100%;
@@ -735,18 +733,19 @@
 		font-size: 20px;
 	}
 	section#subscriber .input-area input {
-		padding: 0 0 0 100px;
+		padding: 0 0 0 30px;
+	}
+	section#subscriber .description-holder:before {
+		display: none;
 	}
 	section#subscriber.focused .input-area input {
 		padding: 0 0 0 28px;
 	}
 	section#subscriber .input-area .subscribe-button {
-		top: 0;
-		left: 16px;
+		background: #4D2CE0;
+		top: 6px;
+		right: 0;
 		height: 63px;
-	}
-	section#subscriber.focused .input-area .subscribe-button {
-		background: rgba(255,255,255,0);
 	}
 	section#subscriber .input-area img {
 		display: none;
@@ -967,9 +966,14 @@
 	.x-mobile-hidden {
 		display: none;
 	}
+	#frame-logo {
+		height: auto;
+		width: calc(100% - 60px);
+	}
 	section#main-presentation .left-side,
 	section#main-presentation .right-side {
-		min-width: 50%
+		min-width: 50%;
+		float: none;
 	}
 	section#main-presentation h3 {
 		font-size: 19px;

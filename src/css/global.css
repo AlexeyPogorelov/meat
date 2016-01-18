@@ -451,6 +451,9 @@ input[type='number'] {
 .block {
 	display: block;
 }
+.nowrap {
+	white-space: normal;
+}
 /*	TABLE	*/
 .table {
 	display: table;
@@ -516,6 +519,12 @@ input[type='number'] {
 	transition: max-height .5s ease, padding .5s ease;
 	/*transition-delay: 1s;*/
 	z-index: 2;
+}
+.content-holder:before,
+.content-holder:after {
+	content: "";
+	display: table;
+	clear: both;
 }
 
 .clearfix:before,
