@@ -18,6 +18,9 @@ var loading = {
 		},
 		done: function () {
 			// setInterval();
+			if (loading.finished) {
+				return
+			}
 
 			// vendor init
 			$('.fadeInUp').addClass('wow fadeInUp');
@@ -50,12 +53,18 @@ var loading = {
 					'width': 2
 				});
 				$(this).detach();
+				loading.finished = true;
 			});
 		}
 	};
+setTimeout(function () {
+	loading.status(1);
+	loading.done();
+}, 2000);
 $(window).on('load', function () {
 	// loaded
 	// loading.loaded();
+	loading.status(1);
 	loading.done();
 });
 $(document).on('ready', function () {
