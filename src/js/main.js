@@ -6,7 +6,7 @@ var loading = {
 		loaded: function () {
 			if(++loading.state == loading.trg) {
 				loading.status(1);
-				loading.done();
+				setTimeout(loading.done, 300);
 			} else {
 				loading.status(loading.state / loading.trg / 1.1);
 			}
@@ -46,7 +46,7 @@ var loading = {
 			new WOW().init();
 
 			// hide preloader
-			this.preloader.animate({
+			loading.preloader.animate({}).delay(100).animate({
 				'opacity': 0
 			}, 600, 'easeOutQuint', function () {
 				$(this).find('.after').css({
@@ -59,13 +59,13 @@ var loading = {
 	};
 setTimeout(function () {
 	loading.status(1);
-	loading.done();
-}, 2000);
+	setTimeout(loading.done, 300);
+}, 10000);
 $(window).on('load', function () {
 	// loaded
 	// loading.loaded();
 	loading.status(1);
-	loading.done();
+	setTimeout(loading.done, 300);
 });
 $(document).on('ready', function () {
 	$('img').each(function () {
