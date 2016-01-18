@@ -860,7 +860,7 @@ section#subscriber .input-area input:-moz-placeholder {
 	font-family: "Gotham Pro", sans-serif;
 	font-size: 39px;
 	font-weight: 300;
-	line-height: 44px;
+	/*line-height: 44px;*/
 	opacity: 0.8;
 	vertical-align: middle;
 }
@@ -870,7 +870,7 @@ section#subscriber .input-area input::-moz-placeholder {
 	font-family: "Gotham Pro", sans-serif;
 	font-size: 39px;
 	font-weight: 300;
-	line-height: 44px;
+	/*line-height: 44px;*/
 	opacity: 0.8;
 	vertical-align: middle;
 }

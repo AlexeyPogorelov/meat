@@ -388,17 +388,17 @@
 	section#subscriber .input-area input::-webkit-input-placeholder {
 		line-height: 25px;
 	}
-	section#subscriber .input-area input:-moz-placeholder {
-		line-height: 25px;
-	}
-	section#subscriber .input-area input::-moz-placeholder {
-		line-height: 25px;
-	}
+	section#subscriber .input-area input:-moz-placeholder {}
+	section#subscriber .input-area input::-moz-placeholder {}
 	section#subscriber .input-area input:-ms-input-placeholder {
 		line-height: 25px;
 	}
 
 
+	#frame-logo {
+		height: 226px;
+		width: 226px;
+	}
 	#frame-logo .blick {
 		display: none;
 	}
@@ -652,8 +652,9 @@
 		margin-left: -10px;
 	}
 	section#main-presentation h1 {
-		margin-top: 70px;
-		margin-left: -10px;
+		margin-top: 40px;
+		margin-left: -6px;
+		font-size: 49px;
 	}
 	section#main-presentation {
 		height: auto;
@@ -662,11 +663,15 @@
 	}
 	section#main-presentation .content-holder .container {
 		text-align: center;
+		width: calc(100% - 120px);
 	}
 	section#main-presentation .left-side {
 		display: inline-block;
-		margin-top: 59px;
+		margin-top: 164px;
 		/*min-width: 50%*/
+	}
+	section#main-presentation .right-side {
+		margin-top: 167px;
 	}
 	section#main-presentation .left-side img {
 		position: static;
@@ -677,6 +682,7 @@
 		display: inline-block;
 		margin-left: 0;
 		margin-right: 0;
+		max-width: 426px;
 		/*min-width: 50%*/
 	}
 	section#subscriber .input-area input {
@@ -712,7 +718,7 @@
 		max-width: 380px;
 	}
 	section#subscriber .description-holder {
-		padding: 46px 28px 0;
+		padding: 40px 28px 0;
 	}
 	section#subscriber .input-area form {
 		width: 100%;
@@ -970,25 +976,35 @@
 		height: auto;
 		width: calc(100% - 60px);
 	}
+	.fadeInRight {
+		-webkit-animation: none;
+		-o-animation: none;
+		animation: none;
+	}
 	section#main-presentation .left-side,
 	section#main-presentation .right-side {
 		min-width: 50%;
-		float: none;
+		margin-top: 76px;
+		/*float: none;*/
 	}
 	section#main-presentation h3 {
 		font-size: 19px;
 		line-height: 20px;
 		margin-left: 0;
 		margin-right: 0;
-		padding: 16px 14px 34px 34px;
+		padding: 16px 14px 34px 0;
 		text-align: left;
 	}
 	section#main-presentation h1 {
 		font-size: 32px;
 		line-height: 38px;
-		margin-top: 40px;
-		padding-left: 32px;
-		padding-right: 32px;
+		margin-top: 22px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	section#main-presentation .content-holder .container {
+		text-align: center;
+		width: calc(100% - 60px);
 	}
 	section#capabilities-slider .slider-viewport {}
 	section#capabilities-slider .slide {}
@@ -1089,5 +1105,29 @@
 	}
 	#main-modal a.buttom-holder {
 		position: static;
+	}
+}
+
+@media screen and (max-width: 790px) {
+	#frame-logo {
+		height: auto;
+		width: 100%;
+	}
+	section#main-presentation .right-side {
+		margin-top: 0;
+		max-width: 400px;
+	}
+	section#main-presentation h1 {
+		/*font-size: 32px;*/
+		/*line-height: 38px;*/
+		/*margin-top: 70px;*/
+		/*margin-left: 20px;*/
+	}
+	section#main-presentation h3 {
+		/*font-size: 19px;*/
+		/*line-height: 20px;*/
+		/*margin-left: 20px;*/
+		margin-right: 0;
+		text-align: left;
 	}
 }

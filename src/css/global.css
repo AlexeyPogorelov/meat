@@ -392,20 +392,40 @@ input[type='number'] {
 }
 .preloader {
 	background-color: #f41f52;
+	/*background: none !important;*/
 	position: fixed;
 	height: 100%;
 	width: 100%;
 	z-index: 999;
 }
+.preloader:before,
+.preloader > .after {
+	background: #f41f52;
+	content: "";
+	height: 4px;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+.preloader > .after {
+	background: #4d2ce0;
+	width: 10px;
+	-webkit-transition: width .3s;
+	transition: width .3s;
+}
 .preloader.blue {
 	background-color: #4d2ce0;
+}
+.preloader.blue:before {
+	background-color: #4d2ce0;
+}
+.preloader.blue > .after {
+	background-color: #f41f52;
 }
 .preloader img {
 	position: absolute;
 	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	top: 50%;
 	left: 50%;
@@ -413,9 +433,6 @@ input[type='number'] {
 .preloader svg {
 	position: absolute;
 	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	top: 50%;
 	left: 50%;
@@ -427,9 +444,6 @@ input[type='number'] {
 	font-size: 40px;
 	position: absolute;
 	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 	top: 50%;
 	left: 50%;
@@ -452,7 +466,7 @@ input[type='number'] {
 	display: block;
 }
 .nowrap {
-	white-space: normal;
+	white-space: nowrap;
 }
 /*	TABLE	*/
 .table {
@@ -520,6 +534,10 @@ input[type='number'] {
 	/*transition-delay: 1s;*/
 	z-index: 2;
 }
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after,
 .content-holder:before,
 .content-holder:after {
 	content: "";
@@ -527,8 +545,6 @@ input[type='number'] {
 	clear: both;
 }
 
-.clearfix:before,
-.clearfix:after,
 section:before,
 section:after,
 .row:before,
@@ -540,10 +556,8 @@ section:after,
   display: table;
   content: " ";
 }
-.clearfix:after,
 section:after,
 .row:after,
-.container:after,
 .container-fluid:after,
 .nav:after,
 .navbar:after {

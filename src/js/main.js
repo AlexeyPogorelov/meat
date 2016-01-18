@@ -2,10 +2,19 @@ var loading = {
 		avgTime: 3000,
 		trg: 1,
 		state: 0,
+		preloader: $('body > .preloader'),
 		loaded: function () {
-			if(++this.state == this.trg) {
-				this.done();
+			if(++loading.state == loading.trg) {
+				loading.status(1);
+				loading.done();
+			} else {
+				loading.status(loading.state / loading.trg / 1.1);
 			}
+		},
+		status: function (mult) {
+			loading.preloader.find('> .after').css({
+				'width': mult * 100 + '%'
+			});
 		},
 		done: function () {
 			// setInterval();
@@ -17,8 +26,13 @@ var loading = {
 			$('#experience').find('> .container > *').addClass('wow fadeInUp');
 			$('#about-text').find('> .container > *').addClass('wow fadeInUp');
 			$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
-			$('#blog-articles').find('> .container .article').addClass('wow fadeInUp');
-			$('#works-articles').find('> .container .article').addClass('wow fadeInUp');
+			$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
+				$(this).addClass('wow fadeInUp').css({
+					'animation-delay': 300 + 'ms',
+					'-webkit-animation-delay': 300 + 'ms'
+				});
+			});
+			$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
 			$('.blog-item-page.top').addClass('wow fadeInUp');
 			$('#works-item-header').find('> .container > *').each(function (i) {
 				$(this).css({
@@ -32,10 +46,12 @@ var loading = {
 			$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
 
 			// hide preloader
-			this.preloader = $('body > .preloader');
 			this.preloader.animate({
 				'opacity': 0
 			}, 600, 'easeOutQuint', function () {
+				$(this).find('.after').css({
+					'width': 2
+				});
 				$(this).detach();
 			});
 		}
@@ -45,6 +61,12 @@ $(window).on('load', function () {
 	loading.loaded();
 });
 $(document).on('ready', function () {
+	$('img').each(function () {
+		if (!this.naturalHeight) {
+			loading.trg ++;
+			$(this).one('load', loading.loaded)
+		}
+	});
 	var winWidth = $(window).width(),
 		winHeight = $(window).height(),
 		bodyOverflow = {
@@ -154,7 +176,7 @@ $(document).on('ready', function () {
 		if (href == '#contact') {
 			e.preventDefault();
 			$self.closest('.opened').removeClass('opened');
-			$('html, body').one('mousewheel touchstart', function () {
+			$('html, body').one('mousewheel DOMMouseScroll touchstart', function () {
 				$(this).stop(true, true);
 				bodyOverflow.unfixBody();
 			});
