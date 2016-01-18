@@ -622,8 +622,10 @@ button:focus,
 	-webkit-transition: opacity .3s ease-out, transform .2s, visibility .4s;
 	transition: opacity .3s ease-out, transform .2s, visibility .4s;
 }
+#main-modal.modal-holder a.close-modal,
 .modal-holder .close-modal {
 	cursor: pointer;
+	display: block;
 	height: 35px;
 	opacity: .7;
 	position: absolute;
@@ -634,6 +636,10 @@ button:focus,
 	transform: rotate(45deg);
 	-webkit-transition: opacity .1s;
 	transition: opacity .1s;
+}
+#main-modal.modal-holder a.close-modal:after,
+.modal-holder .close-modal:after {
+	display: none;
 }
 .modal-holder .close-modal:hover {
 	opacity: 1;

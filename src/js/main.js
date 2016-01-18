@@ -220,7 +220,11 @@ $(document).on('ready', function () {
 	});
 	$('.modal-holder').on('click', function (e) {
 		if (this == e.target) {
-			$(this).removeClass('opened');
+			if ($(this).attr('target')) {
+				document.location = $(this).attr('target');
+			} else {
+				$(this).removeClass('opened');
+			}
 		}
 	});
 	$('.close-modal').on('click', function () {
