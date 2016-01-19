@@ -49,7 +49,7 @@ var loading = {
 			}
 			var wow = new WOW(
 				{
-					boxClass: 'load-more',
+					boxClass: 'button-holder',
 					animateClass: '',
 					offset: 0,
 					mobile: true,
@@ -73,9 +73,7 @@ var loading = {
 			loading.preloader.animate({}).delay(100).animate({
 				'opacity': 0
 			}, 600, 'easeOutQuint', function () {
-				$(this).find('.after').css({
-					'width': 2
-				});
+				loading.status(0);
 				$(this).detach();
 				loading.finished = true;
 			});
@@ -207,6 +205,7 @@ $(document).on('ready', function () {
 	$('nav, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
 		var $self = $(this);
 		var href = $self.attr('href');
+		loading.status(0);
 		if (href == '#contact') {
 			e.preventDefault();
 			$self.closest('.opened').removeClass('opened');
@@ -293,7 +292,9 @@ $(document).on('ready', function () {
 		this.each(function (i) {
 
 			var DOM = {},
-				state = {},
+				state = {
+					'touchStart': {}
+				},
 				self = this;
 
 			// options
@@ -339,7 +340,6 @@ $(document).on('ready', function () {
 										max = width;
 									}
 								});
-								console.log(max);
 								return max;
 							})(DOM.$slides) + 26
 						);
@@ -407,21 +407,19 @@ $(document).on('ready', function () {
 
 			// drag events
 			DOM.$slider.on('touchstart', function (e) {
-				state.touchStart = e;
+				state.touchStart.xPos = e.originalEvent.touches[0].clientX;
+				state.touchStart.timeStamp = e.timeStamp;
 			});
 			DOM.$slider.on('touchmove', function (e) {
-				state.touchEnd = e;
-			});
-			DOM.$slider.on('touchend', function (e) {
 				var distance = 150,
 					speed = 200,
-					delta = state.touchEnd.originalEvent.targetTouches[0].pageX - state.touchStart.originalEvent.targetTouches[0].pageX,
-					time = state.touchEnd.timeStamp - state.touchStart.timeStamp;
+					delta = e.originalEvent.touches[0].clientX - state.touchStart.xPos,
+					time = e.timeStamp - state.touchStart.timeStamp;
 				// console.log('-----');
-				// console.log(e);
-				// console.log(state.touchStart.originalEvent.targetTouches[0].pageX);
-				// console.log(state.touchEnd.originalEvent.targetTouches[0].pageX);
-				if (delta > distance || -delta > distance) {
+				// console.log(time);
+				// console.log(state.touchEnd.originalEvent.touches[0].clientX);
+				// console.log(state.touchStart.originalEvent.touches[0].clientX);
+				if (delta > distance || -delta > distance && time < speed) {
 					if (delta < 0) {
 						plg.nextSlide();
 					} else {
