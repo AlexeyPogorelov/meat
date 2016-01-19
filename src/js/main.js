@@ -293,7 +293,8 @@ $(document).on('ready', function () {
 
 			var DOM = {},
 				state = {
-					'touchStart': {}
+					'touchStart': {},
+					'touchEnd': {}
 				},
 				self = this;
 
@@ -416,19 +417,27 @@ $(document).on('ready', function () {
 			// drag events
 			DOM.$slider.on('touchstart', function (e) {
 				state.touchStart.xPos = e.originalEvent.touches[0].clientX;
+				state.touchStart.yPos = e.originalEvent.touches[0].clientY;
 				state.touchStart.timeStamp = e.timeStamp;
 			});
 			DOM.$slider.on('touchmove', function (e) {
-				var distance = 80,
+				state.touchEnd.xPos = e.originalEvent.touches[0].clientX;
+				state.touchEnd.yPos = e.originalEvent.touches[0].clientY;
+			});
+			DOM.$slider.on('touchend', function (e) {
+				var distance = 70,
 					speed = 200,
-					delta = e.originalEvent.touches[0].clientX - state.touchStart.xPos;
+					deltaX = state.touchEnd.xPos - state.touchStart.xPos,
+					deltaY = Math.abs(state.touchEnd.yPos - state.touchStart.yPos);
 					// time = e.timeStamp - state.touchStart.timeStamp;
 				// console.log('-----');
 				// console.log(time);
+				// console.log(deltaX);
+				// console.log((deltaY));
 				// console.log(state.touchEnd.originalEvent.touches[0].clientX);
 				// console.log(state.touchStart.originalEvent.touches[0].clientX);
-				if (delta > distance || -delta > distance) {
-					if (delta < 0) {
+				if (deltaX > distance || -deltaX > distance && deltaY < 30) {
+					if (deltaX < 0) {
 						plg.nextSlide();
 					} else {
 						plg.prevSlide();
