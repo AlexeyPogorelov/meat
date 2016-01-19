@@ -17,7 +17,6 @@ var loading = {
 			});
 		},
 		done: function () {
-			// setInterval();
 			if (loading.finished) {
 				return;
 			}
@@ -33,6 +32,12 @@ var loading = {
 					$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
 				}
 				$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
+					$(this).one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
+						$(this).removeClass('wow fadeInUp').css({
+							'animation': 'none',
+							'-webkit-animation': 'none'
+						});
+					});
 					$(this).addClass('wow fadeInUp').css({
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
@@ -212,7 +217,7 @@ $(document).on('ready', function () {
 			} else {
 				loading.preloader.removeClass('blue');
 			}
-			loading.preloader.insertBefore('body').animate({
+			loading.preloader.insertAfter('body').animate({
 				'opacity': 1
 			}, 200, function () {
 				document.location.href = href;
@@ -443,16 +448,15 @@ $(document).on('ready', function () {
 					plg.renderElement(xmult, ymult);
 				},
 				mouseleave: function () {
-					if ($.browser.safari) {
-						plg.renderElement(0.5, 0.5, -40);
-					} else {
-						plg.renderElement(0.5, 0.5);
-					}
+					plg.renderElement(0.5, 0.5);
 				},
 				click: function () {
-					$self.parent().parent().find('a').css({
-						"-webkit-transform": "none",
-						"transform": "none"
+					// $self.parent().parent().find('a').css({
+					// 	"-webkit-transform": "none",
+					// 	"transform": "none"
+					// });
+					$self.parent().parent().find('.blick').css({
+						'display': 'none'
 					});
 				},
 				renderElement: function (x, y, z) {

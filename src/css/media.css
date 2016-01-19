@@ -373,7 +373,9 @@
 	section#subscriber .input-area input:-ms-input-placeholder {
 		line-height: 25px;
 	}
-
+	.client-safari section#subscriber.focused .input-area .subscribe-button {
+		top: 8px;
+	}
 	#frame-logo {
 		height: 226px;
 		width: 226px;
