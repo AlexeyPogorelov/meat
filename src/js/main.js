@@ -29,7 +29,9 @@ var loading = {
 				$('#devices').find('> .content-holder > .container > *').addClass('wow fadeInUp');
 				$('#experience').find('> .container > *').addClass('wow fadeInUp');
 				$('#about-text').find('> .container > *').addClass('wow fadeInUp');
-				$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
+				if (!$.browser.safari) {
+					$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
+				}
 				$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
 					$(this).addClass('wow fadeInUp').css({
 						'animation-delay': 300 + 'ms',
@@ -448,7 +450,7 @@ $(document).on('ready', function () {
 					}
 				},
 				click: function () {
-					$self.find('a').css({
+					$self.parent().parent().find('a').css({
 						"-webkit-transform": "none",
 						"transform": "none"
 					});

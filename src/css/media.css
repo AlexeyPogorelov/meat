@@ -759,7 +759,7 @@
 	section#subscriber {
 		padding-left: 60px;
 	}
-	
+
 	section#works-articles .articles-holder .article {
 		width: 256px;
 		margin: 0 16px 44px;
@@ -767,6 +767,9 @@
 	section#works-articles .articles-holder .article .image-holder {
 		height: 256px;
 		width: 256px;
+	}
+	section#works-articles .load-more {
+		margin-top: 70px;
 	}
 	section#works-item ~ #works-articles {
 		padding-top: 113px;

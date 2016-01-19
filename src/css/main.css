@@ -1957,7 +1957,7 @@ section#works-item .blockquote-holder .image-holder img {
 	font-weight: 700;
 	line-height: 64px;
 	text-align: center;
-	padding: 10px 24px;
+	padding: 10px 0;
 }
 .mobile-menu li.active a {
 	color: #f41f52;
