@@ -1,5 +1,15 @@
 
 /*
+	X LARGE
+*/
+@media screen and (min-width: 1664px) {
+	nav.main-navigation .navigation-links li {
+		margin-right: 320px;
+	}
+}
+
+
+/*
 	LARGE
 */
 @media screen and (min-width: 1420px) {
@@ -44,37 +54,6 @@
 		height: 565px;
 		width: 565px;
 	}
-
-/* TODO */
-/*	section#portfolio-presentation .portfolio-item.type-1 {
-		margin-left: 0;
-		height: 490px;
-		width: 490px;
-	}
-	section#portfolio-presentation .portfolio-item.type-2 {
-		margin-left: 65px;
-		height: 490px;
-		width: 490px;
-	}
-	section#portfolio-presentation .portfolio-item.type-3 {
-		margin-left: 30px;
-		margin-top: 63px;
-		height: 420px;
-		width: 420px;
-	}
-	section#portfolio-presentation .portfolio-item.type-3 img {
-		width: 280px;
-	}
-	section#portfolio-presentation .portfolio-item.type-4 img {
-		width: 419px;
-	}
-	section#portfolio-presentation .portfolio-item.type-4 {
-		margin-left: 65px;
-		margin-top: 63px;
-		height: 558px;
-		width: 558px;
-	}*/
-	/* END portfol */
 
 	section#capabilities {
 		padding-bottom: 140px;
@@ -135,6 +114,12 @@
 		/*padding-left: 112px;*/
 		margin-left: 0;
 	}
+	section#subscriber .description-holder {
+		padding-top: 44px;
+	}
+	section#subscriber .description-holder h4 {
+		max-width: 100%;
+	}
 	section#works-item ~ #works-articles {
 		padding-top: 558px;
 	}
@@ -182,10 +167,10 @@
 		padding-top: 100px;
 	}
 	nav.main-navigation .navigation-links li {
-		margin-right: 236px;
+		/*margin-right: 236px;*/
 	}
 	nav.main-navigation .container {
-		max-width: 1364px;
+		max-width: 1664px;
 		width: auto;
 	}
 	#underconstruction .presentation .main-logo-holder {
@@ -198,6 +183,9 @@
 	section#works-item-header {
 		font-size: 34px;
 		font-weight: 100;
+	}
+	section#blog-articles .articles-holder .article {
+		margin: 0 48px 135px;
 	}
 /*	nav.footer-navigation .socials {
 		padding-left: 76px;
@@ -251,10 +239,6 @@
 	}
 	section#subscriber .container {
 		/*width: auto;*/
-	}
-	section#subscriber .description-holder h4 {
-		font-size: 32px;
-		line-height: 34px;
 	}
 	section#main-presentation .content-holder .container {
 		max-width: 800px;
@@ -346,10 +330,6 @@
 		line-height: 40px;
 		font-size: 18px;
 	}
-	section#blog-item ~ #blog-articles {
-		padding-top: 62px;
-		padding-bottom: 96px;
-	}
 }
 /*
 	MOBILE
@@ -393,7 +373,6 @@
 	section#subscriber .input-area input:-ms-input-placeholder {
 		line-height: 25px;
 	}
-
 
 	#frame-logo {
 		height: 226px;
@@ -466,6 +445,14 @@
 		padding-top: 62px;
 		padding-bottom: 96px;
 	}
+
+	section#blog-item ~ #blog-articles {
+		padding-top: 62px;
+		padding-bottom: 96px;
+	}
+	section#blog-articles .container {
+		width: calc(100% - 120px);
+	}
 	section#blog-item ~ #blog-articles {
 		padding-top: 62px;
 		padding-bottom: 96px;
@@ -473,19 +460,29 @@
 	section#blog-header {
 		padding-top: 48px;
 	}
+	section#blog-articles .articles-holder {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	section#blog-articles .articles-holder .button-holder button {
+		margin-top: 60px;
+	}
 	section#blog-articles .articles-holder .article {
 		margin: 0 0 35px;
 	}
+	section#blog-articles .articles-holder .article:nth-child(even) {
+		float: right;
+	}
 	section#blog-articles .articles-holder .article .image-holder {
 		height: auto;
-		width: 256px;
+		width: 100%;
 	}
 	section#blog-articles .articles-holder .article {
 		-webkit-box-shadow: 0 46px 75px -35px rgba(0,0,0,.9);
 		box-shadow: 0 46px 75px -35px rgba(0,0,0,.9);
-		margin-left: 10px;
-		margin-right: 10px;
-		width: 256px;
+		margin-left: 0;
+		margin-right: 0;
+		/*width: calc(50% - 30px);*/
 	}
 
 	section#blog-item .blog-item-page:first-child {
@@ -718,7 +715,7 @@
 		max-width: 380px;
 	}
 	section#subscriber .description-holder {
-		padding: 40px 28px 0;
+		padding: 46px 28px 0;
 	}
 	section#subscriber .input-area form {
 		width: 100%;
@@ -745,7 +742,7 @@
 		display: none;
 	}
 	section#subscriber.focused .input-area input {
-		padding: 0 0 0 28px;
+		padding: 0 90px 0 28px;
 	}
 	section#subscriber .input-area .subscribe-button {
 		background: #4D2CE0;
@@ -756,9 +753,13 @@
 	section#subscriber .input-area img {
 		display: none;
 	}
+	.client-safari section#subscriber.focused .input-area .subscribe-button {
+		top: 0;
+	}
 	section#subscriber {
 		padding-left: 60px;
 	}
+	
 	section#works-articles .articles-holder .article {
 		width: 256px;
 		margin: 0 16px 44px;
@@ -1079,7 +1080,6 @@
 	section#devices img {
 		width: 260px;
 		margin-left: 32px;
-		margin-right: 32px;
 	}
 	section#experience .main-image-holder {
 		padding: 35px;
@@ -1089,31 +1089,6 @@
 	}
 	section#subscriber {
 		padding-left: 32px;
-	}
-}
-/*
-	xSMALL
-*/
-@media screen and (max-width: 481px) {
-	section#capabilities-slider .slide {
-		width: 256px;
-	}
-	section#main-presentation h3 {
-		font-size: 19px;
-		line-height: 20px;
-		margin-left: 0;
-		margin-right: 0;
-		padding: 16px 14px 34px 0;
-		text-align: left;
-	}
-	section#main-presentation h1 {
-		font-size: 32px;
-		line-height: 38px;
-		margin-top: 22px;
-		margin-left: 0;
-		margin-right: 0;
-		padding-left: 0;
-		padding-right: 0;
 	}
 }
 
@@ -1164,5 +1139,70 @@
 		/*margin-left: 20px;*/
 		margin-right: 0;
 		text-align: left;
+	}
+
+	section#blog-articles .container {
+		width: 100%;
+	}
+	section#blog-articles .articles-holder .article:nth-child(even),
+	section#blog-articles .articles-holder .article {
+		display: inline-block;
+		float: none;
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+	section#works-articles .articles-holder .article .image-holder {
+		height: 316px;
+		width: 316px;
+	}
+	section#works-articles .articles-holder .article {
+		width: 316px;
+	}
+}
+
+/*
+	xSMALL
+*/
+@media screen and (max-width: 479px) {
+	section#capabilities-slider .slide {
+		width: 256px;
+	}
+	section#main-presentation h3 {
+		font-size: 19px;
+		line-height: 20px;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 16px 14px 34px 0;
+		text-align: left;
+	}
+	section#main-presentation h1 {
+		font-size: 32px;
+		line-height: 38px;
+		margin-top: 22px;
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	section#blog-articles .articles-holder .article:nth-child(even),
+	section#blog-articles .articles-holder .article {
+		margin-left: 0;
+		margin-right: 0;
+		/*width: 256px;*/
+	}
+}
+@media screen and (max-width: 374px) {
+	section#works-articles .articles-holder .article {
+		width: 256px;
+	}
+	section#works-articles .articles-holder .article .image-holder {
+		height: 256px;
+		width: 256px;
+	}
+	section#blog-articles .articles-holder .article:nth-child(even),
+	section#blog-articles .articles-holder .article {
+		margin-left: 0;
+		margin-right: 0;
+		width: 256px;
 	}
 }

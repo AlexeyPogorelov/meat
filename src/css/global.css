@@ -350,6 +350,14 @@ input[type='number'] {
 	vertical-align: middle;
 	width: 100%;
 }
+.button-holder:after,
+.button-holder:before {
+	content: "";
+	clear: both;
+	display: table;
+}
+.button-holder {}
+
 /*	LIGHTBOX	*/
 
 .lightbox-holder::-webkit-scrollbar {
@@ -396,7 +404,14 @@ input[type='number'] {
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	z-index: 999;
+	z-index: 9999;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.client-safari .preloader {
+	-webkit-transform: translateZ(800px);
+	transform: translateZ(800px);
+	z-index: 999999;
 }
 .preloader:before,
 .preloader > .after {
@@ -411,8 +426,8 @@ input[type='number'] {
 .preloader > .after {
 	background: #4d2ce0;
 	width: 10px;
-	-webkit-transition: width .3s;
-	transition: width .3s;
+	-webkit-transition: width .5s;
+	transition: width .5s;
 }
 .preloader.blue {
 	background-color: #4d2ce0;
@@ -422,6 +437,9 @@ input[type='number'] {
 }
 .preloader.blue > .after {
 	background-color: #f41f52;
+	-webkit-transition: width .6s;
+	-o-transition: width .6s;
+	transition: width .6s;
 }
 .preloader img {
 	position: absolute;

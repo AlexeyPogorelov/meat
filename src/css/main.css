@@ -109,7 +109,7 @@ nav .socials li a:hover {
 	color: #f41f52;
 }
 nav.main-navigation .container {
-		max-width: 940px;
+		/*max-width: 940px;*/
 }
 nav.main-navigation {
 	padding: 20px 20px 0;
@@ -119,6 +119,7 @@ nav.main-navigation li {
 }
 nav.main-navigation .navigation-links li {
 	margin-right: 140px;
+	margin-right: calc(25vw - 112px);
 }
 nav.main-navigation .navigation-links li:last-child {
 	margin-right: 0;
@@ -331,7 +332,7 @@ section#main-presentation .left-side img {
 }
 section#main-presentation .right-side {
 	display: inline-block;
-	margin-top: 57px;
+	margin-top: 76px;
 	margin-left: -8px;
 	max-width: 509px;
 	vertical-align: middle;
@@ -775,7 +776,7 @@ section#subscriber .input-area .subscribe-button {
 }
 section#subscriber.focused .input-area .subscribe-button {
 	opacity: 1;
-	background: rgba(77,44,254,1);
+	background: #4d2ce0;
 	pointer-events: all;
 	-webkit-transition: all .3s ease-out;
 	transition: all .3s ease-out;
@@ -885,35 +886,29 @@ section#subscriber .input-area input:-ms-input-placeholder {
 	opacity: 0.8;
 	vertical-align: middle;
 }
-section#subscriber .input-area input:focus::-webkit-input-placeholder {
-	color: white;
+section#subscriber.focused .input-area input::-webkit-input-placeholder {
+	color: #fff;
 }
-
-section#subscriber .input-area input:focus:-moz-placeholder {
-	color: white;
+section#subscriber.focused .input-area input:-moz-placeholder {
+	color: #fff;
 }
-
-section#subscriber .input-area input:focus::-moz-placeholder {
-	color: white;
+section#subscriber.focused .input-area input::-moz-placeholder {
+	color: #fff;
 }
-
-section#subscriber .input-area input:focus:-ms-input-placeholder {
-	color: white;
+section#subscriber.focused .input-area input:-ms-input-placeholder {
+	color: #fff;
 }
-section#subscriber .input-area input:hover::-webkit-input-placeholder {
-	color: white;
+section#subscriber .input-area:hover input::-webkit-input-placeholder {
+	color: #fff;
 }
-
-section#subscriber .input-area input:hover:-moz-placeholder {
-	color: white;
+section#subscriber .input-area:hover input:-moz-placeholder {
+	color: #fff;
 }
-
-section#subscriber .input-area input:hover::-moz-placeholder {
-	color: white;
+section#subscriber .input-area:hover input::-moz-placeholder {
+	color: #fff;
 }
-
-section#subscriber .input-area input:hover:-ms-input-placeholder {
-	color: white;
+section#subscriber .input-area:hover input:-ms-input-placeholder {
+	color: #fff;
 }
 section#subscriber .description-holder {
 	background-color: #4d2ce0;
@@ -922,7 +917,7 @@ section#subscriber .description-holder {
 	font-weight: 700;
 	height: 224px;
 	line-height: 57px;
-	padding: 54px 35px 0 70px;
+	padding: 24px 35px 0 70px;
 	position: relative;
 }
 section#subscriber .description-holder:before {
@@ -974,6 +969,9 @@ section#subscriber .description-holder a:hover:before {
 	transform: translateY(0);
 	-webkit-transition: opacity .1s, transform .1s;
 	transition: opacity .1s, transform .1s;
+}
+section#subscriber .description-holder h4 {
+	max-width: 700px;
 }
 /* END SUBSCRIBER */
 
@@ -1223,16 +1221,19 @@ section#blog-articles {
 	padding-bottom: 96px;
 }
 section#blog-articles .container {
-	max-width: 1440px;
-	width: auto;
+/*	max-width: 1440px;
+	width: auto;*/
 }
 section#blog-articles .articles-holder {
 	text-align: center;
+	margin-left: -48px;
+	margin-right: -48px;
 }
 section#blog-articles .articles-holder .article {
 	background: #fff;
-	display: inline-block;
-	margin: 0 48px 135px;
+	/*display: inline-block;*/
+	float: left;
+	margin: 0 64px 135px;
 	text-align: left;
 	width: 320px;
 	-webkit-box-shadow: 0 44px 65px -20px rgba(0,0,0,.3);
@@ -1327,8 +1328,8 @@ section#blog-item ul.socials {
 	position: absolute;
 	right: -62px;
 	top: 0;
-	-webkit-transition: top .1s;
-	transition: top .1s;
+	-webkit-transition: top .2s;
+	transition: top .2s;
 	z-index: 1;
 }
 section#blog-item ul.socials li {
@@ -1341,6 +1342,7 @@ section#blog-item ul.socials li {
 }
 section#blog-item ul.socials li a {
 	display: inline-block;
+	color: #656565;
 	line-height: 58px;
 	vertical-align: middle;
 	width: 100%;
@@ -1537,6 +1539,8 @@ section#works-articles .articles-holder {
 }
 section#works-articles .articles-holder a {
 	display: block;
+	position: relative;
+	-webkit-transform-origin: 50%;
 	transform-origin: 50%;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
@@ -1673,8 +1677,8 @@ section#works-item ul.socials {
 	right: -62px;
 	top: 0;
 	z-index: 1;
-	-webkit-transition: top .1s;
-	transition: top .1s;
+	-webkit-transition: top .2s;
+	transition: top .2s;
 }
 section#works-item ul.socials li {
 	background: #fff;
@@ -1849,9 +1853,10 @@ section#works-item .blockquote-holder .image-holder img {
 	background: none;
 	cursor: pointer;
 	overflow: auto;
+	padding: 10px;
 	position: fixed;
-	top: 26px;
-	left: 32px;
+	top: 16px;
+	left: 22px;
 	z-index: 2;
 }
 .navbar-toggle .icon-bar {
@@ -1952,6 +1957,7 @@ section#works-item .blockquote-holder .image-holder img {
 	font-weight: 700;
 	line-height: 64px;
 	text-align: center;
+	padding: 10px 24px;
 }
 .mobile-menu li.active a {
 	color: #f41f52;
@@ -2021,3 +2027,30 @@ section#works-item .blockquote-holder .image-holder img {
 	transform: translateX(-50%);
 }
 /* END MAIN-POPUP */
+
+
+/* FIXES */
+.client-safari {}
+.client-safari section#subscriber.focused .input-area .subscribe-button {
+	top: 8px;
+}
+.client-ios {}
+.client-ios .wow {
+	-webkit-animation: none;
+	animation: none;
+}
+.client-ios section#subscriber.focused .input-area .subscribe-button {
+	top: 6px;
+}
+	
+@media screen and (min-width: 480px) {
+	.client-ios section#subscriber.focused .input-area .subscribe-button {
+		top: 0px;
+		bottom: auto;
+	}
+}
+.client-ios section#subscriber.focused .input-area .subscribe-button {
+	top: 6px;
+}
+.client-ie {}
+/* END FIXES */
