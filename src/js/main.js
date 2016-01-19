@@ -44,7 +44,7 @@ var loading = {
 					});
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
-				$('.blog-item-page.top').addClass('wow fadeInUp');
+				$('.blog-item-page.top').addClass('wow fadeInUpA');
 				new WOW().init();
 			}
 
@@ -151,9 +151,6 @@ $(document).on('ready', function () {
 					fixElement.resize();
 				});
 			}
-	// $('.full-height').css({
-	// 	'min-height': winHeight
-	// });
 
 
 	// perspective hover
@@ -190,7 +187,7 @@ $(document).on('ready', function () {
 	}).on('blur', function () {
 		var $self = $(this);
 		setTimeout(function () {
-			// $self.closest('#subscriber').removeClass('focused');
+			$self.closest('#subscriber').removeClass('focused');
 		}, 200);
 	});
 
@@ -217,11 +214,19 @@ $(document).on('ready', function () {
 			} else {
 				loading.preloader.removeClass('blue');
 			}
-			loading.preloader.insertAfter('body').animate({
-				'opacity': 1
-			}, 200, function () {
-				document.location.href = href;
-			});
+			if ($.browser.safari) {
+				loading.preloader.insertAfter('body > .page-wrapper').animate({
+						'opacity': 1
+					}, 200, function () {
+						document.location.href = href;
+				});
+			} else {
+				loading.preloader.insertBefore('body').animate({
+						'opacity': 1
+					}, 200, function () {
+						document.location.href = href;
+				});
+			}
 		}
 	});
 
@@ -261,9 +266,6 @@ $(document).on('ready', function () {
 	$(window).on('resize', function () {
 		winWidth = $(window).width();
 		winHeight = $(window).height();
-		// $('.full-height').css({
-		// 	'min-height': winHeight > 450 ? winHeight : 450
-		// });
 	});
 
 	// iOS fix
@@ -315,7 +317,20 @@ $(document).on('ready', function () {
 				},
 				resize: function () {
 					state.sliderWidth = DOM.$viewport.width();
-					DOM.$slides.width(DOM.$viewport.width() - 59)
+					DOM.$slides.width(DOM.$viewport.width() - 59);
+					DOM.$slides.height(
+							(function ($slides) {
+								var max = 1;
+								$slides.each(function () {
+									var width = $(this).find('> div').outerHeight();
+									if (width > max) {
+										max = width;
+									}
+								});
+								console.log(max);
+								return max;
+							})(DOM.$slides) + 26
+						);
 					state.slideWidth = DOM.$slides.eq(0).outerWidth() + 12;
 					DOM.$sliderHolder.width(state.slideWidth * state.activeSlides);
 				},

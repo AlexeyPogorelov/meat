@@ -452,7 +452,7 @@ section#capabilities-slider .slide {
 	display: block;
 	float: left;
 	margin-right: 12px;
-	padding: 46px 20px 26px 39px;
+	padding: 46px 30px 26px 39px;
 	text-align: left;
 	vertical-align: top;
 	width: 256px;
@@ -1258,6 +1258,10 @@ section#blog-articles .articles-holder .article:hover {
 	animation-delay: 0;
 	-webkit-transition-delay: 0;
 	transition-delay: 0;
+}
+section#blog-articles .articles-holder .article.wow:hover {
+	-webkit-transform: translateY(0) !important;
+	transform: translateY(0) !important;
 }
 section#blog-articles .articles-holder .article * {
 	pointer-events: none;
