@@ -47,6 +47,18 @@ var loading = {
 				$('.blog-item-page.top').addClass('wow fadeInUpA');
 				new WOW().init();
 			}
+			var wow = new WOW(
+				{
+					boxClass: 'load-more',
+					animateClass: '',
+					offset: 0,
+					mobile: true,
+					callback: function(box) {
+						$('load-more').trigger('click');
+					}
+				}
+			);
+			wow.init();
 
 			$('#works-item-header').find('> .container > *').each(function (i) {
 				$(this).css({
