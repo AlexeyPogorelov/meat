@@ -54,7 +54,7 @@ var loading = {
 					offset: 0,
 					mobile: true,
 					callback: function(box) {
-						$('load-more').trigger('click');
+						$('#paginate').trigger('click');
 					}
 				}
 			);
@@ -363,9 +363,12 @@ $(document).on('ready', function () {
 					this.toSlide(id);
 				},
 				toSlide: function (id) {
+					// DOM.$sliderHolder.css({
+					// 	'-webkit-transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)',
+					// 	'transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)'
+					// });
 					DOM.$sliderHolder.css({
-						'-webkit-transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)',
-						'transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)'
+						'left': -(state.slideWidth * opt.slidesOnPage * id)
 					});
 					DOM.$pagination.find('.page').eq(id).addClass('active').siblings().removeClass('active');
 					state.cur = id;
@@ -411,15 +414,15 @@ $(document).on('ready', function () {
 				state.touchStart.timeStamp = e.timeStamp;
 			});
 			DOM.$slider.on('touchmove', function (e) {
-				var distance = 150,
+				var distance = 50,
 					speed = 200,
-					delta = e.originalEvent.touches[0].clientX - state.touchStart.xPos,
-					time = e.timeStamp - state.touchStart.timeStamp;
+					delta = e.originalEvent.touches[0].clientX - state.touchStart.xPos;
+					// time = e.timeStamp - state.touchStart.timeStamp;
 				// console.log('-----');
 				// console.log(time);
 				// console.log(state.touchEnd.originalEvent.touches[0].clientX);
 				// console.log(state.touchStart.originalEvent.touches[0].clientX);
-				if (delta > distance || -delta > distance && time < speed) {
+				if (delta > distance || -delta > distance) {
 					if (delta < 0) {
 						plg.nextSlide();
 					} else {

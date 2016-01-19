@@ -258,6 +258,20 @@
 	nav.footer-navigation .navigation-links {
 		display: none;
 	}
+	section#blog-articles .articles-holder {
+		margin-left: -20px;
+		margin-right: -20px;
+	}
+	section#blog-articles .articles-holder .article {
+		margin-left: 20px;
+		margin-right: 20px;
+		margin-bottom: 135px;
+		width: 240px;
+	}
+	section#blog-articles .articles-holder .article .image-holder {
+		height: 240px;
+		width: 240px;
+	}
 }
 /*--------------------------------------------------------------------------
 	TABLET
