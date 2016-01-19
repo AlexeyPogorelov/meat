@@ -363,13 +363,18 @@ $(document).on('ready', function () {
 					this.toSlide(id);
 				},
 				toSlide: function (id) {
-					// DOM.$sliderHolder.css({
-					// 	'-webkit-transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)',
-					// 	'transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)'
-					// });
 					DOM.$sliderHolder.css({
-						'left': -(state.slideWidth * opt.slidesOnPage * id)
-					});
+						'-webkit-transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)',
+						'transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)'
+					})
+					// .one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
+					// 	$(this).css({
+					// 		'left': 1
+					// 	});
+					// });
+					// DOM.$sliderHolder.css({
+					// 	'left': -(state.slideWidth * opt.slidesOnPage * id)
+					// });
 					DOM.$pagination.find('.page').eq(id).addClass('active').siblings().removeClass('active');
 					state.cur = id;
 				},
@@ -414,7 +419,7 @@ $(document).on('ready', function () {
 				state.touchStart.timeStamp = e.timeStamp;
 			});
 			DOM.$slider.on('touchmove', function (e) {
-				var distance = 50,
+				var distance = 80,
 					speed = 200,
 					delta = e.originalEvent.touches[0].clientX - state.touchStart.xPos;
 					// time = e.timeStamp - state.touchStart.timeStamp;
