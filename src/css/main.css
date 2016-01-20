@@ -489,7 +489,7 @@ section#capabilities-slider li:before {
 	display: inline-block;
 	float: left;
 	height: 7px;
-	margin-top: 9px;
+	margin-top: 6px;
 	margin-right: 16px;
 	vertical-align: top;
 	width: 7px;
@@ -1069,6 +1069,9 @@ section#subscriber .description-holder h4 {
 	text-align: center;
 }
 #works-item .facts-block .form-group a.link-type-1 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 	color: #4d2ce0;
 	font-size: 44px;
 	font-weight: 700;
@@ -1166,6 +1169,8 @@ section#subscriber .description-holder h4 {
 	font-weight: 400;
 	line-height: 17px;
 	vertical-align: top;
+	min-width: 140px;
+	display: inline-block;
 }
 #works-item .facts-block .form-group .link-type-1 {
 	margin-bottom: 49px;
@@ -1180,6 +1185,10 @@ section#subscriber .description-holder h4 {
 section#page-404 {
 	color: #000;
 	text-align: center;
+}
+section#page-404 .container {
+	overflow: hidden;
+	height: 100vh;
 }
 section#page-404 .logo {
 	display: inline-block;
@@ -1418,6 +1427,7 @@ section#blog-item .blog-item-page:last-child ul.socials {
 }
 section#blog-item iframe {
 	margin-bottom: 66px;
+	width: 100%;
 }
 section#blog-item h3 {
 	font-size: 30px;
@@ -1767,6 +1777,7 @@ section#works-item .blog-item-page:last-child ul.socials {
 }
 section#works-item iframe {
 	margin-bottom: 66px;
+	height: 490px;
 	width: 100%;
 }
 section#works-item h3 {
@@ -2077,7 +2088,7 @@ section#works-item .blockquote-holder .image-holder img {
 
 /* FIXES */
  .redactor-editor, .redactor-box {
-	 background: transparent;
+	 background: transparent !important;
  }
 
 .client-safari {}
@@ -2101,3 +2112,34 @@ section#works-item .blockquote-holder .image-holder img {
 }
 .client-ie {}
 /* END FIXES */
+
+/* POP-UPs */
+#result {}
+#result .error,
+#result .success {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(255, 255, 255, 0.7);
+	z-index: 9;
+}
+#result .success .content-helper,
+#result .error .content-helper {
+	background: rgba(255, 255, 255, 1);
+	position: absolute;
+	top: 70px;
+	bottom: 82px;
+	left: 32px;
+	right: 32px;
+}
+#result .error .content-holder,
+#result .success .content-holder {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+/* END POP-UPs */

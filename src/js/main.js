@@ -261,6 +261,13 @@ $(document).on('ready', function () {
 			$('.modal-holder').removeClass('opened');
 		}
 	});
+	$('#result').on('click', function () {
+		$(this).children().animate({
+			'opacity': 0
+		}, function () {
+			$(this).remove();
+		});
+	});
 
 	 //scroll
 	$(document).on('scroll', function () {
