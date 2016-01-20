@@ -458,7 +458,7 @@ section#capabilities-slider .slide {
 	text-align: left;
 	vertical-align: top;
 	width: 256px;
-	width: calc(50vw);
+	width: 50vw;
 
 	box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
 	-webkit-box-shadow: 0 24px 65px -20px rgba(0,0,0,.45);
@@ -2087,9 +2087,12 @@ section#works-item .blockquote-holder .image-holder img {
 
 
 /* FIXES */
- .redactor-editor, .redactor-box {
-	 background: transparent !important;
- }
+.redactor-editor, .redactor-box {
+	background: transparent !important;
+}
+.stripe-loading-indicator .stripe, .stripe-loading-indicator .stripe-loaded {
+	background: #4d2ce0 !important;
+}
 
 .client-safari {}
 .client-ios {}
@@ -2114,7 +2117,9 @@ section#works-item .blockquote-holder .image-holder img {
 /* END FIXES */
 
 /* POP-UPs */
-#result {}
+#result {
+	cursor: pointer;
+}
 #result .error,
 #result .success {
 	position: fixed;
@@ -2124,6 +2129,8 @@ section#works-item .blockquote-holder .image-holder img {
 	right: 0;
 	background: rgba(255, 255, 255, 0.7);
 	z-index: 9;
+	-webkit-animation: scaleInA .2s;
+	animation: scaleInA .2s;
 }
 #result .success .content-helper,
 #result .error .content-helper {
@@ -2137,6 +2144,7 @@ section#works-item .blockquote-holder .image-holder img {
 #result .error .content-holder,
 #result .success .content-holder {
 	position: absolute;
+	text-align: center;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translate(-50%, -50%);

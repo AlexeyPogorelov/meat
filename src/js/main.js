@@ -269,13 +269,39 @@ $(document).on('ready', function () {
 		});
 	});
 
-	 //scroll
+	// to top
+	var goUp = (function () {
+			var $el = $('#to-top');
+			var plg = {
+				up: function () {
+					$("html, body").stop().animate({scrollTop:0}, 900, 'swing');
+				},
+				show: function () {
+					$el.stop().fadeIn();
+				},
+				hide: function () {
+					$el.stop().fadeOut();
+				}
+			};
+			$el.on('click', function () {
+				plg.up();
+			});
+			$el.hide();
+			return plg;
+		})();
+
+	//scroll
 	$(document).on('scroll', function () {
 		var top = $(this).scrollTop();
 		if (top + winHeight > subscriberTop) {
 			if (!$('#paginate').data('status')) {
 				$('#paginate').attr('data-status', 'loading').trigger('click');
 			}
+		}
+		if (top > winHeight) {
+			goUp.show();
+		} else {
+			goUp.hide();
 		}
 	});
 

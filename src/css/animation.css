@@ -115,3 +115,32 @@
 		transform: translate(0, 0);
 	}
 }
+
+.scaleInA {
+	-webkit-animation-name: scaleInA;
+	animation-name: scaleInA;
+}
+@-webkit-keyframes scaleInA {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(2);
+		transform: scale(2);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
+@keyframes scaleInA {
+	from {
+		opacity: 0;
+		-webkit-transform: scale(2);
+		transform: scale(2);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: scale(1);
+		transform: scale(1);
+	}
+}
