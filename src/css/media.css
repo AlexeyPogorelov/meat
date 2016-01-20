@@ -149,7 +149,17 @@
 		padding-top: 18px;
 	}
 	.facts-block .blockquote-holder .image-holder {
+		height: 141px;
 		width: 141px;
+	}
+	.facts-block .blockquote-holder .content-holder .user-name {
+		margin-left: 178px;
+	}
+	.facts-block .blockquote-holder .content-holder .user-description {
+		margin-left: 178px;
+	}
+	.facts-block .blockquote-holder .content-holder .comment-holder {
+		margin-left: 178px;
 	}
 	.facts-block {
 		margin-top: 90px;
@@ -905,13 +915,24 @@
 		margin-bottom: 40px;
 	}
 	#works-item .facts-block .comment-holder p {
-		font-size: 15px;
+		font-size: 19px;
 		font-weight: 300;
-		line-height: 21px;
+		line-height: 27px;
 		margin-top: 25px;
 	}
 	section#works-item img {
 		margin-bottom: 0;
+	}
+	.facts-block .blockquote-holder .content-holder .user-name {
+		margin-left: 77px;
+	}
+	.facts-block .blockquote-holder .content-holder .user-description {
+		margin-left: 77px;
+		margin-bottom: 26px;
+	}
+	.facts-block .blockquote-holder .content-holder .comment-holder {
+		margin-top: 26px;
+		margin-left: 0;
 	}
 	#works-item .facts-block p.user-description {
 		line-height: 15px;
@@ -927,6 +948,8 @@
 		margin-bottom: 51px;
 	}
 	.facts-block .blockquote-holder .image-holder {
+		margin-top: -10px;
+		height: 65px;
 		width: 65px;
 	}
 	section#works-item table td,

@@ -995,6 +995,16 @@ section#subscriber .description-holder h4 {
 	height: 103px;
 	width: 103px;
 }
+.facts-block .blockquote-holder .content-holder {}
+.facts-block .blockquote-holder .content-holder .user-name {
+	margin-left: 130px;
+}
+.facts-block .blockquote-holder .content-holder .user-description {
+	margin-left: 130px;
+}
+.facts-block .blockquote-holder .content-holder .comment-holder {
+	margin-left: 130px;
+}
 .facts-block .fact {
 	width: 33.1%;
 	vertical-align: top;
@@ -1834,13 +1844,17 @@ section#works-item ~ #works-articles {
 
 /* BLOCKQUOTE */
 
-.blockquote-holder {}
+.blockquote-holder {
+	position: relative;
+}
 .blockquote-holder .image-holder {
-	float: left;
+	position: absolute;
 	width: 174px;
 }
 section#works-item .blockquote-holder .image-holder img {
 	vertical-align: top;
+	margin: 0;
+	padding: 0;
 }
 .blockquote-holder .user-name {
 	opacity: 0.8;
@@ -2048,6 +2062,10 @@ section#works-item .blockquote-holder .image-holder img {
 
 
 /* FIXES */
+ .redactor-editor, .redactor-box {
+	 background: transparent;
+ }
+
 .client-safari {}
 .client-ios {}
 .client-ios .wow {
@@ -2060,7 +2078,7 @@ section#works-item .blockquote-holder .image-holder img {
 	
 @media screen and (min-width: 480px) {
 	.client-ios section#subscriber.focused .input-area .subscribe-button {
-		top: 0px;
+		top: 0;
 		bottom: auto;
 	}
 }
