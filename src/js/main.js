@@ -152,6 +152,10 @@ $(document).on('ready', function () {
 				});
 			}
 
+	//wrap tables
+	$('#works-item, #blog-item').find('table').each(function () {
+		$(this).wrap($('<div>').addClass('table-holder'));
+	});
 
 	// perspective hover
 	if (winWidth > 944) {
@@ -192,7 +196,7 @@ $(document).on('ready', function () {
 	});
 
 	// navigation
-	$('nav, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
+	$('.navigation-links, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
 		var $self = $(this);
 		var href = $self.attr('href');
 		loading.status(0);
