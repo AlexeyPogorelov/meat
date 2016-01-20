@@ -1014,6 +1014,15 @@ section#subscriber .description-holder h4 {
 .facts-block .image-holder {
 	margin-right: 27px;
 }
+#work-background-image {
+	position: absolute;
+	opacity: .1;
+	width: 100%;
+	z-index: 0;
+}
+#work-background-image img {
+	width: 100%;
+}
 #works-item .facts-block p.user-name {
 	font-family: "Gotham Pro", sans-serif;
 	line-height: 30px;
@@ -1449,7 +1458,7 @@ section#blog-item p a:hover:after {
 	-webkit-transition: transform .3s, opacity .1s;
 	transition: transform .3s, opacity .1s;
 }
-section#blog-item .full-width {
+section#blog-item img {
 	width: 100%;
 }
 section#blog-item blockquote {
