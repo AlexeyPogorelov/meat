@@ -217,8 +217,12 @@
 		width: 265px;
 	}
 	#works-item .facts-block .form-group.mobile-apps {
-		margin-top: 26px;
-		margin-bottom: 39px;
+		margin-top: 13px;
+		margin-bottom: 20px;
+	}
+	#works-item .facts-block .form-group.mobile-apps .mobile-app {
+		margin-top: 13px;
+		margin-bottom:20px;
 	}
 	#works-item .facts-block .facts-holder p.big {
 		font-size: 50px;
@@ -419,6 +423,14 @@
 		height: 361px;
 	    top: 101px;
     	margin-left: 135px;
+	}
+	#works-item .facts-block .form-group.mobile-apps {
+		/*margin-top: 26px;*/
+		/*margin-bottom: 39px;*/
+	}
+	#works-item .facts-block .form-group.mobile-apps .mobile-app {
+		display: block;
+		margin: 13px auto 20px;
 	}
 }
 /*
