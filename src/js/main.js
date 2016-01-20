@@ -54,6 +54,7 @@ var loading = {
 					offset: 0,
 					mobile: true,
 					callback: function(box) {
+						alert();
 						$('#paginate').trigger('click');
 					}
 				}
@@ -367,7 +368,7 @@ $(document).on('ready', function () {
 					DOM.$sliderHolder.css({
 						'-webkit-transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)',
 						'transform': 'translateX( -' + (state.slideWidth * opt.slidesOnPage * id) + 'px)'
-					})
+					});
 					// .one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
 					// 	$(this).css({
 					// 		'left': 1
