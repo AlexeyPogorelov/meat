@@ -87,6 +87,8 @@ $(document).on('ready', function () {
 	var winWidth = $(window).width(),
 		winHeight = $(window).height(),
 		$subscriber = $('#subscriber'),
+		$footerNavigation = $('.footer-navigation'),
+		footerNavigationTop = $footerNavigation.offset().top,
 		subscriberTop = $subscriber.offset().top,
 		bodyOverflow = {
 			fixBody: function () {
@@ -271,37 +273,57 @@ $(document).on('ready', function () {
 
 	// to top
 	var goUp = (function () {
-			var $el = $('#to-top');
+			var $el = $('#to-top'),
+				state = false,
+				speed = 900,
+				paused = false;
 			var plg = {
 				up: function () {
-					$("html, body").stop().animate({scrollTop:0}, 900, 'swing');
+					paused = true;
+					$("html, body").stop().animate({scrollTop:0}, speed, 'swing', function () {
+						paused = false;
+					});
+					plg.hide();
 				},
 				show: function () {
-					$el.stop().fadeIn();
+					if (!state && !paused) {
+						$el.addClass('opened');
+						state = true;
+					}
 				},
 				hide: function () {
-					$el.stop().fadeOut();
-				}
+					if (state) {
+						$el.removeClass('opened');
+						state = false;
+					}
+				},
+				$el: $el
 			};
 			$el.on('click', function () {
 				plg.up();
 			});
-			$el.hide();
 			return plg;
 		})();
 
 	//scroll
 	$(document).on('scroll', function () {
 		var top = $(this).scrollTop();
-		if (top + winHeight > subscriberTop) {
+		if (winHeight + top > subscriberTop) {
 			if (!$('#paginate').data('status')) {
 				$('#paginate').attr('data-status', 'loading').trigger('click');
 			}
 		}
-		if (top > winHeight) {
+		if (top > winHeight * 2) {
 			goUp.show();
 		} else {
 			goUp.hide();
+		}
+		if (winHeight + top > footerNavigationTop && winWidth > 960) {
+			// console.log(1);
+			goUp.$el.css('bottom', 49);
+
+		} else {
+			goUp.$el.css('bottom', 30);
 		}
 	});
 
@@ -309,7 +331,8 @@ $(document).on('ready', function () {
 	$(window).on('resize', function () {
 		winWidth = $(window).width();
 		winHeight = $(window).height();
-		subscriberTop = $subscriber.offset().top
+		subscriberTop = $subscriber.offset().top;
+		footerNavigationTop = $footerNavigation.offset().top;
 	});
 
 	// iOS fix

@@ -17,6 +17,9 @@
 	background: url('../img/bg/bg-letters-pattern-2.svg'), #4d2ce0;
 	background-repeat: repeat;
 }
+.bg-6 {
+	background: #f41f52;
+}
 .background-pattern {
 	background-image: url('../img/bg/bg-letters-pattern-1.svg');
 	opacity: .1;

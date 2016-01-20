@@ -1137,6 +1137,9 @@
 		-webkit-animation: none;
 		animation: none;
 	}
+	#to-top {
+		display: none;
+	}
 	section#main-presentation .left-side,
 	section#main-presentation .right-side {
 		min-width: 50%;

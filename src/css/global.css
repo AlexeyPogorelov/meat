@@ -470,11 +470,24 @@ input[type='number'] {
 #to-top {
 	cursor: pointer;
 	position: fixed;
-	right: 20px;
-	top: 40%;
+	right: 30px;
+	bottom: 49px;
+	bottom: 30px;
+	opacity: 0;
 	height: 60px;
 	width: 60px;
 	z-index: 2;
+	-webkit-transform: translateY(60px);
+	transform: translateY(60px);
+	-webkit-transition: transform .3s, opacity .3s, bottom .3s;
+	transition: transform .3s, opacity .3s, bottom .3s;
+}
+#to-top.opened {
+	opacity: 1;
+	-webkit-transition: transform .3s, opacity .3s, bottom .3s;
+	transition: transform .3s, opacity .3s, bottom .3s;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
 }
 /*	GRID	*/
 .container {
