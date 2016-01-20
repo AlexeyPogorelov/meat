@@ -1208,7 +1208,7 @@ section#page-404 .to-main-page:hover {
 	transition: all .2s;
 } 
 section#page-404 .illustration {
-	bottom: 15px;
+	bottom: 0;
 	display: block;
 	position: fixed;
 	pointer-events: none;

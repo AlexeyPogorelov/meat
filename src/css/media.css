@@ -287,8 +287,8 @@
 		width: 240px;
 	}
 	section#page-404 .illustration {
-	    bottom: auto;
-	    top: 295px;
+	    bottom: 0;
+	    top: auto;
 	    margin-left: 50px;
 	}
 }
@@ -297,24 +297,34 @@
 --------------------------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
 	section#page-404 .logo {
-		height: 148px;
+		height: 143px;
 	}
 	section#page-404 h1 {
-	    margin-top: 52px;
-    	font-size: 137px;
-    	line-height: 123px;
+		display: inline-block;
+		margin-top: 53px;
+		vertical-align: middle;
+		font-size: 115px;
+		letter-spacing: -1.8px;
+		margin-left: 27px;
 	}
 	section#page-404 h4 {
-		font-size: 32px;
+		position: relative;
+		top: -41px;
+		left: 67px;
+		font-size: 24px;
 	}
 	section#page-404 .to-main-page {
-		font-size: 22px;
-		line-height: 51px; 
-		padding: 0px 24px;
-	    margin-top: 27px;
+		font-size: 29px;
+		line-height: 61px;
+		padding: 5px 39px;
+		margin-top: 0;
+		position: relative;
+		top: -20px;
+		left: 4px;
 	}
 	section#page-404 .illustration {
-	    top: 149px;
+	    top: auto;
+		bottom: 0;
     	margin-left: 80px;
     }
 }
@@ -421,7 +431,8 @@
 	}
 	section#page-404 .illustration {
 		height: 361px;
-	    top: 101px;
+	    top: auto;
+		bottom: 0;
     	margin-left: 135px;
 	}
 	#works-item .facts-block .form-group.mobile-apps {
@@ -1096,7 +1107,8 @@
 @media screen and (max-width: 800px) {
 	section#page-404 .illustration {
 	    height: 319px;
-	    top: 114px;
+	    top: auto;
+		bottom: 0;
 	    margin-left: 221px;
 	}
 }
