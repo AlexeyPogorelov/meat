@@ -990,6 +990,9 @@ section#subscriber .description-holder h4 {
 	margin-top: 70px;
 }
 .facts-block .blockquote-holder .image-holder {
+	border-radius: 50%;
+	margin-top: 10px;
+	height: 103px;
 	width: 103px;
 }
 .facts-block .fact {
@@ -1741,6 +1744,7 @@ section#works-item .blog-item-page:last-child ul.socials {
 }
 section#works-item iframe {
 	margin-bottom: 66px;
+	width: 100%;
 }
 section#works-item h3 {
 	font-size: 30px;
@@ -1836,7 +1840,6 @@ section#works-item ~ #works-articles {
 	width: 174px;
 }
 section#works-item .blockquote-holder .image-holder img {
-	margin-top: 10px;
 	vertical-align: top;
 }
 .blockquote-holder .user-name {
