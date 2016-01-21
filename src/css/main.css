@@ -208,26 +208,34 @@ nav.fixed {
 	overflow: hidden;
 }
 #underconstruction .content-holder {
-	display: table;
-	height: calc(100% - 211px);
+	/* display: table; */
+	/* height: calc(100% - 211px); */
+	text-align: center;
 }
 #underconstruction .presentation {
 	/*display: table-cell;*/
 	height: 100%;
+	position: absolute;
 	vertical-align: middle;
+	text-align: center;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 #underconstruction .presentation .main-logo-holder,
 #underconstruction .presentation .main-description-holder {
-	display: table-cell;
+	display: inline-block;
 	padding: 0 26px;
 	vertical-align: middle;
 }
 #underconstruction .presentation .main-logo-holder {
-	text-align: right;
-	width: 324px;
+	/* text-align: right; */
+	/*width: 324px;*/
 }
 #underconstruction .presentation .main-description-holder {
 	padding-top: 35px;
+	text-align: left;
 }
 #underconstruction .presentation .grand {
 	color: white;
