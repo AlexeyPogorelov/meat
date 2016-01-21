@@ -189,7 +189,7 @@
 	}
 	#underconstruction .presentation .main-logo-holder {
 		text-align: right;
-		width: 521px;
+		/*width: 521px;*/
 	}
 	section#works-item .blog-item-page {
 		width: 1160px;
@@ -1125,6 +1125,16 @@
 		-webkit-transform: translateX(-50%) rotate(45deg);
 		transform: translateX(-50%) rotate(45deg);
 	}
+	#result h3 {
+		font-size: 28px;
+		font-weight: 700;
+		line-height: 28px;
+	}
+	#result p {
+		font-size: 19px;
+		line-height: 24px;
+		font-weight: 400;
+	}
 }
 /*
 	SMALL
@@ -1155,9 +1165,9 @@
 	#to-top {
 		display: none;
 	}
-
 	#result .success .content-helper,
 	#result .error .content-helper {
+		padding: 28px;
 		position: absolute;
 		top: 70px;
 		bottom: 82px;
@@ -1169,6 +1179,7 @@
 	
 	#result .error .content-holder,
 	#result .success .content-holder {
+		min-width: 220px;
 		position: absolute;
 		text-align: center;
 		top: 50%;

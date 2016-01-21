@@ -450,8 +450,8 @@ input[type='number'] {
 }
 .preloader svg {
 	position: absolute;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+	-webkit-transform: rotate(51deg) translate(-71%, 11%);
+	transform: rotate(51deg) translate(-71%, 11%);
 	top: 50%;
 	left: 50%;
 	height: 200px;

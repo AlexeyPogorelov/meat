@@ -2174,6 +2174,7 @@ body.client-moz #main-modal {
 	padding: 90px 100px 76px;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
+	box-shadow: 0 49px 58px -19px rgba(0,0,0,.25);
 }
 #result .error .content-holder,
 #result .success .content-holder {
