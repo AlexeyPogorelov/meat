@@ -2098,7 +2098,6 @@ section#works-item .blockquote-holder .image-holder img {
 	background: #4d2ce0 !important;
 }
 
-.client-safari {}
 .client-ios {}
 .client-ios .wow {
 	-webkit-animation: none;
@@ -2107,6 +2106,7 @@ section#works-item .blockquote-holder .image-holder img {
 .client-ios section#subscriber.focused .input-area .subscribe-button {
 	top: 6px;
 }
+
 	
 @media screen and (min-width: 480px) {
 	.client-ios section#subscriber.focused .input-area .subscribe-button {
@@ -2118,6 +2118,24 @@ section#works-item .blockquote-holder .image-holder img {
 	top: 6px;
 }
 .client-ie {}
+.client-ie section#subscriber .input-area .subscribe-button {
+	top: 8px;
+}
+.client-ie section#subscriber .input-area .subscribe-button svg {
+	margin-top: 10px;
+}
+.client-ie section#works-articles .articles-holder .article {
+	height: 300px;
+}
+.client-ie section#works-articles .articles-holder .article a {
+	/*height: 0;*/
+	/*position: absolute;*/
+}
+
+body.client-moz {}
+body.client-moz #main-modal {
+ overflow: hidden;
+}
 /* END FIXES */
 
 /* POP-UPs */

@@ -476,7 +476,7 @@ input[type='number'] {
 	opacity: 0;
 	height: 60px;
 	width: 60px;
-	z-index: 2;
+	z-index: 3;
 	-webkit-transform: translateY(60px);
 	transform: translateY(60px);
 	-webkit-transition: transform .3s, opacity .3s, bottom .3s;

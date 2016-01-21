@@ -294,9 +294,9 @@
 		width: 240px;
 	}
 	section#page-404 .illustration {
-	    bottom: 0;
-	    top: auto;
-	    margin-left: 50px;
+		bottom: 0;
+		top: auto;
+		margin-left: 50px;
 	}
 }
 /*--------------------------------------------------------------------------
@@ -330,10 +330,10 @@
 		left: 4px;
 	}
 	section#page-404 .illustration {
-	    top: auto;
+		top: auto;
 		bottom: 0;
-    	margin-left: 80px;
-    }
+		margin-left: 80px;
+	}
 }
 /*--------------------------------------------------------------------------
 	TABLET
@@ -411,36 +411,36 @@
 		font-size: 18px;
 	}
 	section#page-404 .logo {
-	    height: 143px;
+		height: 143px;
 	}
 	section#page-404 h1 {
-	    display: inline-block;
-	    margin-top: 53px;
-	    vertical-align: middle;
-	    font-size: 115px;
-	    letter-spacing: -1.8px;
-	    margin-left: 27px;
+		display: inline-block;
+		margin-top: 53px;
+		vertical-align: middle;
+		font-size: 115px;
+		letter-spacing: -1.8px;
+		margin-left: 27px;
 	}
 	section#page-404 h4 {
-	    position: relative;
-	    top: -41px;
-	    left: 70px;
-	    font-size: 25px;
+		position: relative;
+		top: -41px;
+		left: 70px;
+		font-size: 25px;
 	}
 	section#page-404 .to-main-page {
 		font-size: 29px;
 		line-height: 61px;
 		padding: 5px 39px;
-	    margin-top: 0;
-	    position: relative;
-	    top: -20px;
-	    left: 4px;
+		margin-top: 0;
+		position: relative;
+		top: -20px;
+		left: 4px;
 	}
 	section#page-404 .illustration {
 		height: 361px;
-	    top: auto;
+		top: auto;
 		bottom: 0;
-    	margin-left: 135px;
+		margin-left: 135px;
 	}
 	#works-item .facts-block .form-group.mobile-apps {
 		/*margin-top: 26px;*/
@@ -452,6 +452,9 @@
 	}
 	section#works-item iframe {
 		height: 300px;
+	}
+	section#blog-item .table-holder {
+		margin-bottom: 40px;
 	}
 }
 /*
@@ -569,6 +572,11 @@
 	section#blog-articles {
 		padding-top: 62px;
 		padding-bottom: 96px;
+	}
+
+
+	.client-safari section#subscriber.focused .input-area .subscribe-button {
+		top: 6px;
 	}
 
 	section#blog-item ~ #blog-articles {
@@ -876,7 +884,7 @@
 		display: none;
 	}
 	.client-safari section#subscriber.focused .input-area .subscribe-button {
-		top: 0;
+		top: 6px;
 	}
 	section#subscriber {
 		padding-left: 60px;
@@ -1218,38 +1226,38 @@
 	section#page-404 h1 {
 		display: inline-block;
 		margin-top: 35px;
-	    font-size: 82px;
-	    margin-left: 20px;
+		font-size: 82px;
+		margin-left: 20px;
 	}
 	section#page-404 h4 {
 		top: -56px;
 		font-size: 18px;
 		left: 56px;
-	    position: relative;
+		position: relative;
 	}
 	section#page-404 .to-main-page {
-	    font-size: 22px;
-	    left: 0;
-	    padding: 5px 19px;
-	    line-height: 39px;
-	    margin-bottom: 20px;
-	    top: -31px;
+		font-size: 22px;
+		left: 0;
+		padding: 5px 19px;
+		line-height: 39px;
+		margin-bottom: 20px;
+		top: -31px;
 	}
 	section#page-404 .logo {
 		margin-left: 13px;
-	    margin-top: 54px;
-	    height: 98px;
+		margin-top: 54px;
+		height: 98px;
 	}
 	section#page-404 .illustration {
 		left: 50%;
 		-webkit-transform: translateX(-50%);
 		transform: translateX(-50%);
-	    margin-left: 0;
-	    height: 236px;
-	    margin-top: 22px;
-	    position: absolute;
-	    margin: 0;
-	    /*top: 318px;*/
+		margin-left: 0;
+		height: 236px;
+		margin-top: 22px;
+		position: absolute;
+		margin: 0;
+		/*top: 318px;*/
 		bottom: 0;
 	}
 	/* END 404 */

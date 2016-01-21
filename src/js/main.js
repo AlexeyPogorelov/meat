@@ -344,9 +344,10 @@ $(document).on('ready', function () {
 	});
 
 	// iOS fix
-	if ($.browser.safari) $('body').addClass('client-safari');
+	if ($.browser.safari && !$.browser.mobile ) $('body').addClass('client-safari');
 	if ($.browser.iphone || $.browser.ipad || $.browser.ipad) $('body').addClass('client-ios');
 	if ($.browser.msie) $('body').addClass('client-ie');
+	if ($.browser.name == 'mozilla') $('body').addClass('client-moz');
 });
 
 //plugins
@@ -532,6 +533,11 @@ $(document).on('ready', function () {
 				'power': 20,
 				'duration': 2000
 			}, opt);
+
+			// safari V < 9
+			if (parseInt($.browser.version) < 9 && $.browser.safari) {
+				opt.power == 4;
+			}
 
 			// methods
 			var plg = {
