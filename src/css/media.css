@@ -201,6 +201,13 @@
 	section#blog-articles .articles-holder .article {
 		margin: 0 48px 135px;
 	}
+	section#blog-articles .articles-holder .article .description-holder {
+		margin-bottom: 60px;
+	}
+	section#blog-articles .articles-holder .article h4,
+	section#blog-articles .articles-holder .article p {
+		padding: 0 42px;
+	}
 /*	nav.footer-navigation .socials {
 		padding-left: 76px;
 	}*/
@@ -1116,10 +1123,10 @@
 */
 @media screen and (max-width: 800px) {
 	section#page-404 .illustration {
-	    height: 319px;
-	    top: auto;
+		height: 319px;
+		top: auto;
 		bottom: 0;
-	    margin-left: 221px;
+		margin-left: 221px;
 	}
 }
 @media screen and (max-width: 660px) {
@@ -1139,6 +1146,27 @@
 	}
 	#to-top {
 		display: none;
+	}
+
+	#result .success .content-helper,
+	#result .error .content-helper {
+		position: absolute;
+		top: 70px;
+		bottom: 82px;
+		left: 32px;
+		right: 32px;
+		-webkit-transform: none;
+		transform: none;
+	}
+	
+	#result .error .content-holder,
+	#result .success .content-holder {
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
 	}
 	section#main-presentation .left-side,
 	section#main-presentation .right-side {
@@ -1345,6 +1373,9 @@
 	section#blog-articles .articles-holder .article {
 		width: 316px;
 	}
+	section#blog-articles .articles-holder .article .description-holder {
+		margin-bottom: 20px;
+	}
 }
 @media screen and (min-width: 791px) and (max-width: 960px) {
 	section#blog-articles .articles-holder .article h4 {
@@ -1397,6 +1428,9 @@
 		margin-right: 0;
 		/*width: 256px;*/
 	}
+	section#works-item iframe, section#blog-item iframe {
+		height: 190px;
+	}
 }
 @media screen and (max-width: 374px) {
 	section#works-articles .articles-holder .article {
@@ -1405,6 +1439,9 @@
 	section#works-articles .articles-holder .article .image-holder {
 		height: 256px;
 		width: 256px;
+	}
+	section#blog-articles .articles-holder .article .description-holder {
+		margin-bottom: 44px;
 	}
 	section#blog-articles .articles-holder .article:nth-child(even),
 	section#blog-articles .articles-holder .article {

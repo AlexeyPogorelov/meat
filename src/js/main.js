@@ -261,13 +261,21 @@ $(document).on('ready', function () {
 		// esc pressed
 		if (e.keyCode == '27') {
 			$('.modal-holder').removeClass('opened');
+			$('#result').addClass('clothing').children().animate({
+				'opacity': 0
+			}, function () {
+				$(this).remove();
+				$('#result').removeClass('clothing');
+			});
 		}
 	});
 	$('#result').on('click', function () {
-		$(this).children().animate({
+		var $self = $(this);
+		$(this).addClass('clothing').children().animate({
 			'opacity': 0
 		}, function () {
 			$(this).remove();
+			$self.removeClass('clothing');
 		});
 	});
 

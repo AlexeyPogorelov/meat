@@ -1023,6 +1023,7 @@ section#subscriber .description-holder h4 {
 }
 #work-background-image img {
 	height: 870px;
+	min-width: 100%;
 }
 #works-item .facts-block p.user-name {
 	font-family: "Gotham Pro", sans-serif;
@@ -1315,7 +1316,7 @@ section#blog-articles .articles-holder .article .image-holder {
 }
 section#blog-articles .articles-holder .article .description-holder {
 	overflow: hidden;
-	margin-bottom: 60px;
+	margin-bottom: 44px;
 	height: 288px;
 }
 section#blog-articles .articles-holder .article h4 {
@@ -1324,12 +1325,12 @@ section#blog-articles .articles-holder .article h4 {
 	font-weight: 700;
 	line-height: 32px;
 	margin-top: 45px;
-	padding: 0 42px;
+	padding: 0 26px;
 }
 section#blog-articles .articles-holder .article p {
 	color: #535353;
 	margin-top: 27px;
-	padding: 0 42px;
+	padding: 0 26px;
 	font-family: Garamond;
 }
 section#blog-articles .load-more {
@@ -1780,7 +1781,7 @@ section#works-item .blog-item-page:last-child ul.socials {
 }
 section#works-item iframe {
 	margin-bottom: 66px;
-	height: 490px;
+	height: 530px;
 	width: 100%;
 }
 section#works-item h3 {
@@ -2123,6 +2124,9 @@ section#works-item .blockquote-holder .image-holder img {
 #result {
 	cursor: pointer;
 }
+#result input {
+	display: none;
+}
 #result .error,
 #result .success {
 	position: fixed;
@@ -2130,27 +2134,55 @@ section#works-item .blockquote-holder .image-holder img {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: rgba(255, 255, 255, 0.7);
+	background: rgba(255, 255, 255, 0.8);
 	z-index: 9;
-	-webkit-animation: scaleInA .2s;
-	animation: scaleInA .2s;
+	-webkit-animation: scaleInA .3s;
+	animation: scaleInA .3s;
 }
 #result .success .content-helper,
 #result .error .content-helper {
-	background: rgba(255, 255, 255, 1);
 	position: absolute;
-	top: 70px;
-	bottom: 82px;
-	left: 32px;
-	right: 32px;
+	top: 50%;
+	left: 50%;
+	background: rgba(255, 255, 255, 1);
+	padding: 90px 100px 76px;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 #result .error .content-holder,
 #result .success .content-holder {
-	position: absolute;
+	position: static;
 	text-align: center;
-	top: 50%;
-	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+/*	top: 50%;
+	left: 50%;*/
+/*	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);*/
+}
+
+#result.clothing .content-helper {
+	-webkit-transform: scale(2) translate(-25%, -25%);
+	transform: scale(2) translate(-25%, -25%);
+	-webkit-transition: transform .3s;
+	transition: transform .3s;
+}
+
+#result h3 {
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 48px;
+	margin-bottom: 25px;
+}
+#result .error h3 {
+	color: #f41f52;
+}
+#result .success h3 {
+	color: #4d2ce0;
+}
+#result p {
+	color: black;
+	font-family: "Gotham Pro";
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 34px;
 }
 /* END POP-UPs */
