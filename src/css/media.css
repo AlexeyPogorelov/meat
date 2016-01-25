@@ -372,10 +372,16 @@
 		right: 32px;
 	}
 	#underconstruction {
-		height: auto !important;
+		/*height: auto !important;*/
+		min-height: 720px;
+	}
+	#underconstruction .bottom-line {
+		position: absolute;
+		bottom: 0;
 	}
 	#underconstruction .presentation .main-description-holder {
 		margin-top: 40px;
+		/*margin-bottom: 60px;*/
 	}
 	#underconstruction .presentation .main-logo-holder,
 	#underconstruction .presentation .main-description-holder {
@@ -383,6 +389,9 @@
 		padding: 0;
 		text-align: center;
 		width: auto;
+	}
+	#underconstruction .presentation .main-logo-holder {
+		padding-top: 140px;
 	}
 	.bottom-line {
 		position: static;
@@ -558,7 +567,7 @@
 	section#blog-articles .articles-holder .article h4 {
 		font-size: 19px;
 		font-weight: 700;
-		line-height: 19px
+		line-height: 28px
 	}
 	section#blog-articles .articles-holder .article p {
 		font-family: Garamond, serif;
@@ -625,8 +634,8 @@
 		margin-bottom: 0;
 	}
 	section#blog-item p {
-		font-size: 15px;
-		line-height: 23px;
+		font-size: 20px;
+		line-height: 28px;
 	}
 	section#blog-item p a {
 		font-size: 15px;
@@ -660,8 +669,8 @@
 		padding-top: 14px;
 	}
 	section#about-text {
-		padding-top: 150px;
-		padding-bottom: 80px;
+		padding-top: 115px;
+		padding-bottom: 35px;
 	}
 	section#about-text p {
 		font-size: 13px;
@@ -1135,6 +1144,9 @@
 		line-height: 24px;
 		font-weight: 400;
 	}
+	nav.footer-navigation {
+		padding-bottom: 10px;
+	}
 }
 /*
 	SMALL
@@ -1148,6 +1160,11 @@
 	}
 }
 @media screen and (max-width: 660px) {
+
+	#underconstruction {
+		/*height: auto !important;*/
+		min-height: 630px;
+	}
 	.x-mobile-visible {
 		display: inherit;
 	}
@@ -1346,6 +1363,7 @@
 }
 
 @media screen and (max-width: 790px) {
+
 	#frame-logo {
 		height: auto;
 		width: 100%;
