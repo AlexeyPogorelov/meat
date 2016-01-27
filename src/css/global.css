@@ -41,11 +41,15 @@ section#footer .container {
 	width: auto;
 }
 a {
+	border: none;
 	color: #000;
+	outline: none;
 	font-family: "Gotham Pro", sans-serif;
 	text-decoration: none;
 }
 img {
+	border: none;
+	outline: none;
 	vertical-align: middle;
 }
 li {

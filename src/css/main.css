@@ -2157,6 +2157,8 @@ section#works-item .blockquote-holder .image-holder img {
 .client-ie section#works-articles .articles-holder .article a {
 	/*height: 0;*/
 	/*position: absolute;*/
+	top: 60px;
+	z-index: 1;
 }
 
 body.client-moz {}
