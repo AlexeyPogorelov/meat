@@ -11,6 +11,12 @@ body {
 	font-weight: 300;
 	line-height: 30px;
 }
+body.fixed {
+	overflow: hidden;
+}
+body.fixed.client-ios {
+	position: fixed;
+}
 .wrapper {}
 .lightbox-cell::-webkit-scrollbar-corner,
 .dropdown::-webkit-scrollbar-corner,

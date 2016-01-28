@@ -93,17 +93,14 @@ $(document).on('ready', function () {
 		bodyOverflow = {
 			fixBody: function () {
 				$('body').width($('body').width())
-					.css({
-						'overflow': 'hidden'
-					});
+					.addClass('fixed');
 			},
 			unfixBody: function () {
 				$('body')
 					.css({
-						'overflow': 'auto',
-						'overflow-y': 'scroll',
-						'width': 'initial'
-					});
+						'width': 'auto'
+					})
+					.removeClass('fixed');
 			},
 			resize: function () {
 				this.unfixBody();
