@@ -1727,7 +1727,7 @@ section#works-item .blog-item-page {
 section#works-item p a {
 	color: #f41f52;
 	position: relative;
-	font-size: 24px;
+	font-size: 20px;
 	white-space: nowrap;
 }
 section#works-item p a:after {
@@ -1842,6 +1842,8 @@ section#works-item img {
 	display: block;
 	margin-bottom: 58px;
 	margin-top: 58px;
+	margin-bottom: 0;
+	margin-top: 0;
 }
 section#works-item ul {
 	margin-top: -6px;
@@ -2155,6 +2157,8 @@ section#works-item .blockquote-holder .image-holder img {
 .client-ie section#works-articles .articles-holder .article a {
 	/*height: 0;*/
 	/*position: absolute;*/
+	top: 60px;
+	z-index: 1;
 }
 
 body.client-moz {}
