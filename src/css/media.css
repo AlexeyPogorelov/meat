@@ -1006,13 +1006,14 @@
 	}
 	section#works-item table td,
 	section#blog-item table td {
-		font-size: 15px;
 		padding: 15px;
 		min-width: 128px;
+		line-height: 25px;
+		font-size: 16px;
 	}
 	section#works-item ul li,
 	section#blog-item ul li {
-		font-size: 13px;
+		font-size: 16px;
 		line-height: 30px;
 	}
 	section#works-item ul li:before,
