@@ -634,12 +634,12 @@
 		margin-bottom: 0;
 	}
 	section#blog-item p {
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 15px;
+		line-height: 21px;
 	}
 	section#blog-item p a {
 		font-size: 15px;
-		line-height: 23px;
+		line-height: 21px;
 	}
 	section#blog-item p a:after {
 		height: 1px;
@@ -1004,16 +1004,24 @@
 		height: 65px;
 		width: 65px;
 	}
-	section#works-item table td,
-	section#blog-item table td {
+	section#works-item table td {
 		padding: 15px;
 		min-width: 128px;
 		line-height: 25px;
 		font-size: 16px;
 	}
-	section#works-item ul li,
-	section#blog-item ul li {
+	section#blog-item table td {
+		padding: 15px;
+		min-width: 128px;
+		line-height: 21px;
+		font-size: 15px;
+	}
+	section#works-item ul li {
 		font-size: 16px;
+		line-height: 30px;
+	}
+	section#blog-item ul li {
+		font-size: 15px;
 		line-height: 30px;
 	}
 	section#works-item ul li:before,
