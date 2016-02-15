@@ -46,6 +46,17 @@ var loading = {
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
 				$('.blog-item-page.top').addClass('wow fadeInUpA');
 				new WOW().init();
+
+				$('.blog-item-page').each(function () {
+					var html = $(this).html();
+					html = html.replace(/\s/g, '');
+					if (html == '<p></p>' || html == '<p></p><p></p>' || html == '<p><br></p><p></p>' || html == '<p>' || html == '<p></p><p><br></p><p><br></p>' ) {
+						$(this).remove();
+					} else {
+						console.log( html );
+						console.log( '-------' );
+					}
+				});
 			}
 
 			$('#works-item-header').find('> .container > *').each(function (i) {
@@ -76,8 +87,7 @@ $(window).on('load', function () {
 	// loading.loaded();
 	loading.status(1);
 	setTimeout(loading.done, 500);
-});
-$(document).on('ready', function () {
+});$(document).on('ready', function () {
 	$('img').each(function () {
 		if (!this.naturalHeight) {
 			loading.trg ++;
