@@ -576,7 +576,7 @@ section#portfolio-presentation .portfolio-item {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
-section#portfolio-presentation .portfolio-item:after {
+section#portfolio-presentation .portfolio-item a:after {
 	content: "";
 	position: absolute;
 	top: -12px;
@@ -1031,6 +1031,7 @@ section#subscriber .description-holder h4 {
 }
 #work-background-image img {
 	height: 870px;
+	/*min-height: 870px;*/
 	min-width: 100%;
 }
 #works-item .facts-block p.user-name {
@@ -1278,15 +1279,17 @@ section#blog-header h1 {
 }
 
 section#blog-articles {
+	overflow: hidden;
 	padding-top: 203px;
 	padding-bottom: 96px;
 }
 section#blog-articles .container {
 /*	max-width: 1440px;
 	width: auto;*/
+	/*width: calc(100% - 220px);*/
 }
 section#blog-articles .articles-holder {
-	text-align: center;
+	text-align: justify;
 	margin-left: -48px;
 	margin-right: -48px;
 }
@@ -1341,6 +1344,7 @@ section#blog-articles .articles-holder .article .description-holder {
 	overflow: hidden;
 	margin-bottom: 44px;
 	height: 288px;
+	position: relative;
 }
 section#blog-articles .articles-holder .article h4 {
 	color: black;
@@ -1354,7 +1358,7 @@ section#blog-articles .articles-holder .article p {
 	color: #535353;
 	margin-top: 27px;
 	padding: 0 26px;
-	font-family: Garamond;
+	font-family: Garamond, sans-serif;
 }
 section#blog-articles .load-more {
 	background: none;
@@ -1397,7 +1401,7 @@ section#blog-item .blog-item-page {
 	padding: 0 71px;
 	position: relative;
 	width: 800px;
-	width: calc(100% - 220px);
+	width: calc(100vw - 220px);
 }
 section#blog-item ul.socials {
 	padding-top: 6px;
@@ -1409,6 +1413,7 @@ section#blog-item ul.socials {
 	z-index: 2;
 }
 section#blog-item ul.socials li {
+	cursor: pointer;
 	background: #fff;
 	margin-bottom: 4px;
 	padding: 0;
@@ -1453,7 +1458,8 @@ section#blog-item .blog-item-page:last-child ul.socials {
 	margin-bottom: 0;
 }
 section#blog-item iframe {
-	margin-bottom: 66px;
+	/*margin-bottom: 66px;*/
+	height: 530px;
 	width: 100%;
 }
 section#blog-item h3 {
@@ -1609,6 +1615,7 @@ section#works .header-addition {
 }
 
 section#works-articles {
+	overflow: hidden;
 	padding-top: 203px;
 	padding-bottom: 96px;
 }
@@ -1676,6 +1683,7 @@ section#works-articles .articles-holder .article .description-holder {
 	overflow: hidden;
 	margin-bottom: 60px;
 	height: 288px;
+	position: relative;
 }
 section#works-articles .articles-holder .article h4 {
 	margin-top: 45px;
@@ -1738,7 +1746,7 @@ section#works-item .blog-item-page {
 	padding: 0 71px;
 	position: relative;
 	width: 800px;
-	width: calc(100% - 220px);
+	width: calc(100vw - 220px);
 }
 section#works-item p a {
 	color: #f41f52;
@@ -1821,7 +1829,7 @@ section#works-item .blog-item-page:last-child ul.socials {
 	margin-bottom: 0;
 }
 section#works-item iframe {
-	margin-bottom: 66px;
+	/*margin-bottom: 66px;*/
 	height: 530px;
 	width: 100%;
 }
@@ -1918,6 +1926,26 @@ section#works-item ~ #works-articles {
 }
 
 /* END WORKS */
+
+/* WORKS AND BLOG */
+
+section#works-articles .articles-holder .article .description-holder:after,
+section#blog-articles .articles-holder .article .description-holder:after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 40px;
+	width: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+/* END WORKS AND BLOG */
 
 /* BLOCKQUOTE */
 
