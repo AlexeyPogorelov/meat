@@ -366,7 +366,9 @@ input[type='number'] {
 	clear: both;
 	display: table;
 }
-.button-holder {}
+.button-holder {
+	text-align: center;
+}
 
 /*	LIGHTBOX	*/
 
