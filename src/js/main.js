@@ -223,10 +223,9 @@ $(window).on('load', function () {
 			e.preventDefault();
 			$self.closest('.opened').removeClass('opened');
 			$('html, body').one('mousewheel DOMMouseScroll touchstart', function () {
-				$(this).stop(true, true);
+				$(this).stop(false, false);
 				bodyOverflow.unfixBody();
-			});
-			$('html, body').animate({
+			}).animate({
 				scrollTop: $('#subscriber').offset().top
 			}, 2400, 'easeOutQuint');
 		} else if (href == "#") {
