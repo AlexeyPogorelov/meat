@@ -441,7 +441,7 @@ section#capabilities-slider {
 	/*overflow: hidden;*/
 	margin: auto;
 	width: 256px;
-	width: calc(100% - 70px);
+	width: calc(100% - 64px);
 }
 #capabilities-slider .slider-viewport .slider-holder {
 	position: relative;

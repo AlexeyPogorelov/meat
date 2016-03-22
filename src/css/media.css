@@ -1283,7 +1283,7 @@
 	}
 	section#main-presentation .content-holder .container {
 		text-align: center;
-		width: calc(100% - 60px);
+		width: calc(100% - 64px);
 	}
 	section#capabilities-slider .slider-viewport {}
 	section#capabilities-slider .slide {}
@@ -1315,10 +1315,10 @@
 	section#portfolio-presentation .portfolio-item.type-4 {
 		display: inline-block;
 		float: none;
-		margin: 22px 35px;
+		margin: 22px 32px;
 		height: auto;
 		width: auto;
-		width: calc(100% - 70px);
+		width: calc(100% - 64px);
 		/*max-height: 490px;*/
 	}
 	/* 404 */
@@ -1378,11 +1378,11 @@
 	}
 
 	section#experience h2 {
-		padding: 35px;
+		padding: 32px;
 	}
 	section#devices p {
-		padding-left: 35px;
-		padding-right: 35px;
+		padding-left: 32px;
+		padding-right: 32px;
 	}
 	section#devices h2 {
 		padding-left: 32px;
@@ -1393,10 +1393,10 @@
 		margin-left: 32px;
 	}
 	section#experience .main-image-holder {
-		padding: 35px;
+		padding: 32px;
 	}
 	section#about-text p {
-		padding: 35px;
+		padding: 32px;
 	}
 	section#subscriber {
 		padding-left: 32px;
