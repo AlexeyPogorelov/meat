@@ -200,7 +200,7 @@ $(window).on('load', function () {
 	$('#capabilities-slider').capabilitiesSlider();
 
 	$('#capabilities, #capabilities-slider').find('li').each(function () {
-		console.log($(this).html());
+		// console.log($(this).html());
 		$(this).html('<span>' + $(this).html() + '</span>');
 	});
 
@@ -497,33 +497,40 @@ $(window).on('load', function () {
 
 			// drag events
 			DOM.$slider.on('touchstart', function (e) {
-				state.touchStart.xPos = e.originalEvent.touches[0].clientX;
-				state.touchStart.yPos = e.originalEvent.touches[0].clientY;
 				state.touchStart.timeStamp = e.timeStamp;
-			});
-			DOM.$slider.on('touchmove', function (e) {
+			})
+			.on('touchmove', function (e) {
+				if (!state.touchStart.xPos) {
+					state.touchStart.xPos = e.originalEvent.touches[0].clientX;
+					state.touchStart.yPos = e.originalEvent.touches[0].clientY;
+				}
 				state.touchEnd.xPos = e.originalEvent.touches[0].clientX;
 				state.touchEnd.yPos = e.originalEvent.touches[0].clientY;
-			});
-			DOM.$slider.on('touchend', function (e) {
+			})
+			.on('touchend touchcancel', function (e) {
 				var distance = 70,
 					speed = 200,
 					deltaX = state.touchEnd.xPos - state.touchStart.xPos,
 					deltaY = Math.abs(state.touchEnd.yPos - state.touchStart.yPos);
+
 					// time = e.timeStamp - state.touchStart.timeStamp;
 				// console.log('-----');
 				// console.log(time);
 				// console.log(deltaX);
 				// console.log((deltaY));
-				// console.log(state.touchEnd.originalEvent.touches[0].clientX);
-				// console.log(state.touchStart.originalEvent.touches[0].clientX);
-				if (deltaX > distance || -deltaX > distance && deltaY < 30) {
+				// console.log(state.touchEnd.xPos);
+				// console.log(state.touchStart.xPos);
+				if ( (deltaX > distance || -deltaX > distance && deltaY < 48) && state.touchStart.xPos ) {
 					if (deltaX < 0) {
 						plg.nextSlide();
 					} else {
 						plg.prevSlide();
 					}
 				}
+
+				state.touchStart.xPos = false;
+				state.touchStart.yPos = false;
+
 			});
 
 			$(window).on('resize', plg.resize.bind(plg));
@@ -571,12 +578,20 @@ $(window).on('load', function () {
 				resize: function () {
 					state.elementWidth = $self.innerWidth();
 					state.elementHeight = $self.innerHeight();
+					// if (typeof state.elementHeight !== "number" || state.elementHeight < 10) {
+
+					// 	$self.on('load', function () {
+					// 		state.elementWidth = $self.innerWidth();
+					// 		state.elementHeight = $self.innerHeight();
+					// 	});
+					// }
 				},
 				mousemove: function (e) {
 					var offsetX = e.pageX - $self.offset().left;
 					var xmult = offsetX / state.elementWidth;
 					var offsetY = e.pageY - $self.offset().top;
-					var ymult = offsetY / state.elementHeight;
+					// var ymult = offsetY / state.elementHeight;
+					var ymult = offsetY / state.elementWidth;
 					plg.renderElement(xmult, ymult);
 				},
 				mouseleave: function () {
