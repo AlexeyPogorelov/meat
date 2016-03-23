@@ -552,21 +552,25 @@ $(window).on('load', function () {
 
 			// safari V < 9
 			if (parseInt($.browser.version) < 9 && $.browser.safari) {
-				opt.power == 4;
+				opt.power = 4;
 			}
 
 			// methods
 			var plg = {
 				init: function () {
-					state.elementWidth = $self.innerWidth();
-					state.elementHeight = $self.innerHeight();
-					$self.on('mousemove', this.mousemove);
-					$self.on('mouseleave', this.mouseleave);
-					$self.on('click', this.click);
+					this.resize();
+					$self
+						.on('mousemove', this.mousemove)
+						.on('mouseleave', this.mouseleave)
+						.on('click', this.click);
 					if (!state.$shadow) {
 						state.$shadow = $('<div>').addClass('blick');
 						state.$shadow.appendTo($self.find('a'));
 					}
+				},
+				resize: function () {
+					state.elementWidth = $self.innerWidth();
+					state.elementHeight = $self.innerHeight();
 				},
 				mousemove: function (e) {
 					var offsetX = e.pageX - $self.offset().left;
@@ -603,8 +607,11 @@ $(window).on('load', function () {
 
 			plg.init();
 
+			$(window).on( 'resize', plg.resize );
+
 			return plg;
 		});
+
 	};
 
 	// easing
