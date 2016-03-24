@@ -214,6 +214,7 @@ nav.fixed {
 }
 #underconstruction .presentation {
 	/*display: table-cell;*/
+	pointer-events: none;
 	height: 100%;
 	position: absolute;
 	vertical-align: middle;

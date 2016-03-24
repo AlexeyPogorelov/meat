@@ -12,6 +12,9 @@ var loading = {
 			}
 		},
 		status: function (mult) {
+            if (loading.finished) {
+                return;
+            }
 			loading.preloader.find('> .after').css({
 				'width': mult * 100 + '%'
 			});
