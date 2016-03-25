@@ -579,7 +579,7 @@ section#portfolio-presentation .portfolio-item {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
-section#portfolio-presentation .portfolio-item a:after {
+section#portfolio-presentation .portfolio-item a .shadow {
 	content: "";
 	position: absolute;
 	top: -12px;
