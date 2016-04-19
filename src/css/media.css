@@ -301,14 +301,59 @@
 		top: auto;
 		margin-left: 50px;
 	}
+
+
+	section#portfolio-presentation .portfolio-item.type-1,
+	section#portfolio-presentation .portfolio-item.type-2 {
+		height: 275px;
+		width: 275px;
+		height: calc(100vw / 2 - 176px);
+		width: calc(100vw / 2 - 176px);
+	}
+	section#portfolio-presentation .portfolio-item.type-3 {
+		margin-left: 85px;
+		height: calc(100vw / 2 - 258px);
+		width: calc(100vw / 2 - 258px);
+	}
+	section#portfolio-presentation .portfolio-item.type-4 {
+		height: 330px;
+		width: 330px;
+		height: calc(100vw / 2 - 114px);
+		width: calc(100vw / 2 - 114px);
+		/*display: inline-block;*/
+		/*float: none;*/
+		/*margin: 22px 35px;*/
+		/*height: auto;*/
+		/*width: auto;*/
+		/*width: calc(100% - 120px);*/
+	}
+
 }
 @media screen and (min-width: 980px) and (max-width: 1419px) {
+	section#main-presentation .content-holder .container,
+	section#capabilities .container,
+	section#portfolio-presentation .container,
 	section#devices .container,
 	section#experience .container,
 	section#about-text .container {
 		padding: 0 100px;
+		margin-left: 0;
+		margin-right: 0;
+		max-width: 100%;
 		width: 100%;
 	}
+	section#capabilities .left-element,
+	section#capabilities .right-element {
+		width: calc(100% - 20px);
+	}
+	section#main-presentation h1 {
+		font-size: 6vw;
+	}
+
+	section#main-presentation .right-side {
+		max-width: calc(100vw - 540px);
+	}
+
 }
 /*--------------------------------------------------------------------------
 	1280
@@ -810,7 +855,8 @@
 	}
 	section#capabilities {
 		padding-top: 192px;
-		padding-top: 356px;
+		/* TODO discuss it */
+		/*padding-top: 356px;*/
 	}
 	section#main-presentation .content-holder {
 		margin-top: 0;
@@ -1192,6 +1238,7 @@
 /*
 	SMALL
 */
+
 @media screen and (max-width: 820px) {
 /*	section#portfolio-presentation {
 		padding-left: 0;
@@ -1514,6 +1561,23 @@
 	section#blog-articles .articles-holder .article .description-holder {
 		padding: 0 30px;
 		position: relative;
+	}
+}
+
+
+@media screen and (min-width: 521px) and (max-width: 790px) {
+	section#main-presentation .right-side {
+		max-width: 100%;
+		width: 100%;
+	}
+	section#main-presentation h1 {
+		text-align: center;
+		font-size: 6vw;
+	}
+	section#main-presentation h3 {
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
 	}
 }
 
