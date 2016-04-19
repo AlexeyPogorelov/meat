@@ -310,11 +310,22 @@ $(window).on('load', function () {
 				paused = false;
 			var plg = {
 				up: function () {
+
 					paused = true;
+
 					$("html, body").stop().animate({scrollTop:0}, speed, 'swing', function () {
+
 						paused = false;
+
+					}).one('touchstart mousewheel DOMMouseScroll wheel', function () {
+
+						$(this).stop(false, false).off('touchstart mousewheel DOMMouseScroll wheel');
+						paused = false;
+
 					});
+
 					plg.hide();
+
 				},
 				show: function () {
 					if (!state && !paused) {
