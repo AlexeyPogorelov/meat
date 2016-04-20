@@ -348,10 +348,30 @@
 	}
 	section#main-presentation h1 {
 		font-size: 6vw;
+		line-height: 1.1em;
 	}
 
 	section#main-presentation .right-side {
 		max-width: calc(100vw - 540px);
+	}
+
+	section#main-presentation .right-side {
+		max-width: 53vw;
+	}
+
+	section#main-presentation h3 {
+		margin-right: 12%;
+	}
+
+}
+@media screen and (min-width: 980px) and (max-width: 1140px) {
+
+	section#main-presentation .right-side {
+		max-width: 45vw;
+	}
+
+	section#main-presentation h1 {
+		font-size: 5.1vw;
 	}
 
 }
@@ -1699,4 +1719,19 @@
 	section#subscriber .container {
 		width: 100%;
 	}
+}
+
+@media screen and (min-width: 790px) and (max-width: 979px) {
+
+	section#main-presentation .right-side {
+		max-width: 52vw;
+	}
+	section#main-presentation h1 {
+		font-size: 5.8vw;
+	}
+
+	section#main-presentation h3 {
+		margin-right: 15%;
+	}
+
 }
