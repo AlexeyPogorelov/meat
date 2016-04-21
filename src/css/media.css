@@ -361,6 +361,7 @@
 
 	section#main-presentation h3 {
 		margin-right: 12%;
+		font-size: 1.75vw;
 	}
 
 }
@@ -867,7 +868,7 @@
 		display: inline-block;
 		padding-top: 0;
 		width: 300px;
-		width: calc(50% - 60px);
+		width: calc(50vw - 60px);
 	}
 	#capabilities .container.table .cell h4 {
 		font-size: 24px;
@@ -884,7 +885,8 @@
 	section#main-presentation h3 {
 		margin-left: -10px;
 		margin: 12px 52px -16px 0;
-		font-size: 20px;
+		/*font-size: 20px;*/
+		/*font-size: 4.3vw;*/
 	}
 	section#main-presentation h1 {
 		margin-top: 42px;
@@ -1584,23 +1586,6 @@
 	}
 }
 
-
-@media screen and (min-width: 521px) and (max-width: 790px) {
-	section#main-presentation .right-side {
-		max-width: 100%;
-		width: 100%;
-	}
-	section#main-presentation h1 {
-		text-align: center;
-		font-size: 6vw;
-	}
-	section#main-presentation h3 {
-		text-align: center;
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
-
 /*
 	xSMALL
 */
@@ -1608,12 +1593,11 @@
 /* TODO remove it */
 @media screen and (max-width: 520px) {
 	section#main-presentation h3 {
-		font-size: 19px;
+		/*font-size: 1.2vw;*/
 		line-height: 20px;
 		margin-left: 0;
 		margin-right: 0;
 		padding: 16px 14px 34px 0;
-		text-align: left;
 	}
 	section#main-presentation h1 {
 		font-size: 32px;
@@ -1643,7 +1627,7 @@
 		width: 256px;
 	}
 	section#main-presentation h3 {
-		font-size: 19px;
+		font-size: 5vw;
 		line-height: 20px;
 		margin-left: 0;
 		margin-right: 0;
@@ -1735,3 +1719,27 @@
 	}
 
 }
+
+@media all and (max-width: 790px) {
+	section#main-presentation .right-side {
+		max-width: 100%;
+		text-align: center;
+		width: 100%;
+	}
+	section#main-presentation h1 {
+		text-align: center;
+		font-size: 6vw;
+		font-size: 9.2vw;
+		line-height: 1.3em;
+		line-height: 1.1em;
+	}
+	section#main-presentation h3 {
+		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 2.8vw;
+		padding: 0;
+		font-size: 4.3vw;
+	}
+}
+
