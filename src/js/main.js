@@ -95,10 +95,11 @@ $(window).on('load', function () {
 	loading.status(1);
 	setTimeout(loading.done, 500);
 });$(document).on('ready', function () {
+
 	$('img').each(function () {
 		if (!this.naturalHeight) {
 			loading.trg ++;
-			$(this).one('load', loading.loaded)
+			$(this).one('load', loading.loaded);
 		}
 	});
 	var winWidth = $(window).width(),
@@ -221,8 +222,15 @@ $(window).on('load', function () {
 		}, 200);
 	});
 
+	// TODO remove it
+	$('section#blog-articles .articles-holder .article').on('click', function (e) {
+		e.preventDefault();
+	});
+	// end todo
+
 	// navigation
-	$('.navigation-links, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
+	// $('.navigation-links, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
+	$('.navigation-links, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
 		var $self = $(this);
 		var href = $self.attr('href');
 		loading.status(0);

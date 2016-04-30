@@ -665,6 +665,12 @@
 		font-size: 32px;
 		line-height: 37px;
 	}
+	section#blog-header h4 {
+
+		font-size: 15px;
+		margin-top: 60px;
+		margin-bottom: 0px;
+	}
 	section#blog-articles {
 		padding-top: 62px;
 		padding-bottom: 96px;
