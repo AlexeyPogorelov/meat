@@ -1199,7 +1199,8 @@
 	}
 	section#works-item .blog-item-page ul.socials.mobile-vs,
 	section#blog-item .blog-item-page ul.socials.mobile-vs {
-		bottom: 29px;
+		/*bottom: 29px;*/
+		bottom: 10px;
 		display: block;
 		left: 0;
 		position: absolute;
