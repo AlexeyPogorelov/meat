@@ -109,3 +109,40 @@
 	font-style: italic;
 	font-weight: normal;
 }
+/* font-family: "Garamond"; */
+@font-face {
+	font-family: "Garamond";
+	src: url("../fonts/garamond/GaramondC.eot");
+	src: url("../fonts/garamond/GaramondC.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/garamond/GaramondC.woff") format("woff"),
+	url("../fonts/garamond/GaramondC.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
+@font-face {
+	font-family: "Garamond";
+	src: url("../fonts/garamond/GaramondC-Bold.eot");
+	src: url("../fonts/garamond/GaramondC-Bold.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/garamond/GaramondC-Bold.woff") format("woff"),
+	url("../fonts/garamond/GaramondC-Bold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Garamond";
+	src: url("../fonts/garamond/GaramondC-BoldItalic.eot");
+	src: url("../fonts/garamond/GaramondC-BoldItalic.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/garamond/GaramondC-BoldItalic.woff") format("woff"),
+	url("../fonts/garamond/GaramondC-BoldItalic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: 600;
+}
+@font-face {
+	font-family: "Garamond";
+	src: url("../fonts/garamond/GaramondC-Italic.eot");
+	src: url("../fonts/garamond/GaramondC-Italic.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/garamond/GaramondC-Italic.woff") format("woff"),
+	url("../fonts/garamond/GaramondC-Italic.ttf") format("truetype");
+	font-style: italic;
+	font-weight: normal;
+}
