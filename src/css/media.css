@@ -669,7 +669,7 @@
 
 		font-size: 15px;
 		margin-top: 60px;
-		margin-bottom: 0px;
+		margin-bottom: 0;
 	}
 	section#blog-articles {
 		padding-top: 62px;
@@ -1199,8 +1199,7 @@
 	}
 	section#works-item .blog-item-page ul.socials.mobile-vs,
 	section#blog-item .blog-item-page ul.socials.mobile-vs {
-		/*bottom: 29px;*/
-		bottom: 10px;
+		bottom: 29px;
 		display: block;
 		left: 0;
 		position: absolute;
@@ -1588,7 +1587,7 @@
 		width: calc(50vw - 100px);
 	}
 	section#blog-articles .articles-holder .article .description-holder {
-		padding: 0 30px;
+		/*padding: 0 30px;*/
 		position: relative;
 	}
 }
