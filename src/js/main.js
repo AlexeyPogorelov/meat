@@ -1,4 +1,42 @@
-var loading = {
+var animationPrefix = (function () {
+	var t,
+	el = document.createElement("fakeelement");
+	var transitions = {
+        "WebkitTransition": "webkitAnimationEnd",
+        "transition": "animationend",
+		"OTransition": "oAnimationEnd",
+		"MozTransition": "animationend"
+	};
+	for (t in transitions) {
+
+		if (el.style[t] !== undefined) {
+
+			return transitions[t];
+
+		}
+
+	}
+})(),
+transitionPrefix = (function () {
+	var t,
+	el = document.createElement("fakeelement");
+	var transitions = {
+        "WebkitTransition": "webkitTransitionEnd",
+        "transition": "transitionend",
+		"OTransition": "oTransitionEnd",
+		"MozTransition": "transitionend"
+	};
+	for (t in transitions) {
+
+		if (el.style[t] !== undefined) {
+
+			return transitions[t];
+
+		}
+
+	}
+})(),
+loading = {
 		avgTime: 3000,
 		trg: 1,
 		state: 0,
@@ -27,7 +65,9 @@ var loading = {
 			// WOW init
 			if ($.browser.desktop) {
 				$('.fadeInUp').addClass('wow fadeInUp');
-				$('.fadeInRight').addClass('wow fadeInRight');
+				$('.fadeInRight').addClass('wow fadeInRight').one(animationPrefix, function () {
+					$(this).removeClass('wow fadeInRight').attr('style', '');
+				});
 				$('#devices').find('> .content-holder > .container > *').addClass('wow fadeInUp');
 				$('#experience').find('> .container > *').addClass('wow fadeInUp');
 				$('#about-text').find('> .container > *').addClass('wow fadeInUp');
@@ -35,16 +75,14 @@ var loading = {
 					$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
 				}
 				$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
-					$(this).one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
-						$(this).removeClass('wow fadeInUp').css({
-							'animation': 'none',
-							'-webkit-animation': 'none'
-						});
+					$(this).on(animationPrefix, function () {
+						$(this).removeClass('wow fadeInUp').attr('style', '');
 					});
 					$(this).addClass('wow fadeInUp').css({
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
 					});
+                    //console.log(this)
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
 				$('.blog-item-page.top').addClass('wow fadeInUpA');
@@ -164,7 +202,7 @@ $(window).on('load', function () {
 				$(document).on('scroll', function () {
 					fixElement.scroll($(this).scrollTop());
 				});
-				$('section').on('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
+				$('section').on(animationPrefix, function () {
 					fixElement.resize();
 				});
 			}
@@ -246,6 +284,10 @@ $(window).on('load', function () {
 		} else if (href == "#") {
 			e.preventDefault();
 		} else {
+            //console.log(e);
+            //e.preventDefault();
+            //return
+            if (e.ctrlKey || e.metaKey || e.button == 1) return;
 			e.preventDefault();
 			if ($self.attr('target') == 'blue') {
 				loading.preloader.addClass('blue');
@@ -592,37 +634,48 @@ $(window).on('load', function () {
 			var plg = {
 				init: function () {
 					this.resize();
+                    DOM.$plate = $self.find('a, .link-holder');
 					$self
+						.on('mouseenter', this.mouseenter)
 						.on('mousemove', this.mousemove)
 						.on('mouseleave', this.mouseleave)
 						.on('click', this.click);
 					if (!state.$shadow) {
 						state.$shadow = $('<div>').addClass('blick');
-						state.$shadow.appendTo($self.find('a'));
+						state.$shadow.appendTo(DOM.$plate);
 
-						$('<div>').addClass('shadow').appendTo($self.find('a'));
+						$('<div>').addClass('shadow').appendTo(DOM.$plate);
 					}
 				},
 				resize: function () {
 					state.elementWidth = $self.innerWidth();
 					state.elementHeight = $self.innerHeight();
-					// if (typeof state.elementHeight !== "number" || state.elementHeight < 10) {
-
-					// 	$self.on('load', function () {
-					// 		state.elementWidth = $self.innerWidth();
-					// 		state.elementHeight = $self.innerHeight();
-					// 	});
-					// }
+				},
+				mouseenter: function (e) {
+                    if ($.browser.chrome) {
+                        DOM.$plate.css({
+                            "-webkit-transition": "transform .1s",
+                            "transition": "transform .1s"
+                        });
+                    } else {
+                        DOM.$plate.css({
+                            "-webkit-transition": "none",
+                            "transition": "none"
+                        });
+                    }
 				},
 				mousemove: function (e) {
 					var offsetX = e.pageX - $self.offset().left;
 					var xmult = offsetX / state.elementWidth;
 					var offsetY = e.pageY - $self.offset().top;
-					// var ymult = offsetY / state.elementHeight;
 					var ymult = offsetY / state.elementWidth;
 					plg.renderElement(xmult, ymult);
 				},
 				mouseleave: function () {
+                    DOM.$plate.css({
+                        "-webkit-transition": "all .6s",
+                        "transition": "transform .6s"
+                    });
 					plg.renderElement(0.5, 0.5);
 				},
 				click: function () {
@@ -638,7 +691,7 @@ $(window).on('load', function () {
 					if (!z) {
 						z = 10;
 					}
-					$self.find('a').css({
+                    DOM.$plate.css({
 						"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
 						"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
 					});
