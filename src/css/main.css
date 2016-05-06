@@ -263,13 +263,15 @@ nav.fixed {
 	margin: auto;
 	-webkit-transition: transform .1s;
 	transition: transform .1s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 #frame-logo a img {
 	display: block;
 	margin: auto;
 }
  #frame-logo .blick {
-	top: 15px;
+	/*top: 15px;*/
 	opacity: 0;
  }
  #frame-logo:hover .blick {
@@ -323,20 +325,30 @@ section#main-presentation .right-side {
 	text-align: left;
 }
 section#main-presentation .left-side {
-	display: inline-block;
+    top: 15px;
+
+    display: inline-block;
 	position: relative;
 	/*text-align: right;*/
 	vertical-align: middle;
-	-webkit-perspective: 2000px;
-	perspective: 2000px;
+	-webkit-perspective: 1000px;
+	perspective: 1000px;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+section#main-presentation .left-side:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 section#main-presentation .left-side img {
 	-webkit-box-shadow: 0 48px 75px -10px rgba(0,0,0,.35);
 	box-shadow: 0 48px 75px -10px rgba(0,0,0,.35);
 	position: relative;
-	top: 15px;
+	/*top: 15px;*/
 	/*width: 265px;*/
 	width: 322px;
 }
@@ -346,8 +358,11 @@ section#main-presentation .left-side .parallax {
     left: 0;
     height: 100%;
     width: 100%;
-    transform: translateZ(200px) !important;
+    transform: translateZ(50px) !important;
+    -webkit-transform: translateZ(50px) !important;
     z-index: 2;
+    box-shadow: none;
+    -webkit-box-shadow: none;
 }
 section#main-presentation .right-side {
     display: inline-block;
@@ -582,11 +597,22 @@ section#portfolio-presentation .portfolio-item {
 	-ms-user-select: none;
 	user-select: none;*/
 
+    -webkit-transition: all .5s;
+    transition: all .5s;
+
 	-webkit-perspective: 2000px;
 	perspective: 2000px;
 
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+}
+section#portfolio-presentation .portfolio-item:hover {
+
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
+
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 section#portfolio-presentation .portfolio-item a .shadow {
 	content: "";
@@ -1683,10 +1709,21 @@ section#works-articles .articles-holder .article {
 	/*box-shadow: 0 24px 65px -20px rgba(0,0,0,.85);*/
 	position: relative;
 	z-index: 1;
-	-webkit-perspective: 2000px;
-	perspective: 2000px;
+	-webkit-perspective: 1400px;
+	perspective: 1400px;
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
+
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+ section#works-articles .articles-holder .article:hover {
+
+ -webkit-transform: scale(1.04);
+ transform: scale(1.04);
+
+ -webkit-transition: all .5s;
+ transition: all .5s;
 }
 section#works-articles .articles-holder .article a {
 	background: #fff;

@@ -605,6 +605,11 @@
 	#frame-logo .blick {
 		display: none;
 	}
+
+    section#main-presentation .left-side {
+        top: 0;
+    }
+
 	.table-holder {
 		max-width: 100%;
 		overflow: auto;
@@ -830,9 +835,9 @@
 	}
 	section#portfolio-presentation .portfolio-item.type-1,
 	section#portfolio-presentation .portfolio-item.type-2 {
-		height: 275px;
+		/*height: 275px;*/
 		width: 275px;
-		height: calc(100vw / 2 - 130px);
+		/*height: calc(100vw / 2 - 130px);*/
 		width: calc(100vw / 2 - 130px);
 	}
 	section#portfolio-presentation .portfolio-item.type-3 {
@@ -919,7 +924,7 @@
 	}
 	section#main-presentation .left-side img {
 		position: static;
-		width: auto;
+		/*width: auto;*/
 		width: 100%;
 	}
 	section#main-presentation .right-side {
@@ -950,7 +955,7 @@
 	nav.footer-navigation .socials {
 		padding-left: 66px;
 		margin-right: 0;
-		width: 253px;
+		/*width: 253px;*/
 		width: 100%;
 	}
 	section#subscriber .description-holder a {
@@ -1734,9 +1739,7 @@
 	}
 	section#main-presentation h1 {
 		text-align: center;
-		font-size: 6vw;
 		font-size: 9.2vw;
-		line-height: 1.3em;
 		line-height: 1.1em;
 	}
 	section#main-presentation h3 {
@@ -1749,3 +1752,8 @@
 	}
 }
 
+/*@media screen and (min-width: 960px) {*/
+    /*section#main-presentation .left-side .parallax {*/
+        /*top: 10px;*/
+    /*}*/
+/*}*/
