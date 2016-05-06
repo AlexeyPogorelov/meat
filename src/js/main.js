@@ -630,6 +630,11 @@ $(window).on('load', function () {
 				opt.power = 4;
 			}
 
+			// if chrome
+			if ($.browser.chrome) {
+				opt.power = 23;
+			}
+
 			// methods
 			var plg = {
 				init: function () {

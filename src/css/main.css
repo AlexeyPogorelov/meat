@@ -358,11 +358,19 @@ section#main-presentation .left-side .parallax {
     left: 0;
     height: 100%;
     width: 100%;
-    transform: translateZ(50px) !important;
-    -webkit-transform: translateZ(50px) !important;
+    transform: translateZ(0px) !important;
+    -webkit-transform: translateZ(0px) !important;
     z-index: 2;
     box-shadow: none;
     -webkit-box-shadow: none;
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+ section#main-presentation .left-side:hover .parallax {
+     transform: translateZ(50px) !important;
+     -webkit-transform: translateZ(50px) !important;
+     -webkit-transition: all .5s;
+     transition: all .5s;
 }
 section#main-presentation .right-side {
     display: inline-block;
