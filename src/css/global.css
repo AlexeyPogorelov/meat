@@ -671,6 +671,9 @@ button:focus,
 	-webkit-perspective: 1000px;
 	perspective: 1000px;
 
+    -webkit-transform: translateZ(70px);
+    transform: translateZ(70px);
+
 	-webkit-transition: opacity .3s ease-out, transform .2s, visibility .4s;
 	transition: opacity .3s ease-out, transform .2s, visibility .4s;
 }
@@ -721,4 +724,5 @@ button:focus,
 	transform: scale(1, 1);
 	-webkit-transition: transform .3s;
 	transition: transform .3s;
+    overflow: auto;
 }

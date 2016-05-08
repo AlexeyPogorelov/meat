@@ -63,9 +63,11 @@ loading = {
 			}
 
 			// WOW init
-			if ($.browser.desktop) {
-				$('.fadeInUp').addClass('wow fadeInUp');
-				$('.fadeInRight').addClass('wow fadeInRight').one(animationPrefix, function () {
+			if ($.browser.desktop && $(window).width() > 660) {
+				$('.fadeInUp').addClass('wow').one(animationPrefix, function () {
+                    $(this).removeClass('wow fadeInUp').attr('style', '');
+                });
+				$('.fadeInRight').addClass('wow').one(animationPrefix, function () {
 					$(this).removeClass('wow fadeInRight').attr('style', '');
 				});
 				$('#devices').find('> .content-holder > .container > *').addClass('wow fadeInUp');

@@ -339,6 +339,9 @@ section#main-presentation .left-side {
     -webkit-transition: all .6s;
     transition: all .6s;
 }
+section#main-presentation .left-side.animated {
+    pointer-events: none;
+}
 section#main-presentation .left-side:hover {
     -webkit-transform: scale(1.05);
     transform: scale(1.05);
@@ -622,6 +625,9 @@ section#portfolio-presentation .portfolio-item {
 	-webkit-transform-style: preserve-3d;
 	transform-style: preserve-3d;
 }
+section#portfolio-presentation .portfolio-item.animated {
+    pointer-events: none;
+}
 section#portfolio-presentation .portfolio-item:hover {
 
     -webkit-transform: scale(1.04);
@@ -657,11 +663,41 @@ section#portfolio-presentation .portfolio-item a {
 	text-decoration: none;
 	z-index: 1;
 	transform-origin: 50%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
 	-webkit-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
 	-webkit-transition: transform .3s;
 	transition: transform .3s;
 }
+section#portfolio-presentation .portfolio-item a .pre-parallax,
+section#portfolio-presentation .portfolio-item a .parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateZ(0px);
+    -webkit-transform: translateZ(0px);
+    z-index: 2;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -webkit-transition: all .6s;
+    transition: all .6s;
+}
+section#portfolio-presentation .portfolio-item a:hover .parallax {
+    transform: translateZ(35px);
+    -webkit-transform: translateZ(35px);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+section#portfolio-presentation .portfolio-item a:hover .pre-parallax {
+    transform: translateZ(25px);
+    -webkit-transform: translateZ(25px);
+    -webkit-transition: all .5s;
+    transition: all .5s;
+}
+
 section#portfolio-presentation .portfolio-item .blick {
 	position: absolute;
 	height: 100%;
@@ -673,8 +709,8 @@ section#portfolio-presentation .portfolio-item .blick {
 	background-image: -webkit-linear-gradient(14.5deg, transparent, rgba(255, 255, 255, 0.2) 55%, transparent 115%);
 	background-image: linear-gradient(14.5deg, transparent, rgba(255, 255, 255, 0.2) 55%, transparent 115%);
 	transform-origin: 50%;
-	transform: translate3d(0,0,0);
-	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,2px);
+	-webkit-transform: translate3d(0,0,2px);
 }
 section#portfolio-presentation .portfolio-item:hover .blick {
 	opacity: 1;
@@ -1386,6 +1422,10 @@ section#blog-articles .articles-holder .article {
 	-ms-user-select: none;
 	user-select: none;
 }
+
+section#blog-articles .articles-holder .article.animated {
+    pointer-events: none;
+}
 section#blog-articles .articles-holder .article:hover {
 	-webkit-transform: translateY(-10px);
 	transform: translateY(-10px);
@@ -1740,6 +1780,9 @@ section#works-articles .articles-holder .article {
 
  -webkit-transition: all .5s;
  transition: all .5s;
+}
+section#works-articles .articles-holder .article.animated {
+    pointer-events: none;
 }
 section#works-articles .articles-holder .article a {
 	background: #fff;
