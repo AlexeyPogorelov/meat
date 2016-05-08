@@ -819,11 +819,11 @@
 	section#portfolio-presentation .portfolio-item.type-2 {
 		/*height: 275px;*/
 		width: 275px;
-		/*height: calc(100vw / 2 - 130px);*/
-		width: calc(100vw / 2 - 130px);
+		height: calc(100vw / 2 - 128px);
+		width: calc(100vw / 2 - 128px);
 	}
 	section#portfolio-presentation .portfolio-item.type-3 {
-		margin-left: 85px;
+		margin-left: 82px;
 		height: calc(100vw / 2 - 214px);
 		width: calc(100vw / 2 - 214px);
 	}
@@ -1223,6 +1223,7 @@
 	nav.footer-navigation .socials li {
 		margin-bottom: 40px;
 	}
+	.modal-holder .modal-content,
 	.modal-holder.opened .modal-content {
 		top: 28px;
 		left: 32px;
@@ -1320,6 +1321,13 @@
 		top: 16px;
 		left: 22px;
 	}
+    #capabilities .container.table .cell {
+        width: calc(50vw - 32px);
+    }
+    nav .socials {
+        margin-top: 2px;
+        margin-right: 13px;
+    }
 	section#blog-articles .container {
 		width: calc(100vw - 64px);
 	}

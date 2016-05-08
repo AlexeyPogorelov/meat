@@ -223,8 +223,10 @@ $(window).on('load', function () {
 	if (winWidth > 944) {
 		$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
 	}
+    $('.portfolio-item, #frame-logo, section#works-articles .article').find('a, .link-holder').append( $('<div>').addClass('shadow') );
 
-	// sidebars
+
+    // sidebars
 	$('.navbar-toggle').on('click', function () {
 		$('#mobile-menu').toggleClass('opened');
 		bodyOverflow.fixBody();
@@ -427,6 +429,19 @@ $(window).on('load', function () {
 		winHeight = $(window).height();
 		subscriberTop = $subscriber.offset().top;
 		footerNavigationTop = $footerNavigation.offset().top;
+
+     // capabilities height fix
+        (function () {
+            var height = 1,
+                $elements = $('#capabilities').find('.cell > *');
+            $elements.attr('style', '');
+            $elements.each(function () {
+                if ( $(this).height() > height ) {
+                    height = $(this).height();
+                }
+            });
+            $elements.height( height );
+        })();
 	});
 
 	// iOS fix
@@ -650,8 +665,7 @@ $(window).on('load', function () {
 					if (!state.$shadow) {
 						state.$shadow = $('<div>').addClass('blick');
 						state.$shadow.appendTo(DOM.$plate);
-
-						$('<div>').addClass('shadow').appendTo(DOM.$plate);
+						//$('<div>').addClass('shadow').appendTo(DOM.$plate);
 					}
 				},
 				resize: function () {
