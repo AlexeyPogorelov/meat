@@ -270,13 +270,14 @@ nav.fixed {
 	display: block;
 	margin: auto;
 }
- #frame-logo .blick {
+#frame-logo .blick {
 	/*top: 15px;*/
 	opacity: 0;
- }
- #frame-logo:hover .blick {
-	opacity: 1;
- }
+    transform: translateZ(2px);
+}
+#frame-logo:hover .blick {
+    opacity: 1;
+}
 /* 3D HOVER */
 .blick {
 	content: "";
@@ -352,6 +353,7 @@ section#main-presentation .left-side img {
 	/*width: 265px;*/
 	width: 322px;
 }
+section#main-presentation .left-side .pre-parallax,
 section#main-presentation .left-side .parallax {
     position: absolute;
     top: 0;
@@ -371,6 +373,12 @@ section#main-presentation .left-side .parallax {
      -webkit-transform: translateZ(50px);
      -webkit-transition: all .5s;
      transition: all .5s;
+}
+section#main-presentation .left-side:hover .pre-parallax {
+    transform: translateZ(25px);
+    -webkit-transform: translateZ(25px);
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 section#main-presentation .right-side {
     display: inline-block;
@@ -2188,14 +2196,21 @@ section#works-item .blockquote-holder .image-holder img {
 	overflow: auto;
 	position: relative;
 	height: 100%;
+    display: table;
+    width: 100%;
+}
+#main-modal .container:before {
+    display: none;
 }
 #main-modal .container .content-holder {
 	padding: 38px 28px;
-	position: absolute;
-	top: 50%;
+	/*position: absolute;*/
+    display: table-cell;
+    vertical-align: middle;
+	/*top: 50%;*/
 	width: 100%;
-	-webkit-transform: translateY(-50%);
-	transform: translateY(-50%);
+	/*-webkit-transform: translateY(-50%);*/
+	/*transform: translateY(-50%);*/
 }
 #main-modal p {
 	color: black;

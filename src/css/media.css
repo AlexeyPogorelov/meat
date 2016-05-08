@@ -442,12 +442,12 @@
 		/*height: 265px;*/
 		/*width: 265px;*/
 	}
-	.modal-holder .modal-content {
-		top: 28px;
-		bottom: 28px;
-		left: 32px;
-		right: 32px;
-	}
+	/*.modal-holder .modal-content {*/
+		/*top: 28px;*/
+		/*bottom: 28px;*/
+		/*left: 32px;*/
+		/*right: 32px;*/
+	/*}*/
 	#underconstruction {
 		/*height: auto !important;*/
 		min-height: 720px;
@@ -477,24 +477,6 @@
 	}
 	section#subscriber .input-area input {
 		/*padding-left: 6px;*/
-	}
-	#main-modal .container .content-holder {
-		top: 0;
-		text-align: left;
-		-webkit-transform: none;
-		transform: none;
-	}
-	#main-modal p {
-		padding: 0 40px;
-		padding: 0;
-	}
-	#main-modal b {
-		margin-top: 0;
-	}
-	#main-modal a.buttom-holder {
-		bottom: 20px;
-		line-height: 40px;
-		font-size: 18px;
 	}
 	section#page-404 .logo {
 		height: 143px;
@@ -872,8 +854,9 @@
 	section#capabilities .right-element {
 		width: auto;
 		width: calc(100% - 20px);
-		padding: 46px 20px 28px 39px;
-		padding: 70px 20px 28px 48px;
+		/*padding: 46px 20px 28px 39px;*/
+		/*padding: 70px 20px 28px 48px;*/
+        padding: 46px 30px 26px 39px;
 	}
 	#capabilities .container.table .cell  {
 		display: inline-block;
@@ -1540,6 +1523,32 @@
 	section#subscriber {
 		padding-left: 32px;
 	}
+    .modal-holder .modal-content {
+        top: 28px;
+        bottom: 28px;
+        left: 32px;
+        right: 32px;
+    }
+    #main-modal .container .content-holder {
+        top: 0;
+        text-align: left;
+        vertical-align: top;
+    }
+    #main-modal p {
+        padding: 0 40px;
+        padding: 0;
+    }
+    #main-modal b {
+        margin-top: 0;
+    }
+    #main-modal a.buttom-holder {
+        bottom: 20px;
+        line-height: 40px;
+        font-size: 18px;
+    }
+    #main-modal .modal-mobile-hidden {
+        display: none;
+    }
 }
 
 /*
@@ -1563,8 +1572,12 @@
 	.mobile-menu ul {
 		margin-top: 10px;
 	}
+    #main-modal .container .content-holder,
 	#main-modal a.buttom-holder {
 		position: static;
+        display: table-row;
+        -webkit-transform: none;
+        transform: none;
 	}
 	section#page-404 .illustration {
 		bottom: auto;
@@ -1752,6 +1765,25 @@
 	}
 }
 
+@media all and (max-width: 620px) {
+    #capabilities {
+        display: none !important;
+    }
+
+    #capabilities-slider {
+        display: block !important;
+    }
+}
+
+@media all and (min-width: 619px) {
+    #capabilities {
+        display: block !important;
+    }
+
+    #capabilities-slider {
+        display: none !important;
+    }
+}
 /*@media screen and (min-width: 960px) {*/
     /*section#main-presentation .left-side .parallax {*/
         /*top: 10px;*/
