@@ -2,8 +2,8 @@ var animationPrefix = (function () {
 	var t,
 	el = document.createElement("fakeelement");
 	var transitions = {
-        "WebkitTransition": "webkitAnimationEnd",
         "transition": "animationend",
+        "WebkitTransition": "webkitAnimationEnd",
 		"OTransition": "oAnimationEnd",
 		"MozTransition": "animationend"
 	};
@@ -21,8 +21,8 @@ transitionPrefix = (function () {
 	var t,
 	el = document.createElement("fakeelement");
 	var transitions = {
-        "WebkitTransition": "webkitTransitionEnd",
         "transition": "transitionend",
+        "WebkitTransition": "webkitTransitionEnd",
 		"OTransition": "oTransitionEnd",
 		"MozTransition": "transitionend"
 	};
@@ -65,10 +65,18 @@ loading = {
 			// WOW init
 			if ($.browser.desktop && $(window).width() > 660) {
 				$('.fadeInUp').addClass('wow').one(animationPrefix, function () {
-                    $(this).removeClass('wow fadeInUp').attr('style', '');
+                    console.log( this );
+                    $(this).removeClass('wow fadeInUp').css({
+                        '-webkit-animation-name': 'none',
+                        'animation-name': 'none'
+                    });
                 });
 				$('.fadeInRight').addClass('wow').one(animationPrefix, function () {
-					$(this).removeClass('wow fadeInRight').attr('style', '');
+                    console.log( this );
+					$(this).removeClass('wow fadeInRight').css({
+                        '-webkit-animation-name': 'none',
+                        'animation-name': 'none'
+                    });
 				});
 				$('#devices').find('> .content-holder > .container > *').addClass('wow fadeInUp');
 				$('#experience').find('> .container > *').addClass('wow fadeInUp');
@@ -77,13 +85,19 @@ loading = {
 					$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
 				}
 				$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
-					$(this).on(animationPrefix, function () {
-						$(this).removeClass('wow fadeInUp').attr('style', '');
-					});
-					$(this).addClass('wow fadeInUp').css({
+                    //console.log(animationPrefix)
+                    var $self = $(this);
+                    $self.addClass('wow fadeInUp').css({
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
 					});
+                    setTimeout(function () {
+                        $self.on(animationPrefix, function (e) {
+                            //console.log( e );
+                            if (e.target !== this) return;
+                            $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
+                        });
+                    }, 400);
                     //console.log(this)
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
@@ -115,7 +129,8 @@ loading = {
 			// hide preloader
 			loading.preloader.animate({}).delay(100).animate({
 				'opacity': 0
-			}, 600, 'easeOutQuint', function () {
+			}, 500, 'easeOutQuint', function () {
+                $(window).trigger('resize');
 				loading.status(0);
 				$(this).detach();
 				loading.finished = true;
@@ -223,7 +238,7 @@ $(window).on('load', function () {
 	if (winWidth > 944) {
 		$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
 	}
-    $('.portfolio-item, #frame-logo, section#works-articles .article').find('a, .link-holder').append( $('<div>').addClass('shadow') );
+    $('.portfolio-item, #frame-logo, section#works-articles .article').append( $('<div>').addClass('shadow') );
 
 
     // sidebars
@@ -253,6 +268,18 @@ $(window).on('load', function () {
 		// console.log($(this).html());
 		$(this).html('<span>' + $(this).html() + '</span>');
 	});
+
+    function capatabilitiesHeightFix () {
+        var height = 1,
+            $elements = $('#capabilities').find('.cell > *');
+        $elements.attr('style', '');
+        $elements.each(function () {
+            if ( $(this).height() > height ) {
+                height = $(this).height();
+            }
+        });
+        $elements.height( height );
+    }
 
 	// subscriber
 	$('#subscriber').find('input').on('focus', function () {
@@ -431,18 +458,9 @@ $(window).on('load', function () {
 		footerNavigationTop = $footerNavigation.offset().top;
 
      // capabilities height fix
-        (function () {
-            var height = 1,
-                $elements = $('#capabilities').find('.cell > *');
-            $elements.attr('style', '');
-            $elements.each(function () {
-                if ( $(this).height() > height ) {
-                    height = $(this).height();
-                }
-            });
-            $elements.height( height );
-        })();
-	});
+        capatabilitiesHeightFix ();
+
+    });
 
 	// iOS fix
 	if ($.browser.safari && !$.browser.mobile ) $('body').addClass('client-safari');

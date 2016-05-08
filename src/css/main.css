@@ -284,8 +284,8 @@ nav.fixed {
 	position: absolute;
 	left: 0;
 	top: 0;
-	background-image: -webkit-linear-gradient(14.5deg, transparent, rgba(255, 255, 255, 0.2) 55%, transparent 115%);
-	background-image: linear-gradient(14.5deg, transparent, rgba(255, 255, 255, 0.2) 55%, transparent 115%);
+	/*background-image: -webkit-linear-gradient(14.5deg, transparent, rgba(255, 255, 255, 0.2) 55%, transparent 115%);*/
+	/*background-image: linear-gradient(14.5deg, transparent, rgba(255, 255, 255, 0.2) 55%, transparent 115%);*/
 	height: 100%;
 	width: 100%;
 	-webkit-transition: all .4s;
@@ -636,7 +636,7 @@ section#portfolio-presentation .portfolio-item:hover {
     -webkit-transition: all .5s;
     transition: all .5s;
 }
-section#portfolio-presentation .portfolio-item a .shadow {
+section#portfolio-presentation .portfolio-item .shadow {
 	content: "";
 	position: absolute;
 	top: -12px;
@@ -1773,26 +1773,25 @@ section#works-articles .articles-holder .article {
     -webkit-transition: all .6s;
     transition: all .6s;
 }
- section#works-articles .articles-holder .article:hover {
+section#works-articles .articles-holder .article:hover {
 
- -webkit-transform: scale(1.04);
- transform: scale(1.04);
+    -webkit-transform: scale(1.04);
+    transform: scale(1.04);
 
- -webkit-transition: all .5s;
- transition: all .5s;
+    -webkit-transition: all .5s;
+    transition: all .5s;
 }
 section#works-articles .articles-holder .article.animated {
     pointer-events: none;
 }
 section#works-articles .articles-holder .article a {
-	background: #fff;
     perspective: 280px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     perspective: 1280px;
     -webkit-perspective: 1280px;
 }
-section#works-articles .articles-holder .article:after {
+section#works-articles .articles-holder .article .shadow {
 	content: "";
 	position: absolute;
 	top: -12px;
@@ -1804,13 +1803,27 @@ section#works-articles .articles-holder .article:after {
 	-webkit-transform: translateZ(-100px);
 	transform: translateZ(-100px);
 	z-index: 0;
+    -webkit-transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
+    transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
 }
+section#works-articles .articles-holder .article.wow.animated .shadow {
+    -webkit-box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
+    box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
+    -webkit-transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
+    transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
+}
+section#works-articles .articles-holder .article.wow .shadow {
+    -webkit-box-shadow: 0 66px 75px -10px rgba(0,0,0,0);
+    box-shadow: 0 66px 75px -10px rgba(0,0,0,0);
+}
+
 /*section#works-articles .articles-holder .article:hover {
 	-webkit-transform: translateY(-10px);
 	transform: translateY(-10px);
 	-moz-transform: none;
 }*/
-section#works-articles .articles-holder .article .image-holder {
+section#works-articles .articles-holder .article .image-holder,
+section#works-articles .articles-holder .article img {
 	height: 240px;
 	width: 240px;
 
@@ -1827,8 +1840,10 @@ section#works-articles .articles-holder .article .image-holder {
 
 section#works-articles .articles-holder .article img {
 
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
+    /*-webkit-transform-style: preserve-3d;*/
+    /*transform-style: preserve-3d;*/
+    -webkit-transform: translateZ(0px);
+    transform: translateZ(0px);
 
 }
 section#works-articles .articles-holder .article .pre-parallax,
@@ -1847,8 +1862,8 @@ section#works-articles .articles-holder .article .parallax {
     transition: all .6s;
 }
 section#works-articles .articles-holder .article:hover .parallax {
-    transform: translateZ(35px);
-    -webkit-transform: translateZ(35px);
+    transform: translateZ(40px);
+    -webkit-transform: translateZ(40px);
     -webkit-transition: all .5s;
     transition: all .5s;
 }
@@ -1881,12 +1896,12 @@ section#works-articles .articles-holder .article .blick {
 	opacity: 0;
 	-webkit-transition: all .6s;
 	transition: all .6s;
-    z-index: 2;
+    z-index: 0;
     -webkit-transform: translateZ(8px);
     transform: translateZ(8px);
 }
 section#works-articles .articles-holder .article:hover .blick {
-	opacity: 1;
+	opacity: 0.7;
 	-webkit-transition: all .6s;
 	transition: all .6s;
 }
