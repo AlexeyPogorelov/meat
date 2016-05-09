@@ -369,6 +369,9 @@ input[type='number'] {
 .button-holder {
 	text-align: center;
 }
+.wow {
+    /*visibility: hidden;*/
+}
 
 /*	LIGHTBOX	*/
 

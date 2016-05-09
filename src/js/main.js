@@ -64,23 +64,9 @@ loading = {
 
 			// WOW init
 			if ($.browser.desktop && $(window).width() > 660) {
-				$('.fadeInUp').addClass('wow').one(animationPrefix, function () {
-                    console.log( this );
-                    $(this).removeClass('wow fadeInUp').css({
-                        '-webkit-animation-name': 'none',
-                        'animation-name': 'none'
-                    });
-                });
-				$('.fadeInRight').addClass('wow').one(animationPrefix, function () {
-                    console.log( this );
-					$(this).removeClass('wow fadeInRight').css({
-                        '-webkit-animation-name': 'none',
-                        'animation-name': 'none'
-                    });
-				});
+				$('.fadeInUp, .fadeInRight').addClass('wow');
 				$('#devices').find('> .content-holder > .container > *').addClass('wow fadeInUp');
-				$('#experience').find('> .container > *').addClass('wow fadeInUp');
-				$('#about-text').find('> .container > *').addClass('wow fadeInUp');
+				$('#experience, #about-text').find('> .container > *').addClass('wow fadeInUp');
 				if (!$.browser.safari) {
 					$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
 				}
@@ -91,13 +77,13 @@ loading = {
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
 					});
-                    setTimeout(function () {
-                        $self.on(animationPrefix, function (e) {
-                            //console.log( e );
-                            if (e.target !== this) return;
-                            $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
-                        });
-                    }, 400);
+                    //setTimeout(function () {
+                    //    $self.on(animationPrefix, function (e) {
+                    //        //console.log( e );
+                    //        if (e.target !== this) return;
+                    //        $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
+                    //    });
+                    //}, 1000);
                     //console.log(this)
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
@@ -136,7 +122,45 @@ loading = {
 				loading.finished = true;
 
 				//	BUG shadow fix
-				//$('<style>').html('section#portfolio-presentation .portfolio-item a:after {height: 99%}').appendTo('body')
+                if (!$.browser.desktop && $(window).width() > 660) return;
+                $('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
+                    //console.log(animationPrefix)
+                    var $self = $(this);
+                    setTimeout(function () {
+                        $self.on(animationPrefix, function (e) {
+                            //console.log( e );
+                            if (e.target !== this) return;
+                            $self.off(animationPrefix).removeClass('fadeInUp').attr('style', '');
+                        });
+                    }, 100);
+                    //console.log(this)
+                });
+
+                $('.fadeInUp, .fadeInRight').each(function () {
+                    var $self = $(this);
+                    setTimeout(function () {
+                        $self.on(animationPrefix, function (e) {
+                            if (e.target !== this) return;
+                            $self.removeClass('fadeInUp fadeInRight').css({
+                                '-webkit-animation-name': 'none',
+                                'animation-name': 'none'
+                            }).off(animationPrefix);
+                        });
+                    }, 100);
+                });
+
+                //$('#main-presentation').find('.fadeInUp, .fadeInRight').each(function () {
+                //    var $self = $(this);
+                //
+                //    $self.on(animationPrefix, function (e) {
+                //        if (e.target !== this) return;
+                //        $self.removeClass('fadeInUp fadeInRight').css({
+                //            '-webkit-animation-name': 'none',
+                //            'animation-name': 'none'
+                //        }).off(animationPrefix);
+                //    });
+                //});
+
 			});
 		}
 	};
@@ -268,6 +292,11 @@ $(window).on('load', function () {
 		// console.log($(this).html());
 		$(this).html('<span>' + $(this).html() + '</span>');
 	});
+
+    $('#capabilities').find('.cell').addClass('wow fadeInUp').eq(1).css({
+        'animation-delay': '300ms',
+        '-webkit-animation-delay': '300ms'
+    });
 
     function capatabilitiesHeightFix () {
         var height = 1,
@@ -665,11 +694,6 @@ $(window).on('load', function () {
 				opt.power = 4;
 			}
 
-			// if chrome
-			if ($.browser.chrome) {
-				opt.power = 23;
-			}
-
 			// methods
 			var plg = {
 				init: function () {
@@ -704,27 +728,51 @@ $(window).on('load', function () {
                     }
 				},
 				mousemove: function (e) {
-					var offsetX = e.pageX - $self.offset().left;
-					var xmult = offsetX / state.elementWidth;
-					var offsetY = e.pageY - $self.offset().top;
-					var ymult = offsetY / state.elementWidth;
+					var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
+					var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
 					plg.renderElement(xmult, ymult);
-				},
+                    //console.log( xmult );
+                    //console.log( ymult );
+
+                    //var animationState = {
+                     //   startTime: new Date().getTime(),
+                     //   startX:.5,
+                     //   startY:.5,
+                     //   speed: 100,
+                     //   endX: (e.pageX - $self.offset().left) / state.elementWidth,
+                     //   endY: (e.pageY - $self.offset().top) / state.elementWidth,
+                     //   status: 0
+                    //};
+                    //clearInterval( plg.firstAnimation );
+                    //
+                    //plg.firstAnimation = setInterval(function () {
+                     //   var currentTime = new Date().getTime();
+                     //   animationState.status = (currentTime - animationState.startTime) / animationState.speed;
+                     //   if (animationState.status > 1) {
+                     //       animationState.status = 1;
+                     //       clearInterval( plg.firstAnimation );
+                     //   }
+                     //   console.log( (animationState.endX - animationState.startX) / animationState.status + animationState.startX );
+                     //   plg.renderElement(Math.floor( (animationState.endX - animationState.startX) / animationState.status ), Math.floor( (animationState.endY - animationState.startY) / animationState.status) );
+                    //
+                    //}, 20);
+                },
 				mouseleave: function () {
                     DOM.$plate.css({
                         "-webkit-transition": "all .6s",
                         "transition": "transform .6s"
                     });
-					plg.renderElement(0.5, 0.5);
+                    clearInterval( plg.firstAnimation );
+                    plg.renderElement(0.5, 0.5);
 				},
 				click: function () {
 					// $self.parent().parent().find('a').css({
 					// 	"-webkit-transform": "none",
 					// 	"transform": "none"
 					// });
-					$self.parent().parent().find('.blick').css({
-						'display': 'none'
-					});
+					//$self.parent().parent().find('.blick').css({
+					//	'display': 'none'
+					//});
 				},
 				renderElement: function (x, y, z) {
 					if (!z) {

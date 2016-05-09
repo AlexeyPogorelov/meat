@@ -428,6 +428,7 @@ section#capabilities .right-element {
 	width: 450px;
 	vertical-align: top;
 }
+
 section#capabilities .right-element {
 	-webkit-animation-delay: .4s;
 	animation-delay: .4s;
@@ -686,14 +687,14 @@ section#portfolio-presentation .portfolio-item a .parallax {
     transition: all .6s;
 }
 section#portfolio-presentation .portfolio-item a:hover .parallax {
-    transform: translateZ(35px);
-    -webkit-transform: translateZ(35px);
+    transform: translateZ(85px);
+    -webkit-transform: translateZ(85px);
     -webkit-transition: all .5s;
     transition: all .5s;
 }
 section#portfolio-presentation .portfolio-item a:hover .pre-parallax {
-    transform: translateZ(25px);
-    -webkit-transform: translateZ(25px);
+    transform: translateZ(45px);
+    -webkit-transform: translateZ(45px);
     -webkit-transition: all .5s;
     transition: all .5s;
 }
@@ -1468,12 +1469,16 @@ section#blog-articles .articles-holder .article h4 {
 	line-height: 32px;
 	margin-top: 45px;
 	padding: 0 26px;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 section#blog-articles .articles-holder .article p {
 	color: #535353;
 	margin-top: 27px;
 	padding: 0 26px;
 	font-family: Garamond, sans-serif;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 section#blog-articles .load-more {
 	background: none;
@@ -1784,8 +1789,8 @@ section#works-articles .articles-holder .article:hover {
 section#works-articles .articles-holder .article.animated {
     pointer-events: none;
 }
+section#works-articles .articles-holder .article .link-holder,
 section#works-articles .articles-holder .article a {
-    perspective: 280px;
     transform-style: preserve-3d;
     -webkit-transform-style: preserve-3d;
     perspective: 1280px;
@@ -1807,14 +1812,16 @@ section#works-articles .articles-holder .article .shadow {
     transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
 }
 section#works-articles .articles-holder .article.wow.animated .shadow {
-    -webkit-box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
-    box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
-    -webkit-transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
-    transition: box-shadow .5s .5s cubic-bezier(0.63, 0.01, 1, 1);
-}
-section#works-articles .articles-holder .article.wow .shadow {
     -webkit-box-shadow: 0 66px 75px -10px rgba(0,0,0,0);
     box-shadow: 0 66px 75px -10px rgba(0,0,0,0);
+    -webkit-transition: none;
+    transition: none;
+}
+section#works-articles .articles-holder .article.wow .shadow {
+    -webkit-box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
+    box-shadow: 0 66px 75px -10px rgba(0,0,0,.3);
+    -webkit-transition: box-shadow .5s cubic-bezier(0.63, 0.01, 1, 1);
+    transition: box-shadow .5s cubic-bezier(0.63, 0.01, 1, 1);
 }
 
 /*section#works-articles .articles-holder .article:hover {
@@ -1897,8 +1904,8 @@ section#works-articles .articles-holder .article .blick {
 	-webkit-transition: all .6s;
 	transition: all .6s;
     z-index: 0;
-    -webkit-transform: translateZ(8px);
-    transform: translateZ(8px);
+    -webkit-transform: translate3d(0,0,1px);
+    transform: translate3d(0,0,1px);
 }
 section#works-articles .articles-holder .article:hover .blick {
 	opacity: 0.7;
@@ -1992,6 +1999,7 @@ section#works-item ul.socials li {
 }
 section#works-item ul.socials li a {
 	display: inline-block;
+    cursor: pointer;
 	line-height: 58px;
 	color: #656565;
 	vertical-align: middle;

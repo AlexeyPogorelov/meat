@@ -127,7 +127,7 @@
 /*		max-width: 1440px;
 		width: auto;*/
 	}
-    section#works-articles .articles-holder .article .image-holder,
+	section#works-articles .articles-holder .article .image-holder,
 	section#works-articles .articles-holder .article img {
 		height: 320px;
 		width: 320px;
@@ -589,9 +589,9 @@
 		display: none;
 	}
 
-    section#main-presentation .left-side {
-        top: 0;
-    }
+	section#main-presentation .left-side {
+		top: 0;
+	}
 
 	.table-holder {
 		max-width: 100%;
@@ -631,11 +631,11 @@
 	section#blog-item .full-width {
 		margin-bottom: 43px;
 	}
-	section#works-item iframe,
-	section#blog-item iframe {
-		height: 300px;
-		margin-bottom: 30px;
-	}
+	/*section#works-item iframe,*/
+	/*section#blog-item iframe {*/
+		/*height: 300px;*/
+		/*margin-bottom: 30px;*/
+	/*}*/
 	section#blog-articles .articles-holder .article .description-holder {
 		height: 277px;
 	}
@@ -857,7 +857,7 @@
 		width: calc(100% - 20px);
 		/*padding: 46px 20px 28px 39px;*/
 		/*padding: 70px 20px 28px 48px;*/
-        padding: 46px 30px 26px 39px;
+		padding: 46px 30px 26px 39px;
 	}
 	#capabilities .container.table .cell  {
 		display: inline-block;
@@ -1008,7 +1008,7 @@
 		/*width: 256px;*/
 		width: calc(50% - 80px);
 	}
-    section#works-articles .articles-holder .article .image-holder,
+	section#works-articles .articles-holder .article .image-holder,
 	section#works-articles .articles-holder .article img {
 		height: auto;
 		width: 100%;
@@ -1206,11 +1206,11 @@
 	section#blog-item ul.socials.mobile-vs li i {
 		font-size: 20px;
 	}
-	section#works-item iframe,
-	section#blog-item iframe {
-		height: 360px;
-		margin-bottom: 30px;
-	}
+	/*section#works-item iframe,*/
+	/*section#blog-item iframe {*/
+		/*height: 360px;*/
+		/*margin-bottom: 30px;*/
+	/*}*/
 	section#works-item-header .container {
 		max-width: 320px;
 		padding-left: 0;
@@ -1323,13 +1323,13 @@
 		top: 16px;
 		left: 22px;
 	}
-    #capabilities .container.table .cell {
-        width: calc(50vw - 32px);
-    }
-    nav .socials {
-        margin-top: 2px;
-        margin-right: 13px;
-    }
+	#capabilities .container.table .cell {
+		width: calc(50vw - 32px);
+	}
+	nav .socials {
+		margin-top: 2px;
+		margin-right: 13px;
+	}
 	section#blog-articles .container {
 		width: calc(100vw - 64px);
 	}
@@ -1533,33 +1533,33 @@
 	section#subscriber {
 		padding-left: 32px;
 	}
-    .modal-holder .modal-content {
-        top: 28px;
-        bottom: 28px;
-        left: 32px;
-        right: 32px;
-    }
-    #main-modal .container .content-holder {
-        top: 0;
-        text-align: left;
-        vertical-align: top;
-    }
-    #main-modal p {
-        padding: 0;
-        font-size: 24px;
-        line-height: 38px;
-    }
-    #main-modal b {
-        margin-top: 0;
-    }
-    #main-modal a.buttom-holder {
-        bottom: 20px;
-        line-height: 40px;
-        font-size: 18px;
-    }
-    #main-modal .modal-mobile-hidden {
-        display: none;
-    }
+	.modal-holder .modal-content {
+		top: 28px;
+		bottom: 28px;
+		left: 32px;
+		right: 32px;
+	}
+	#main-modal .container .content-holder {
+		top: 0;
+		text-align: left;
+		vertical-align: top;
+	}
+	#main-modal p {
+		padding: 0;
+		font-size: 24px;
+		line-height: 38px;
+	}
+	#main-modal b {
+		margin-top: 0;
+	}
+	#main-modal a.buttom-holder {
+		bottom: 20px;
+		line-height: 40px;
+		font-size: 18px;
+	}
+	#main-modal .modal-mobile-hidden {
+		display: none;
+	}
 }
 
 /*
@@ -1583,12 +1583,12 @@
 	.mobile-menu ul {
 		margin-top: 10px;
 	}
-    #main-modal .container .content-holder,
+	#main-modal .container .content-holder,
 	#main-modal a.buttom-holder {
 		position: static;
-        display: table-row;
-        -webkit-transform: none;
-        transform: none;
+		display: table-row;
+		-webkit-transform: none;
+		transform: none;
 	}
 	section#page-404 .illustration {
 		bottom: auto;
@@ -1700,7 +1700,7 @@
 	#subscriber .container {
 		width: calc(100vw - 220px);
 	}
-    section#works-articles .articles-holder .article .image-holder,
+	section#works-articles .articles-holder .article .image-holder,
 	section#works-articles .articles-holder .article img,
 	section#blog-articles .articles-holder .article .image-holder {
 		height: auto;
@@ -1778,26 +1778,26 @@
 }
 
 @media all and (max-width: 620px) {
-    #capabilities {
-        display: none !important;
-    }
+	#capabilities {
+		display: none !important;
+	}
 
-    #capabilities-slider {
-        display: block !important;
-    }
+	#capabilities-slider {
+		display: block !important;
+	}
 }
 
 @media all and (min-width: 619px) {
-    #capabilities {
-        display: block !important;
-    }
+	#capabilities {
+		display: block !important;
+	}
 
-    #capabilities-slider {
-        display: none !important;
-    }
+	#capabilities-slider {
+		display: none !important;
+	}
 }
 /*@media screen and (min-width: 960px) {*/
-    /*section#main-presentation .left-side .parallax {*/
-        /*top: 10px;*/
-    /*}*/
+	/*section#main-presentation .left-side .parallax {*/
+		/*top: 10px;*/
+	/*}*/
 /*}*/
