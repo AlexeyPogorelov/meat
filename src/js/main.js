@@ -690,6 +690,7 @@ $(window).on('load', function () {
 				opt = {};
 			}
 			opt = $.extend({
+				// 'power': 20,
 				'power': 20,
 				'duration': 2000
 			}, opt);
@@ -732,13 +733,14 @@ $(window).on('load', function () {
 						});
 					}
 
-					clearInterval( plg.firstAnimation );
+					// clearInterval( plg.firstAnimation );
 
 					plg.animationState = {
 						startTime: new Date().getTime(),
+						startStamp: new Date().getTime(),
 						startX: 0.5,
 						startY: 0.5,
-						speed: 400,
+						speed: 20,
 						endX: (e.pageX - $self.offset().left) / state.elementWidth,
 						endY: (e.pageY - $self.offset().top) / state.elementWidth,
 						status: 0
@@ -751,9 +753,19 @@ $(window).on('load', function () {
 					// e.stopPropagation();
 					// e.preventDefault();
 				mousemove: function (e) {
+					plg.animationState.startTime = new Date().getTime();
 					plg.animationState.endX = (e.pageX - $self.offset().left) / state.elementWidth;
 					plg.animationState.endY = (e.pageY - $self.offset().top) / state.elementWidth;
 					plg.animationState.status = 0;
+					if (plg.animationState.startTime - plg.animationState.startStamp > 600) {
+
+						plg.animationState.speed = 0;
+
+					} else {
+
+						plg.animationState.speed = 30;
+
+					}
 					plg.animationState.startX = plg.animationState.currentX || 0.5;
 					plg.animationState.startY = plg.animationState.currentY || 0.5;
 
@@ -761,31 +773,31 @@ $(window).on('load', function () {
 
 				},
 				animateElement: function () {
-					plg.animationState.startTime = new Date().getTime();
-
-					// var oldAnimation = plg.firstAnimation;
-					// clearInterval( oldAnimation );
 
 					(function loop () {
 						var currentTime = new Date().getTime();
 						plg.animationState.status = (currentTime - plg.animationState.startTime) / plg.animationState.speed;
 
-						console.log(plg.animationState.status)
 
-						if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
+						if (plg.animationState.speed < 2) {
+
+							plg.renderElement( plg.animationState.endX, plg.animationState.endY );
+
+						} else if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
 
 							plg.animationState.status = 1;
-							return;
+							// return;
 
 						} else {
 
+							// console.log(plg.animationState.status)
 							plg.animationState.currentX = (plg.animationState.endX - plg.animationState.startX) * plg.animationState.status + plg.animationState.startX;
 							plg.animationState.currentY = (plg.animationState.endY - plg.animationState.startY) * plg.animationState.status + plg.animationState.startY;
 							plg.renderElement( plg.animationState.currentX, plg.animationState.currentY );
 
-							window.requestAnimationFrame( loop );
-
 						}
+
+						window.requestAnimationFrame( loop );
 
 
 					})();
@@ -793,13 +805,15 @@ $(window).on('load', function () {
 				},
 				mouseleave: function (e) {
 					// clearInterval( plg.firstAnimation );
+					plg.animationState.startTime = new Date().getTime();
 					plg.animationState.startX = (e.pageX - $self.offset().left) / state.elementWidth;
 					plg.animationState.startY = (e.pageY - $self.offset().top) / state.elementWidth;
 					plg.animationState.status = 0;
+					plg.animationState.speed = 600;
 					plg.animationState.endX = 0.5;
 					plg.animationState.endY = 0.5;
 
-					plg.animateElement(plg.animationState.endX, plg.animationState.endY);
+					// plg.animateElement(plg.animationState.endX, plg.animationState.endY);
 				},
 				click: function () {
 					// $self.parent().parent().find('a').css({
