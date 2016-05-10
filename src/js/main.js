@@ -334,13 +334,18 @@ $(window).on('load', function () {
 		loading.status(0);
 		if (href == '#contact') {
 			e.preventDefault();
+
 			$self.closest('.opened').removeClass('opened');
+			bodyOverflow.unfixBody();
 			$('html, body').one('mousewheel DOMMouseScroll touchstart', function () {
 				$(this).stop(false, false);
-				bodyOverflow.unfixBody();
-			}).animate({
-				scrollTop: $('#subscriber').offset().top
-			}, 2400, 'easeOutQuint');
+			});
+			setTimeout(function () {
+				$('html, body').animate({
+					scrollTop: $('#subscriber').offset().top
+				}, 2400, 'easeOutQuint');
+			}, 200);
+
 		} else if (href == "#") {
 			e.preventDefault();
 		} else {
@@ -731,62 +736,70 @@ $(window).on('load', function () {
 
 					plg.animationState = {
 						startTime: new Date().getTime(),
-						startX: .5,
-						// startX: plg.currentX || .5,
-						startY: .5,
-						// startY: plg.currentY || .5,
-						speed: 200,
+						startX: 0.5,
+						startY: 0.5,
+						speed: 400,
 						endX: (e.pageX - $self.offset().left) / state.elementWidth,
 						endY: (e.pageY - $self.offset().top) / state.elementWidth,
 						status: 0
 					};
+
+					plg.animateElement(plg.animationState.endX, plg.animationState.endY);
+
 				},
 				// click: function (e) {
 					// e.stopPropagation();
 					// e.preventDefault();
 				mousemove: function (e) {
-					// var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
-					// var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
-
-					clearInterval( plg.firstAnimation );
-
-					plg.animationState.status = 0;
 					plg.animationState.endX = (e.pageX - $self.offset().left) / state.elementWidth;
 					plg.animationState.endY = (e.pageY - $self.offset().top) / state.elementWidth;
-					plg.animationState.startX = plg.animationState.currentX || .5;
-					plg.animationState.startY = plg.animationState.currentY || .5;
-					plg.firstAnimation = setInterval(function () {
+					plg.animationState.status = 0;
+					plg.animationState.startX = plg.animationState.currentX || 0.5;
+					plg.animationState.startY = plg.animationState.currentY || 0.5;
+
+					// plg.animateElement(plg.animationState.endX, plg.animationState.endY);
+
+				},
+				animateElement: function () {
+					plg.animationState.startTime = new Date().getTime();
+
+					// var oldAnimation = plg.firstAnimation;
+					// clearInterval( oldAnimation );
+
+					(function loop () {
 						var currentTime = new Date().getTime();
 						plg.animationState.status = (currentTime - plg.animationState.startTime) / plg.animationState.speed;
 
 						console.log(plg.animationState.status)
+
 						if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
 
 							plg.animationState.status = 1;
-							clearInterval( plg.firstAnimation );
+							return;
+
+						} else {
+
+							plg.animationState.currentX = (plg.animationState.endX - plg.animationState.startX) * plg.animationState.status + plg.animationState.startX;
+							plg.animationState.currentY = (plg.animationState.endY - plg.animationState.startY) * plg.animationState.status + plg.animationState.startY;
+							plg.renderElement( plg.animationState.currentX, plg.animationState.currentY );
+
+							window.requestAnimationFrame( loop );
 
 						}
 
-						plg.animationState.currentX = (plg.animationState.endX - plg.animationState.startX) * plg.animationState.status + plg.animationState.startX;
-						plg.animationState.currentY = (plg.animationState.endY - plg.animationState.startY) * plg.animationState.status + plg.animationState.startY;
-						// console.log( animationState.startX );
 
-						plg.renderElement( plg.animationState.currentX, plg.animationState.currentY );
-
-					}, 15);
-
-					// plg.renderElement(xmult, ymult);
-					//console.log( xmult );
-					//console.log( ymult );
+					})();
 
 				},
-				mouseleave: function () {
-					DOM.$plate.css({
-						"-webkit-transition": "all .6s",
-						"transition": "transform .6s"
-					});
-					clearInterval( plg.firstAnimation );
-					plg.renderElement(0.5, 0.5);
+				mouseleave: function (e) {
+					// clearInterval( plg.firstAnimation );
+					plg.animationState.startX = (e.pageX - $self.offset().left) / state.elementWidth;
+					plg.animationState.startY = (e.pageY - $self.offset().top) / state.elementWidth;
+					plg.animationState.status = 0;
+					plg.animationState.endX = 0.5;
+					plg.animationState.endY = 0.5;
+
+					plg.animateElement(plg.animationState.endX, plg.animationState.endY);
 				},
 				click: function () {
 					// $self.parent().parent().find('a').css({
@@ -803,20 +816,17 @@ $(window).on('load', function () {
 						z = 10;
 					}
 
-					console.log( 'x = ' + x );
-					console.log( 'y = ' + y );
+					window.requestAnimationFrame( function () {
 
-					// plg.currentX = x;
-					// plg.currentY = y;
-					// plg.currentZ = z;
+						DOM.$plate.css({
+							"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
+							"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
+						});
+						state.$shadow.css({
+							'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
+						});
 
-					DOM.$plate.css({
-						"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
-						"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
-					});
-					state.$shadow.css({
-						'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
-					});
+					} );
 
 				}
 			};
