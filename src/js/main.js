@@ -2,8 +2,8 @@ var animationPrefix = (function () {
 	var t,
 	el = document.createElement("fakeelement");
 	var transitions = {
-        "transition": "animationend",
-        "WebkitTransition": "webkitAnimationEnd",
+		"transition": "animationend",
+		"WebkitTransition": "webkitAnimationEnd",
 		"OTransition": "oAnimationEnd",
 		"MozTransition": "animationend"
 	};
@@ -21,8 +21,8 @@ transitionPrefix = (function () {
 	var t,
 	el = document.createElement("fakeelement");
 	var transitions = {
-        "transition": "transitionend",
-        "WebkitTransition": "webkitTransitionEnd",
+		"transition": "transitionend",
+		"WebkitTransition": "webkitTransitionEnd",
 		"OTransition": "oTransitionEnd",
 		"MozTransition": "transitionend"
 	};
@@ -71,20 +71,20 @@ loading = {
 					$('#subscriber').find('> .container > .subscriber-holder').addClass('wow fadeInRightA');
 				}
 				$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
-                    //console.log(animationPrefix)
-                    var $self = $(this);
-                    $self.addClass('wow fadeInUp').css({
+					//console.log(animationPrefix)
+					var $self = $(this);
+					$self.addClass('wow fadeInUp').css({
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
 					});
-                    //setTimeout(function () {
-                    //    $self.on(animationPrefix, function (e) {
-                    //        //console.log( e );
-                    //        if (e.target !== this) return;
-                    //        $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
-                    //    });
-                    //}, 1000);
-                    //console.log(this)
+					//setTimeout(function () {
+					//    $self.on(animationPrefix, function (e) {
+					//        //console.log( e );
+					//        if (e.target !== this) return;
+					//        $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
+					//    });
+					//}, 1000);
+					//console.log(this)
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
 				$('.blog-item-page.top').addClass('wow fadeInUpA');
@@ -116,50 +116,50 @@ loading = {
 			loading.preloader.animate({}).delay(100).animate({
 				'opacity': 0
 			}, 500, 'easeOutQuint', function () {
-                $(window).trigger('resize');
+				$(window).trigger('resize');
 				loading.status(0);
 				$(this).detach();
 				loading.finished = true;
 
 				//	BUG shadow fix
-                if (!$.browser.desktop && $(window).width() > 660) return;
-                $('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
-                    //console.log(animationPrefix)
-                    var $self = $(this);
-                    setTimeout(function () {
-                        $self.on(animationPrefix, function (e) {
-                            //console.log( e );
-                            if (e.target !== this) return;
-                            $self.off(animationPrefix).removeClass('fadeInUp').attr('style', '');
-                        });
-                    }, 100);
-                    //console.log(this)
-                });
+				if (!$.browser.desktop && $(window).width() > 660) return;
+				$('#works-articles, #blog-articles').find('> .container .article').each(function (i) {
+					//console.log(animationPrefix)
+					var $self = $(this);
+					setTimeout(function () {
+						$self.on(animationPrefix, function (e) {
+							//console.log( e );
+							if (e.target !== this) return;
+							$self.off(animationPrefix).removeClass('fadeInUp').attr('style', '');
+						});
+					}, 100);
+					//console.log(this)
+				});
 
-                $('.fadeInUp, .fadeInRight').each(function () {
-                    var $self = $(this);
-                    setTimeout(function () {
-                        $self.on(animationPrefix, function (e) {
-                            if (e.target !== this) return;
-                            $self.removeClass('fadeInUp fadeInRight').css({
-                                '-webkit-animation-name': 'none',
-                                'animation-name': 'none'
-                            }).off(animationPrefix);
-                        });
-                    }, 100);
-                });
+				$('.fadeInUp, .fadeInRight').each(function () {
+					var $self = $(this);
+					setTimeout(function () {
+						$self.on(animationPrefix, function (e) {
+							if (e.target !== this) return;
+							$self.removeClass('fadeInUp fadeInRight').css({
+								'-webkit-animation-name': 'none',
+								'animation-name': 'none'
+							}).off(animationPrefix);
+						});
+					}, 100);
+				});
 
-                //$('#main-presentation').find('.fadeInUp, .fadeInRight').each(function () {
-                //    var $self = $(this);
-                //
-                //    $self.on(animationPrefix, function (e) {
-                //        if (e.target !== this) return;
-                //        $self.removeClass('fadeInUp fadeInRight').css({
-                //            '-webkit-animation-name': 'none',
-                //            'animation-name': 'none'
-                //        }).off(animationPrefix);
-                //    });
-                //});
+				//$('#main-presentation').find('.fadeInUp, .fadeInRight').each(function () {
+				//    var $self = $(this);
+				//
+				//    $self.on(animationPrefix, function (e) {
+				//        if (e.target !== this) return;
+				//        $self.removeClass('fadeInUp fadeInRight').css({
+				//            '-webkit-animation-name': 'none',
+				//            'animation-name': 'none'
+				//        }).off(animationPrefix);
+				//    });
+				//});
 
 			});
 		}
@@ -262,10 +262,10 @@ $(window).on('load', function () {
 	if (winWidth > 944) {
 		$('.portfolio-item, #frame-logo, section#works-articles .article').perspectiveHover();
 	}
-    $('.portfolio-item, #frame-logo, section#works-articles .article').append( $('<div>').addClass('shadow') );
+	$('.portfolio-item, #frame-logo, section#works-articles .article').append( $('<div>').addClass('shadow') );
 
 
-    // sidebars
+	// sidebars
 	$('.navbar-toggle').on('click', function () {
 		$('#mobile-menu').toggleClass('opened');
 		bodyOverflow.fixBody();
@@ -293,22 +293,22 @@ $(window).on('load', function () {
 		$(this).html('<span>' + $(this).html() + '</span>');
 	});
 
-    $('#capabilities').find('.cell').addClass('wow fadeInUp').eq(1).css({
-        'animation-delay': '300ms',
-        '-webkit-animation-delay': '300ms'
-    });
+	$('#capabilities').find('.cell').addClass('wow fadeInUp').eq(1).css({
+		'animation-delay': '300ms',
+		'-webkit-animation-delay': '300ms'
+	});
 
-    function capatabilitiesHeightFix () {
-        var height = 1,
-            $elements = $('#capabilities').find('.cell > *');
-        $elements.attr('style', '');
-        $elements.each(function () {
-            if ( $(this).height() > height ) {
-                height = $(this).height();
-            }
-        });
-        $elements.height( height );
-    }
+	function capatabilitiesHeightFix () {
+		var height = 1,
+			$elements = $('#capabilities').find('.cell > *');
+		$elements.attr('style', '');
+		$elements.each(function () {
+			if ( $(this).height() > height ) {
+				height = $(this).height();
+			}
+		});
+		$elements.height( height );
+	}
 
 	// subscriber
 	$('#subscriber').find('input').on('focus', function () {
@@ -344,10 +344,10 @@ $(window).on('load', function () {
 		} else if (href == "#") {
 			e.preventDefault();
 		} else {
-            //console.log(e);
-            //e.preventDefault();
-            //return
-            if (e.ctrlKey || e.metaKey || e.button == 1) return;
+			//console.log(e);
+			//e.preventDefault();
+			//return
+			if (e.ctrlKey || e.metaKey || e.button == 1) return;
 			e.preventDefault();
 			if ($self.attr('target') == 'blue') {
 				loading.preloader.addClass('blue');
@@ -486,10 +486,10 @@ $(window).on('load', function () {
 		subscriberTop = $subscriber.offset().top;
 		footerNavigationTop = $footerNavigation.offset().top;
 
-     // capabilities height fix
-        capatabilitiesHeightFix ();
+	 // capabilities height fix
+		capatabilitiesHeightFix ();
 
-    });
+	});
 
 	// iOS fix
 	if ($.browser.safari && !$.browser.mobile ) $('body').addClass('client-safari');
@@ -698,7 +698,7 @@ $(window).on('load', function () {
 			var plg = {
 				init: function () {
 					this.resize();
-                    DOM.$plate = $self.find('a, .link-holder');
+					DOM.$plate = $self.find('a, .link-holder');
 					$self
 						.on('mouseenter', this.mouseenter)
 						.on('mousemove', this.mousemove)
@@ -715,55 +715,78 @@ $(window).on('load', function () {
 					state.elementHeight = $self.innerHeight();
 				},
 				mouseenter: function (e) {
-                    if ($.browser.chrome) {
-                        DOM.$plate.css({
-                            "-webkit-transition": "transform .1s",
-                            "transition": "transform .1s"
-                        });
-                    } else {
-                        DOM.$plate.css({
-                            "-webkit-transition": "none",
-                            "transition": "none"
-                        });
-                    }
-				},
-				mousemove: function (e) {
-					var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
-					var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
-					plg.renderElement(xmult, ymult);
-                    //console.log( xmult );
-                    //console.log( ymult );
+					if ($.browser.chrome && false) {
+						DOM.$plate.css({
+							"-webkit-transition": "transform .1s",
+							"transition": "transform .1s"
+						});
+					} else {
+						DOM.$plate.css({
+							"-webkit-transition": "none",
+							"transition": "none"
+						});
+					}
 
-                    //var animationState = {
-                     //   startTime: new Date().getTime(),
-                     //   startX:.5,
-                     //   startY:.5,
-                     //   speed: 100,
-                     //   endX: (e.pageX - $self.offset().left) / state.elementWidth,
-                     //   endY: (e.pageY - $self.offset().top) / state.elementWidth,
-                     //   status: 0
-                    //};
-                    //clearInterval( plg.firstAnimation );
-                    //
-                    //plg.firstAnimation = setInterval(function () {
-                     //   var currentTime = new Date().getTime();
-                     //   animationState.status = (currentTime - animationState.startTime) / animationState.speed;
-                     //   if (animationState.status > 1) {
-                     //       animationState.status = 1;
-                     //       clearInterval( plg.firstAnimation );
-                     //   }
-                     //   console.log( (animationState.endX - animationState.startX) / animationState.status + animationState.startX );
-                     //   plg.renderElement(Math.floor( (animationState.endX - animationState.startX) / animationState.status ), Math.floor( (animationState.endY - animationState.startY) / animationState.status) );
-                    //
-                    //}, 20);
-                },
+					clearInterval( plg.firstAnimation );
+
+					plg.animationState = {
+						startTime: new Date().getTime(),
+						startX: .5,
+						// startX: plg.currentX || .5,
+						startY: .5,
+						// startY: plg.currentY || .5,
+						speed: 200,
+						endX: (e.pageX - $self.offset().left) / state.elementWidth,
+						endY: (e.pageY - $self.offset().top) / state.elementWidth,
+						status: 0
+					};
+				},
+				// click: function (e) {
+					// e.stopPropagation();
+					// e.preventDefault();
+				mousemove: function (e) {
+					// var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
+					// var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
+
+					clearInterval( plg.firstAnimation );
+
+					plg.animationState.status = 0;
+					plg.animationState.endX = (e.pageX - $self.offset().left) / state.elementWidth;
+					plg.animationState.endY = (e.pageY - $self.offset().top) / state.elementWidth;
+					plg.animationState.startX = plg.animationState.currentX || .5;
+					plg.animationState.startY = plg.animationState.currentY || .5;
+					plg.firstAnimation = setInterval(function () {
+						var currentTime = new Date().getTime();
+						plg.animationState.status = (currentTime - plg.animationState.startTime) / plg.animationState.speed;
+
+						console.log(plg.animationState.status)
+						if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
+
+							plg.animationState.status = 1;
+							clearInterval( plg.firstAnimation );
+
+						}
+
+						plg.animationState.currentX = (plg.animationState.endX - plg.animationState.startX) * plg.animationState.status + plg.animationState.startX;
+						plg.animationState.currentY = (plg.animationState.endY - plg.animationState.startY) * plg.animationState.status + plg.animationState.startY;
+						// console.log( animationState.startX );
+
+						plg.renderElement( plg.animationState.currentX, plg.animationState.currentY );
+
+					}, 15);
+
+					// plg.renderElement(xmult, ymult);
+					//console.log( xmult );
+					//console.log( ymult );
+
+				},
 				mouseleave: function () {
-                    DOM.$plate.css({
-                        "-webkit-transition": "all .6s",
-                        "transition": "transform .6s"
-                    });
-                    clearInterval( plg.firstAnimation );
-                    plg.renderElement(0.5, 0.5);
+					DOM.$plate.css({
+						"-webkit-transition": "all .6s",
+						"transition": "transform .6s"
+					});
+					clearInterval( plg.firstAnimation );
+					plg.renderElement(0.5, 0.5);
 				},
 				click: function () {
 					// $self.parent().parent().find('a').css({
@@ -775,16 +798,26 @@ $(window).on('load', function () {
 					//});
 				},
 				renderElement: function (x, y, z) {
+
 					if (!z) {
 						z = 10;
 					}
-                    DOM.$plate.css({
+
+					console.log( 'x = ' + x );
+					console.log( 'y = ' + y );
+
+					// plg.currentX = x;
+					// plg.currentY = y;
+					// plg.currentZ = z;
+
+					DOM.$plate.css({
 						"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
 						"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
 					});
 					state.$shadow.css({
 						'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
 					});
+
 				}
 			};
 
