@@ -1760,6 +1760,10 @@ section#works-articles .articles-holder a {
 	-webkit-transition: transform .1s;
 	transition: transform .1s;
 }
+section#works-articles .articles-holder .article:hover .link-holder,
+section#works-articles .articles-holder .article:hover a {
+	will-change: transform;
+}
 section#works-articles .articles-holder .article {
 	display: block;
 	float: left;

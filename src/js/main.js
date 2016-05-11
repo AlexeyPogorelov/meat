@@ -750,70 +750,29 @@ $(window).on('load', function () {
 					plg.animationState.startX = plg.animationState.stateX || 0.5;
 					plg.animationState.startY = plg.animationState.stateY || 0.5;
 
-					plg.animateElement(plg.animationState.endX, plg.animationState.endY);
-
 				},
-				// click: function (e) {
-					// e.stopPropagation();
-					// e.preventDefault();
 				mousemove: function (e) {
-					plg.animationState.startTime = new Date().getTime();
-					plg.animationState.endX = (e.pageX - $self.offset().left) / state.elementWidth;
-					plg.animationState.endY = (e.pageY - $self.offset().top) / state.elementWidth;
-					plg.animationState.status = 0.1;
-					if (plg.animationState.startTime - plg.animationState.startStamp > 400) {
 
-						plg.animationState.speed = 0;
+					var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
+					var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
+
+					if (new Date().getTime() - plg.animationState.startStamp > 200) {
+
+						DOM.$plate.css({
+							"-webkit-transition": "transform 0",
+							"transition": "transform 0"
+						});
 
 					} else {
 
-						plg.animationState.speed = 200;
+						DOM.$plate.css({
+							"-webkit-transition": "transform 0.2s ease-out",
+							"transition": "transform 0.2s ease-out"
+						});
 
 					}
-					plg.animationState.startX = plg.animationState.currentX || 0.5;
-					plg.animationState.startY = plg.animationState.currentY || 0.5;
 
-					// plg.animateElement(plg.animationState.endX, plg.animationState.endY);
-
-				},
-				animateElement: function () {
-
-					(function loop () {
-						var currentTime = new Date().getTime();
-						plg.animationState.status = (currentTime - plg.animationState.startTime) / plg.animationState.speed;
-
-
-						if (plg.animationState.speed < 2) {
-
-							plg.renderElement( plg.animationState.endX, plg.animationState.endY );
-
-						} else if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
-
-							plg.animationState.status = 1;
-
-							if (plg.animationState.last) {
-								plg.animationState.active = false;
-								plg.animationState.last = false;
-							}
-							// return;
-
-						} else {
-
-							// console.log(plg.animationState.status)
-							plg.animationState.currentX = (plg.animationState.endX - plg.animationState.startX) * plg.animationState.status + plg.animationState.startX;
-							plg.animationState.currentY = (plg.animationState.endY - plg.animationState.startY) * plg.animationState.status + plg.animationState.startY;
-							plg.renderElement( plg.animationState.currentX, plg.animationState.currentY );
-
-						}
-
-						if (plg.animationState.active) {
-
-							window.requestAnimationFrame( loop );
-
-						}
-
-
-					})();
+					plg.renderElement(xmult, ymult);
 
 				},
 				mouseleave: function (e) {
@@ -827,7 +786,13 @@ $(window).on('load', function () {
 					plg.animationState.endY = 0.5;
 					plg.animationState.last = true;
 
-					// plg.animateElement(plg.animationState.endX, plg.animationState.endY);
+
+						DOM.$plate.css({
+							"-webkit-transition": "transform 0.6s ease-out",
+							"transition": "transform 0.6s ease-out"
+						});
+
+					plg.renderElement(plg.animationState.endX, plg.animationState.endY);
 				},
 				click: function () {
 					// $self.parent().parent().find('a').css({
