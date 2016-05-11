@@ -746,6 +746,9 @@ $(window).on('load', function () {
 						status: 0
 					};
 
+					plg.animationState.startX = plg.animationState.stateX || 0.5;
+					plg.animationState.startY = plg.animationState.stateY || 0.5;
+
 					plg.animateElement(plg.animationState.endX, plg.animationState.endY);
 
 				},
@@ -819,7 +822,7 @@ $(window).on('load', function () {
 					// $self.parent().parent().find('a').css({
 					// 	"-webkit-transform": "none",
 					// 	"transform": "none"
-					// });
+					// };
 					//$self.parent().parent().find('.blick').css({
 					//	'display': 'none'
 					//});
@@ -830,7 +833,9 @@ $(window).on('load', function () {
 						z = 10;
 					}
 
-					window.requestAnimationFrame( function () {
+					// window.requestAnimationFrame( function () {
+					plg.animationState.stateX = x;
+					plg.animationState.stateY = y;
 
 						DOM.$plate.css({
 							"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
@@ -840,7 +845,7 @@ $(window).on('load', function () {
 							'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
 						});
 
-					} );
+					// } );
 
 				}
 			};
