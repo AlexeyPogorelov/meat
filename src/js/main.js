@@ -736,6 +736,7 @@ $(window).on('load', function () {
 					// clearInterval( plg.firstAnimation );
 
 					plg.animationState = {
+						active: true,
 						startTime: new Date().getTime(),
 						startStamp: new Date().getTime(),
 						startX: 0.5,
@@ -759,14 +760,14 @@ $(window).on('load', function () {
 					plg.animationState.startTime = new Date().getTime();
 					plg.animationState.endX = (e.pageX - $self.offset().left) / state.elementWidth;
 					plg.animationState.endY = (e.pageY - $self.offset().top) / state.elementWidth;
-					plg.animationState.status = 0;
-					if (plg.animationState.startTime - plg.animationState.startStamp > 600) {
+					plg.animationState.status = 0.1;
+					if (plg.animationState.startTime - plg.animationState.startStamp > 400) {
 
 						plg.animationState.speed = 0;
 
 					} else {
 
-						plg.animationState.speed = 30;
+						plg.animationState.speed = 200;
 
 					}
 					plg.animationState.startX = plg.animationState.currentX || 0.5;
@@ -789,6 +790,11 @@ $(window).on('load', function () {
 						} else if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
 
 							plg.animationState.status = 1;
+
+							if (plg.animationState.last) {
+								plg.animationState.active = false;
+								plg.animationState.last = false;
+							}
 							// return;
 
 						} else {
@@ -800,7 +806,11 @@ $(window).on('load', function () {
 
 						}
 
-						window.requestAnimationFrame( loop );
+						if (plg.animationState.active) {
+
+							window.requestAnimationFrame( loop );
+
+						}
 
 
 					})();
@@ -815,6 +825,7 @@ $(window).on('load', function () {
 					plg.animationState.speed = 600;
 					plg.animationState.endX = 0.5;
 					plg.animationState.endY = 0.5;
+					plg.animationState.last = true;
 
 					// plg.animateElement(plg.animationState.endX, plg.animationState.endY);
 				},
@@ -834,8 +845,6 @@ $(window).on('load', function () {
 					}
 
 					// window.requestAnimationFrame( function () {
-					plg.animationState.stateX = x;
-					plg.animationState.stateY = y;
 
 						DOM.$plate.css({
 							"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
