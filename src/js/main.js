@@ -77,14 +77,6 @@ loading = {
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
 					});
-					//setTimeout(function () {
-					//    $self.on(animationPrefix, function (e) {
-					//        //console.log( e );
-					//        if (e.target !== this) return;
-					//        $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
-					//    });
-					//}, 1000);
-					//console.log(this)
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
 				$('.blog-item-page.top').addClass('wow fadeInUpA');
@@ -334,13 +326,18 @@ $(window).on('load', function () {
 		loading.status(0);
 		if (href == '#contact') {
 			e.preventDefault();
+
 			$self.closest('.opened').removeClass('opened');
+			bodyOverflow.unfixBody();
 			$('html, body').one('mousewheel DOMMouseScroll touchstart', function () {
 				$(this).stop(false, false);
-				bodyOverflow.unfixBody();
-			}).animate({
-				scrollTop: $('#subscriber').offset().top
-			}, 2400, 'easeOutQuint');
+			});
+			setTimeout(function () {
+				$('html, body').animate({
+					scrollTop: $('#subscriber').offset().top
+				}, 2400, 'easeOutQuint');
+			}, 200);
+
 		} else if (href == "#") {
 			e.preventDefault();
 		} else {
@@ -685,13 +682,20 @@ $(window).on('load', function () {
 				opt = {};
 			}
 			opt = $.extend({
+				// 'power': 20,
 				'power': 20,
+				'defSpeed': 0,
 				'duration': 2000
 			}, opt);
 
 			// safari V < 9
 			if (parseInt($.browser.version) < 9 && $.browser.safari) {
 				opt.power = 4;
+			}
+
+			// chrome
+			if ($.browser.chrome) {
+				opt.defSpeed = 0.1;
 			}
 
 			// methods
@@ -715,84 +719,73 @@ $(window).on('load', function () {
 					state.elementHeight = $self.innerHeight();
 				},
 				mouseenter: function (e) {
-					if ($.browser.chrome && false) {
-						DOM.$plate.css({
-							"-webkit-transition": "transform .1s",
-							"transition": "transform .1s"
-						});
-					} else {
-						DOM.$plate.css({
-							"-webkit-transition": "none",
-							"transition": "none"
-						});
-					}
+					// if ($.browser.chrome && false) {
+					// 	DOM.$plate.css({
+					// 		"-webkit-transition": "transform .1s",
+					// 		"transition": "transform .1s"
+					// 	});
+					// } else {
+					// 	DOM.$plate.css({
+					// 		"-webkit-transition": "none",
+					// 		"transition": "none"
+					// 	});
+					// }
 
-					clearInterval( plg.firstAnimation );
+					// clearInterval( plg.firstAnimation );
 
 					plg.animationState = {
+						active: true,
 						startTime: new Date().getTime(),
-						startX: .5,
-						// startX: plg.currentX || .5,
-						startY: .5,
-						// startY: plg.currentY || .5,
-						speed: 200,
+						startStamp: new Date().getTime(),
+						startX: 0.5,
+						startY: 0.5,
+						speed: 0.6,
 						endX: (e.pageX - $self.offset().left) / state.elementWidth,
 						endY: (e.pageY - $self.offset().top) / state.elementWidth,
 						status: 0
 					};
+
+					plg.animationState.startX = plg.animationState.stateX || 0.5;
+					plg.animationState.startY = plg.animationState.stateY || 0.5;
+
 				},
-				// click: function (e) {
-					// e.stopPropagation();
-					// e.preventDefault();
 				mousemove: function (e) {
-					// var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
-					// var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
 
-					clearInterval( plg.firstAnimation );
+					var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
+					var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
+					var currentTime = new Date().getTime();
 
-					plg.animationState.status = 0;
-					plg.animationState.endX = (e.pageX - $self.offset().left) / state.elementWidth;
-					plg.animationState.endY = (e.pageY - $self.offset().top) / state.elementWidth;
-					plg.animationState.startX = plg.animationState.currentX || .5;
-					plg.animationState.startY = plg.animationState.currentY || .5;
-					plg.firstAnimation = setInterval(function () {
-						var currentTime = new Date().getTime();
-						plg.animationState.status = (currentTime - plg.animationState.startTime) / plg.animationState.speed;
+					if ( currentTime - plg.animationState.startStamp > 400 ) {
 
-						console.log(plg.animationState.status)
-						if (plg.animationState.status > 1 || currentTime - plg.animationState.startTime > plg.animationState.speed ) {
+						plg.animationState.speed = opt.defSpeed;
 
-							plg.animationState.status = 1;
-							clearInterval( plg.firstAnimation );
+					} else {
 
-						}
+						plg.animationState.speed = (400 - (currentTime - plg.animationState.startStamp)) / 1000;
 
-						plg.animationState.currentX = (plg.animationState.endX - plg.animationState.startX) * plg.animationState.status + plg.animationState.startX;
-						plg.animationState.currentY = (plg.animationState.endY - plg.animationState.startY) * plg.animationState.status + plg.animationState.startY;
-						// console.log( animationState.startX );
+					}
 
-						plg.renderElement( plg.animationState.currentX, plg.animationState.currentY );
-
-					}, 15);
-
-					// plg.renderElement(xmult, ymult);
-					//console.log( xmult );
-					//console.log( ymult );
+					plg.renderElement(xmult, ymult);
 
 				},
-				mouseleave: function () {
-					DOM.$plate.css({
-						"-webkit-transition": "all .6s",
-						"transition": "transform .6s"
-					});
-					clearInterval( plg.firstAnimation );
-					plg.renderElement(0.5, 0.5);
+				mouseleave: function (e) {
+					// clearInterval( plg.firstAnimation );
+					plg.animationState.startTime = new Date().getTime();
+					plg.animationState.startX = (e.pageX - $self.offset().left) / state.elementWidth;
+					plg.animationState.startY = (e.pageY - $self.offset().top) / state.elementWidth;
+					plg.animationState.status = 0;
+					plg.animationState.speed = 0.6;
+					plg.animationState.endX = 0.5;
+					plg.animationState.endY = 0.5;
+					plg.animationState.last = true;
+
+					plg.renderElement(plg.animationState.endX, plg.animationState.endY);
 				},
 				click: function () {
 					// $self.parent().parent().find('a').css({
 					// 	"-webkit-transform": "none",
 					// 	"transform": "none"
-					// });
+					// };
 					//$self.parent().parent().find('.blick').css({
 					//	'display': 'none'
 					//});
@@ -803,20 +796,19 @@ $(window).on('load', function () {
 						z = 10;
 					}
 
-					console.log( 'x = ' + x );
-					console.log( 'y = ' + y );
+					// window.requestAnimationFrame( function () {
 
-					// plg.currentX = x;
-					// plg.currentY = y;
-					// plg.currentZ = z;
+						DOM.$plate.css({
+							"-webkit-transition": 'transform ' + plg.animationState.speed + 's linear',
+							"transition": 'transform ' + plg.animationState.speed + 's linear',
+							"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
+							"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
+						});
+						state.$shadow.css({
+							'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
+						});
 
-					DOM.$plate.css({
-						"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
-						"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
-					});
-					state.$shadow.css({
-						'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
-					});
+					// } );
 
 				}
 			};

@@ -15,7 +15,9 @@ body.fixed {
 	overflow: hidden;
 }
 body.fixed.client-ios {
-	position: fixed;
+	/*position: fixed;*/
+	-webkit-overflow-scrolling:touch;
+	overflow-scrolling:touch;
 }
 .wrapper {}
 .lightbox-cell::-webkit-scrollbar-corner,
@@ -485,6 +487,7 @@ input[type='number'] {
 #to-top {
 	cursor: pointer;
 	position: fixed;
+	pointer-events: none;
 	right: 30px;
 	bottom: 49px;
 	bottom: 30px;
@@ -498,6 +501,7 @@ input[type='number'] {
 	transition: transform .3s, opacity .3s, bottom .3s;
 }
 #to-top.opened {
+	pointer-events: all;
 	opacity: 1;
 	-webkit-transition: transform .3s, opacity .3s, bottom .3s;
 	transition: transform .3s, opacity .3s, bottom .3s;

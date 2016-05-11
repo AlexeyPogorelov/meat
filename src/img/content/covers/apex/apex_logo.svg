@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600px" height="600px" viewBox="0 0 600 600" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>apex logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="23.4690947" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#FDC541" offset="0%"></stop>
+            <stop stop-color="#F5447D" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="apex-logo">
+            <g id="Group-2">
+                <rect id="Rectangle-55" x="0" y="0" width="600" height="600"></rect>
+                <g id="Background-Copy-4" transform="translate(189.000000, 180.000000)">
+                    <path d="M154.492221,40.6212766 C178.249468,40.6212766 193.659574,56.031383 193.659574,79.7886303 L193.659574,165.828391 C193.659574,189.585638 178.249468,204.995745 154.492221,204.995745 L68.4524601,204.995745 C44.6952128,204.995745 29.2851064,189.585638 29.2851064,165.828391 L29.2851064,79.7886303 C29.2851064,56.031383 44.6952128,40.6212766 68.4524601,40.6212766 L154.492221,40.6212766 Z" id="Mask" fill="#920303" filter="url(#filter-1)"></path>
+                    <rect id="Rectangle-2594" fill="url(#linearGradient-2)" x="0" y="0" width="222" height="222" rx="44"></rect>
+                    <g id="Group" transform="translate(54.047660, 48.992340)" stroke="#FFFFFF" stroke-width="0.8" fill="#FFFFFF">
+                        <path d="M105.10372,57.0890886 L105.103719,8.83833907 L0.499817238,113.182557 L0.405151887,108.101435 L105.639752,3.13104478 L108.778678,7.81597009e-14 L108.778678,4.42064027 L108.778678,111.892961 L105.10372,111.892961 L105.10372,60.7426801 L65.3655503,60.7426801 L68.945404,57.0890886 L105.10372,57.0890886 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
