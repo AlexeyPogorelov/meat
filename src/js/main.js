@@ -29,9 +29,7 @@ transitionPrefix = (function () {
 	for (t in transitions) {
 
 		if (el.style[t] !== undefined) {
-
 			return transitions[t];
-
 		}
 
 	}
@@ -77,14 +75,6 @@ loading = {
 						'animation-delay': 300 + 'ms',
 						'-webkit-animation-delay': 300 + 'ms'
 					});
-					//setTimeout(function () {
-					//    $self.on(animationPrefix, function (e) {
-					//        //console.log( e );
-					//        if (e.target !== this) return;
-					//        $self.off(animationPrefix).removeClass('wow fadeInUp').attr('style', '');
-					//    });
-					//}, 1000);
-					//console.log(this)
 				});
 				$('#works-header, #blog-header').find('> *').addClass('wow fadeInUp');
 				$('.blog-item-page.top').addClass('wow fadeInUpA');
@@ -96,8 +86,8 @@ loading = {
 					if (html == '<p></p>' || html == '<p></p><p></p>' || html == '<p><br></p><p></p>' || html == '<p>' || html == '<p></p><p><br></p><p><br></p>' ) {
 						$(this).remove();
 					} else {
-						console.log( html );
-						console.log( '-------' );
+						// console.log( html );
+						// console.log( '-------' );
 					}
 				});
 
@@ -187,22 +177,42 @@ $(window).on('load', function () {
 		$footerNavigation = $('.footer-navigation'),
 		footerNavigationTop = $footerNavigation.offset().top,
 		subscriberTop = $subscriber.offset().top,
-		bodyOverflow = {
-			fixBody: function () {
-				$('body').width($('body').width())
-					.addClass('fixed');
-			},
-			unfixBody: function () {
-				$('body')
-					.css({
-						'width': 'auto'
-					})
-					.removeClass('fixed');
-			},
-			resize: function () {
-				this.unfixBody();
-			}.bind(this)
-		},
+		bodyOverflow = (function () {
+			var $body = $('body'),
+				$mainNavigation = $('.main-navigation'),
+				top;
+			return {
+				fixBody: function () {
+
+					top = $body.scrollTop();
+
+					$body.css({
+						'top': -top,
+						'width': $body.width()
+					}).addClass('fixed');
+
+					$mainNavigation.width( $body.width() - 80 );
+
+				},
+				unfixBody: function () {
+
+					$body
+						.css({
+							'width': 'auto'
+						})
+						.removeClass('fixed')
+						.scrollTop(top);
+
+					$mainNavigation.width('');
+
+				},
+				resize: function () {
+
+					this.unfixBody();
+
+				}.bind(this)
+			};
+		})(),
 		fixElement = (function () {
 				var elTopStart,
 					elTopEnd,
@@ -327,7 +337,6 @@ $(window).on('load', function () {
 	// end todo
 
 	// navigation
-	// $('.navigation-links, #blog-articles, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
 	$('.navigation-links, #works-articles, #mobile-menu, #portfolio-presentation').find('a').on('click', function (e) {
 		var $self = $(this);
 		var href = $self.attr('href');
@@ -352,7 +361,9 @@ $(window).on('load', function () {
 			//console.log(e);
 			//e.preventDefault();
 			//return
-			if (e.ctrlKey || e.metaKey || e.button == 1) return;
+			if ( e.ctrlKey || e.metaKey || e.button == 1 ) return;
+			
+			if ( $.browser.platform === 'iphone' || $.browser.platform === 'ipad' || $.browser.platform === 'ipod' ) return;
 			e.preventDefault();
 			if ($self.attr('target') == 'blue') {
 				loading.preloader.addClass('blue');
@@ -463,26 +474,25 @@ $(window).on('load', function () {
 		})();
 
 	//scroll
-	$(document).on('scroll', function () {
-		var top = $(this).scrollTop();
-		//if (winHeight + top > subscriberTop) {
-		//	if (!$('#paginate').data('status')) {
-		//		$('#paginate').attr('data-status', 'loading').trigger('click');
-		//	}
-		//}
-		if (top > winHeight * 2) {
-			goUp.show();
-		} else {
-			goUp.hide();
-		}
-		if (winHeight + top > footerNavigationTop && winWidth > 960) {
-			// console.log(1);
-			goUp.$el.css('bottom', 49);
+    if (winWidth > 660) {
 
-		} else {
-			goUp.$el.css('bottom', 30);
-		}
-	});
+        $(document).on('scroll', function () {
+            var top = $(this).scrollTop();
+            if (top > winHeight * 2) {
+                goUp.show();
+            } else {
+                goUp.hide();
+            }
+            if (winHeight + top > footerNavigationTop && winWidth > 960) {
+                // console.log(1);
+                goUp.$el.css('bottom', 49);
+
+            } else {
+                goUp.$el.css('bottom', 30);
+            }
+        });
+
+    }
 
 	// resize
 	$(window).on('resize', function () {
@@ -692,12 +702,18 @@ $(window).on('load', function () {
 			opt = $.extend({
 				// 'power': 20,
 				'power': 20,
+				'defSpeed': 0,
 				'duration': 2000
 			}, opt);
 
 			// safari V < 9
 			if (parseInt($.browser.version) < 9 && $.browser.safari) {
 				opt.power = 4;
+			}
+
+			// chrome
+			if ($.browser.chrome) {
+				opt.defSpeed = 0.1;
 			}
 
 			// methods
@@ -721,17 +737,6 @@ $(window).on('load', function () {
 					state.elementHeight = $self.innerHeight();
 				},
 				mouseenter: function (e) {
-					if ($.browser.chrome && false) {
-						DOM.$plate.css({
-							"-webkit-transition": "transform .1s",
-							"transition": "transform .1s"
-						});
-					} else {
-						DOM.$plate.css({
-							"-webkit-transition": "none",
-							"transition": "none"
-						});
-					}
 
 					// clearInterval( plg.firstAnimation );
 
@@ -741,7 +746,7 @@ $(window).on('load', function () {
 						startStamp: new Date().getTime(),
 						startX: 0.5,
 						startY: 0.5,
-						speed: 20,
+						speed: 0.6,
 						endX: (e.pageX - $self.offset().left) / state.elementWidth,
 						endY: (e.pageY - $self.offset().top) / state.elementWidth,
 						status: 0
@@ -755,22 +760,15 @@ $(window).on('load', function () {
 
 					var xmult = (e.pageX - $self.offset().left) / state.elementWidth;
 					var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
+					var currentTime = new Date().getTime();
 
-					if (new Date().getTime() - plg.animationState.startStamp > 200) {
+					if (!$.browser.chrome && currentTime - plg.animationState.startStamp < 300 ) {
 
-						DOM.$plate.css({
-							"-webkit-transition": "transform 0",
-							"transition": "transform 0"
-						});
+						plg.animationState.speed = (300 - (currentTime - plg.animationState.startStamp)) / 1000;
 
 					} else {
-
-						DOM.$plate.css({
-							"-webkit-transition": "transform 0.2s ease-out",
-							"transition": "transform 0.2s ease-out"
-						});
-
-					}
+                        plg.animationState.speed = opt.defSpeed;
+                    }
 
 					plg.renderElement(xmult, ymult);
 
@@ -781,16 +779,10 @@ $(window).on('load', function () {
 					plg.animationState.startX = (e.pageX - $self.offset().left) / state.elementWidth;
 					plg.animationState.startY = (e.pageY - $self.offset().top) / state.elementWidth;
 					plg.animationState.status = 0;
-					plg.animationState.speed = 600;
+					plg.animationState.speed = 0.6;
 					plg.animationState.endX = 0.5;
 					plg.animationState.endY = 0.5;
 					plg.animationState.last = true;
-
-
-						DOM.$plate.css({
-							"-webkit-transition": "transform 0.6s ease-out",
-							"transition": "transform 0.6s ease-out"
-						});
 
 					plg.renderElement(plg.animationState.endX, plg.animationState.endY);
 				},
@@ -809,9 +801,11 @@ $(window).on('load', function () {
 						z = 10;
 					}
 
-					// window.requestAnimationFrame( function () {
+					 window.requestAnimationFrame( function () {
 
 						DOM.$plate.css({
+							"-webkit-transition": 'transform ' + plg.animationState.speed + 's linear',
+							"transition": 'transform ' + plg.animationState.speed + 's linear',
 							"-webkit-transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)",
 							"transform": "rotateY(" + (-(x - 0.5) * -opt.power) + "deg) rotateX(" + (-(y - 0.5) * opt.power) + "deg) translateZ(" + z + "px)"
 						});
@@ -819,7 +813,7 @@ $(window).on('load', function () {
 							'background-image': 'linear-gradient(' + (x * 25 + 2) + 'deg, transparent, rgba(255, 255, 255, 0.2) ' + (y * 30 + 40) + '%, transparent ' + (y * 30 + 100) + '%)'
 						});
 
-					// } );
+					 } );
 
 				}
 			};

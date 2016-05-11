@@ -16,6 +16,8 @@ body.fixed {
 }
 body.fixed.client-ios {
 	position: fixed;
+	/*-webkit-overflow-scrolling:touch;*/
+	/*overflow-scrolling:touch;*/
 }
 .wrapper {}
 .lightbox-cell::-webkit-scrollbar-corner,
@@ -420,8 +422,8 @@ input[type='number'] {
 	height: 100%;
 	width: 100%;
 	z-index: 9999;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
+	-webkit-transform: translateZ(200px);
+	transform: translateZ(200px);
 }
 .client-safari .preloader {
 	-webkit-transform: translateZ(800px);
@@ -485,6 +487,7 @@ input[type='number'] {
 #to-top {
 	cursor: pointer;
 	position: fixed;
+	pointer-events: none;
 	right: 30px;
 	bottom: 49px;
 	bottom: 30px;
@@ -498,6 +501,7 @@ input[type='number'] {
 	transition: transform .3s, opacity .3s, bottom .3s;
 }
 #to-top.opened {
+	pointer-events: all;
 	opacity: 1;
 	-webkit-transition: transform .3s, opacity .3s, bottom .3s;
 	transition: transform .3s, opacity .3s, bottom .3s;

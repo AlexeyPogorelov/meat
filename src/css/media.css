@@ -1594,9 +1594,9 @@
 		bottom: auto;
 		top: 320px;
 	}
-	section#blog-articles .articles-holder .article {
+/*	section#blog-articles .articles-holder .article {
 		margin: 0 0 35px;
-	}
+	}*/
 }
 
 @media screen and (min-width: 791px) and (max-width: 959px) {

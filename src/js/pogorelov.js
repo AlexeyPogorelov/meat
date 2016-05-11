@@ -46,12 +46,19 @@ function( callback ){
 },
 bodyOverflow = (function () {
 	var $body = $('body'),
-		$mainNavigation = $('.main-navigation');
+		$mainNavigation = $('.main-navigation'),
+		top;
 	return {
 		fixBody: function () {
 
-			$body.width( $body.width() )
-				.addClass('fixed');
+			top = $body.scrollTop();
+
+			console.log(top)
+
+			$body.css({
+				'top': -top,
+				'width': $body.width()
+			}).addClass('fixed');
 
 			$mainNavigation.width( $body.width() - 80 );
 
