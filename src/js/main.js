@@ -171,6 +171,13 @@ $(window).on('load', function () {
 			$(this).one('load', loading.loaded);
 		}
 	});
+
+    if ($.browser.msie || $.browser.msedge) {
+        var $el = $('#frame-logo').find('.pre-parallax'),
+            src = $el.attr('src').replace('frame-3', 'frame-4');
+        $el.attr( 'src', src );
+    }
+
 	var winWidth = $(window).width(),
 		winHeight = $(window).height(),
 		$subscriber = $('#subscriber'),
@@ -762,7 +769,7 @@ $(window).on('load', function () {
 					var ymult = (e.pageY - $self.offset().top) / state.elementWidth;
 					var currentTime = new Date().getTime();
 
-					if (!$.browser.chrome && currentTime - plg.animationState.startStamp < 300 ) {
+					if (!($.browser.chrome || $.browser.msie || $.browser.msedge) && currentTime - plg.animationState.startStamp < 300 ) {
 
 						plg.animationState.speed = (300 - (currentTime - plg.animationState.startStamp)) / 1000;
 
