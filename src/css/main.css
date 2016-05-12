@@ -352,11 +352,8 @@ section#main-presentation .left-side img {
 	-webkit-box-shadow: 0 48px 75px -10px rgba(0,0,0,.35);
 	box-shadow: 0 48px 75px -10px rgba(0,0,0,.35);
 	position: relative;
-	/*top: 15px;*/
-	/*width: 265px;*/
-
-    transform: translateZ(0px);
-    -webkit-transform: translateZ(0px);
+	transform: translateZ(0px);
+	-webkit-transform: translateZ(0px);
 	width: 322px;
 }
 section#main-presentation .left-side .pre-parallax,
@@ -375,24 +372,24 @@ section#main-presentation .left-side .parallax {
 	transition: all .6s;
 }
 /* TODO uncomment it */
-/*body.fixed section#main-presentation .left-side .pre-parallax {*/
-	/*transform: translateZ(1px) !important;*/
-	/*-webkit-transform: translateZ(1px) !important;*/
-/*}*/
-/*body.fixed section#main-presentation .left-side .parallax {*/
-	/*transform: translateZ(2px) !important;*/
-	/*-webkit-transform: translateZ(2px) !important;*/
-/*}*/
-/*section#main-presentation .left-side .pre-parallax {*/
-	/*transform: translateZ(1px);*/
-	/*-webkit-transform: translateZ(1px);*/
-	/*z-index: 2;*/
-/*}*/
-/*section#main-presentation .left-side .parallax {*/
-	/*transform: translateZ(2px);*/
-	/*-webkit-transform: translateZ(2px);*/
-	/*z-index: 3;*/
-/*}*/
+/*body.fixed section#main-presentation .left-side .pre-parallax {
+	transform: translateZ(1px) !important;
+	-webkit-transform: translateZ(1px) !important;
+}
+body.fixed section#main-presentation .left-side .parallax {
+	transform: translateZ(2px) !important;
+	-webkit-transform: translateZ(2px) !important;
+}*/
+section#main-presentation .left-side .pre-parallax {
+	transform: translateZ(2px);
+	-webkit-transform: translateZ(2px);
+	z-index: 2;
+}
+section#main-presentation .left-side .parallax {
+	transform: translateZ(3px);
+	-webkit-transform: translateZ(3px);
+	z-index: 3;
+}
 section#main-presentation .left-side:hover .parallax {
 	 transform: translateZ(50px);
 	 -webkit-transform: translateZ(50px);
@@ -730,25 +727,25 @@ section#portfolio-presentation .portfolio-item a .parallax {
 	transition: all .6s;
 }
 /* TODO uncomment it */
-/*body.fixed section#portfolio-presentation .portfolio-item a .pre-parallax {*/
-	/*transform: translateZ(1px) !important;*/
-	/*-webkit-transform: translateZ(1px) !important;*/
-/*}*/
-/*body.fixed section#portfolio-presentation .portfolio-item a .parallax {*/
-	/*transform: translateZ(2px) !important;*/
-	/*-webkit-transform: translateZ(2px) !important;*/
-/*}*/
+/*body.fixed section#portfolio-presentation .portfolio-item a .pre-parallax {
+	transform: translateZ(1px) !important;
+	-webkit-transform: translateZ(1px) !important;
+}
+body.fixed section#portfolio-presentation .portfolio-item a .parallax {
+	transform: translateZ(2px) !important;
+	-webkit-transform: translateZ(2px) !important;
+}*/
 
-/*section#portfolio-presentation .portfolio-item a .parallax {*/
-	/*transform: translateZ(3px);*/
-	/*-webkit-transform: translateZ(3px);*/
-	/*z-index: 3;*/
-/*}*/
-/*section#portfolio-presentation .portfolio-item a .pre-parallax {*/
-	/*transform: translateZ(1px);*/
-	/*-webkit-transform: translateZ(1px);*/
-	/*z-index: 2;*/
-/*}*/
+section#portfolio-presentation .portfolio-item a .parallax {
+	transform: translateZ(3px);
+	-webkit-transform: translateZ(3px);
+	z-index: 3;
+}
+section#portfolio-presentation .portfolio-item a .pre-parallax {
+	transform: translateZ(2px);
+	-webkit-transform: translateZ(2px);
+	z-index: 2;
+}
 section#portfolio-presentation .portfolio-item a:hover .parallax {
 	transform: translateZ(85px);
 	-webkit-transform: translateZ(85px);
@@ -1852,7 +1849,6 @@ section#works-articles .articles-holder .article {
 }
 section#works-articles .articles-holder .article:hover {
 
-/* TODO uncomment it */
 	-webkit-transform: scale(1.04);
 	transform: scale(1.04);
 
@@ -1943,26 +1939,26 @@ section#works-articles .articles-holder .article .parallax {
 	-webkit-transition: all .6s;
 	transition: all .6s;
 }
- /* TODO uncomment it */
-/*body.fixed section#works-articles .articles-holder .article .pre-parallax {*/
-	/*transform: translateZ(1px) !important;*/
-	/*-webkit-transform: translateZ(1px) !important;*/
-/*}*/
-/*body.fixed section#works-articles .articles-holder .article .parallax {*/
-	/*transform: translateZ(2px) !important;*/
-	/*-webkit-transform: translateZ(2px) !important;*/
-/*}*/
+/* TODO uncomment it */
+/*body.fixed section#works-articles .articles-holder .article .pre-parallax {
+	transform: translateZ(1px) !important;
+	-webkit-transform: translateZ(1px) !important;
+}
+body.fixed section#works-articles .articles-holder .article .parallax {
+	transform: translateZ(2px) !important;
+	-webkit-transform: translateZ(2px) !important;
+}*/
 
-/*section#works-articles .articles-holder .article .parallax {*/
-	/*transform: translateZ(2px);*/
-	/*-webkit-transform: translateZ(2px);*/
-	/*z-index: 3;*/
-/*}*/
-/*section#works-articles .articles-holder .article .pre-parallax {*/
-	/*transform: translateZ(2px);*/
-	/*-webkit-transform: translateZ(2px);*/
-	/*z-index: 2;*/
-/*}*/
+section#works-articles .articles-holder .article .parallax {
+	transform: translateZ(3px);
+	-webkit-transform: translateZ(3px);
+	z-index: 3;
+}
+section#works-articles .articles-holder .article .pre-parallax {
+	transform: translateZ(2px);
+	-webkit-transform: translateZ(2px);
+	z-index: 2;
+}
 section#works-articles .articles-holder .article:hover .parallax {
 	transform: translateZ(40px);
 	-webkit-transform: translateZ(40px);
