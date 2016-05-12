@@ -380,7 +380,7 @@ body.fixed section#main-presentation .left-side .parallax {
 	transform: translateZ(2px) !important;
 	-webkit-transform: translateZ(2px) !important;
 }*/
-/*section#main-presentation .left-side .pre-parallax {
+section#main-presentation .left-side .pre-parallax {
 	transform: translateZ(2px);
 	-webkit-transform: translateZ(2px);
 	z-index: 2;
@@ -389,7 +389,7 @@ section#main-presentation .left-side .parallax {
 	transform: translateZ(3px);
 	-webkit-transform: translateZ(3px);
 	z-index: 3;
-}*/
+}
 section#main-presentation .left-side:hover .parallax {
 	 transform: translateZ(50px);
 	 -webkit-transform: translateZ(50px);
@@ -736,7 +736,7 @@ body.fixed section#portfolio-presentation .portfolio-item a .parallax {
 	-webkit-transform: translateZ(2px) !important;
 }*/
 
-/*section#portfolio-presentation .portfolio-item a .parallax {
+section#portfolio-presentation .portfolio-item a .parallax {
 	transform: translateZ(3px);
 	-webkit-transform: translateZ(3px);
 	z-index: 3;
@@ -745,7 +745,7 @@ section#portfolio-presentation .portfolio-item a .pre-parallax {
 	transform: translateZ(2px);
 	-webkit-transform: translateZ(2px);
 	z-index: 2;
-}*/
+}
 section#portfolio-presentation .portfolio-item a:hover .parallax {
 	transform: translateZ(85px);
 	-webkit-transform: translateZ(85px);
@@ -1949,7 +1949,7 @@ body.fixed section#works-articles .articles-holder .article .parallax {
 	-webkit-transform: translateZ(2px) !important;
 }*/
 
-/*section#works-articles .articles-holder .article .parallax {
+section#works-articles .articles-holder .article .parallax {
 	transform: translateZ(3px);
 	-webkit-transform: translateZ(3px);
 	z-index: 3;
@@ -1958,7 +1958,7 @@ section#works-articles .articles-holder .article .pre-parallax {
 	transform: translateZ(2px);
 	-webkit-transform: translateZ(2px);
 	z-index: 2;
-}*/
+}
 section#works-articles .articles-holder .article:hover .parallax {
 	transform: translateZ(40px);
 	-webkit-transform: translateZ(40px);
