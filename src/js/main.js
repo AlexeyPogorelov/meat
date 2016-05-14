@@ -416,13 +416,14 @@ $(window).on('load', function () {
 	$(window).on('keyup', function (e) {
 		// esc pressed
 		if (e.keyCode == '27') {
-			$('.modal-holder').removeClass('opened');
+			$('.modal-holder, #mobile-menu').removeClass('opened');
 			$('#result').addClass('clothing').children().animate({
 				'opacity': 0
 			}, function () {
 				$(this).remove();
 				$('#result').removeClass('clothing');
 			});
+            bodyOverflow.unfixBody();
 		}
 	});
 	$('#result').on('click', function () {
